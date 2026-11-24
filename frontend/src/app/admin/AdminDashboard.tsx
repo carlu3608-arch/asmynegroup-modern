@@ -40,6 +40,7 @@ type Settings = {
   contactEmail?: string;
   supportPhone?: string;
   marketplaceUrl?: string;
+  ledaWidget?: boolean;
   social?: Record<string, string>;
   sectionsEnabled?: Record<string, boolean>;
 };
@@ -757,7 +758,7 @@ function SettingsPanel({ flash }: { flash: (ok: boolean, msg: string) => void })
       <header className="admin-head">
         <div>
           <h1>Configuración</h1>
-          <p>Contacto, marketplace y redes sociales.</p>
+          <p>Contacto, marketplace, asistente LEDA y redes sociales.</p>
         </div>
         <button className="admin-btn-gold" onClick={save} disabled={saving}>{saving ? "Guardando…" : "Guardar"}</button>
       </header>
@@ -771,6 +772,14 @@ function SettingsPanel({ flash }: { flash: (ok: boolean, msg: string) => void })
         <h2>Marketplace Global</h2>
         <label className="admin-field"><span>URL del marketplace</span><input type="url" placeholder="https://market.asmynegroup.com" value={s.marketplaceUrl ?? ""} onChange={(e) => setS({ ...s, marketplaceUrl: e.target.value })} /></label>
         <p style={{ opacity: 0.7, fontSize: "0.85rem", margin: "6px 0 0" }}>Todos los enlaces de Marketplace del sitio redirigen a esta dirección. Cámbiala a https://market.asmynegroup.com cuando el DNS esté listo.</p>
+      </div>
+      <div className="admin-card">
+        <h2>Asistente LEDA (chat flotante)</h2>
+        <label className="admin-field" style={{ flexDirection: "row", alignItems: "center", gap: 10 }}>
+          <input type="checkbox" style={{ width: 18, height: 18 }} checked={s.ledaWidget !== false} onChange={(e) => setS({ ...s, ledaWidget: e.target.checked })} />
+          <span>Mostrar el asistente LEDA en todas las páginas</span>
+        </label>
+        <p style={{ opacity: 0.7, fontSize: "0.85rem", margin: "6px 0 0" }}>Burbuja abajo a la derecha. Responde en el idioma del sitio y orienta sobre los servicios. Los cambios se aplican en menos de un minuto.</p>
       </div>
       <div className="admin-card">
         <h2>Redes</h2>

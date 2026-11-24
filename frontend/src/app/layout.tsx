@@ -7,6 +7,7 @@ import "./globals.css";
 import CartProviderBridge from "./shared/CartProviderBridge";
 import { LanguageProvider } from "@/i18n/LanguageProvider";
 import BrandSync from "@/components/BrandSync";
+import LedaWidget from "@/components/LedaWidget";
 import ClientToastWrapper from "./shared/ClientToastWrapper";
 import { verifyAuthToken } from "@/lib/jwt";
 
@@ -75,6 +76,7 @@ export default async function RootLayout({
             </div>
           </CartProviderBridge>
           </ClientToastWrapper>
+          <LedaWidget />
         </LanguageProvider>
       </body>
     </html>

@@ -13,6 +13,7 @@ const DEFAULT_SETTINGS = {
   contactEmail: "contact@asmyne.com",
   supportPhone: "+1-(809) 308-6370",
   marketplaceUrl: DEFAULT_MARKETPLACE_URL,
+  ledaWidget: true,
   social: {
     facebook: "https://www.facebook.com/share/1KGpFstMcy/",
     instagram: "https://www.instagram.com/asmynegroup",

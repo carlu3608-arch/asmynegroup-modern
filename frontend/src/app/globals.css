@@ -686,3 +686,52 @@ html.js.motion [data-stagger] > * { opacity: 0; transform: translateY(28px); }
 
 .admin-page-link { margin-left: 12px; font-size: 13px; font-weight: 500; color: #C9A96E; text-decoration: none; }
 .admin-page-link:hover { text-decoration: underline; }
+
+/* ===== LEDA assistant widget (Palette A · Midnight Champagne) ===== */
+.leda-widget { position: fixed; right: 22px; bottom: 22px; z-index: 450; font-family: var(--font-manrope), system-ui, sans-serif; }
+.leda-bubble { width: 60px; height: 60px; border-radius: 50%; display: grid; place-items: center; color: #050810; cursor: pointer;
+  background: radial-gradient(circle at 30% 25%, #E6D2A8, #C9A96E 55%, #8C6B3E); border: 1px solid rgba(230,210,168,.7);
+  box-shadow: 0 14px 34px rgba(0,0,0,.55), 0 0 0 6px rgba(201,169,110,.12); transition: transform .25s ease, box-shadow .25s ease; margin-left: auto; }
+.leda-bubble:hover { transform: translateY(-2px) scale(1.04); box-shadow: 0 18px 40px rgba(0,0,0,.6), 0 0 0 8px rgba(201,169,110,.18); }
+.leda-widget[data-open="0"] .leda-bubble::after { content: ""; position: absolute; inset: -4px; border-radius: 50%; border: 1px solid rgba(201,169,110,.5); animation: leda-pulse 2.6s ease-out infinite; pointer-events: none; }
+.leda-widget { display: flex; flex-direction: column; align-items: flex-end; gap: 14px; }
+.leda-bubble { position: relative; }
+@keyframes leda-pulse { 0% { transform: scale(1); opacity: .9; } 100% { transform: scale(1.45); opacity: 0; } }
+.leda-panel { width: 370px; max-width: calc(100vw - 28px); height: min(560px, calc(100vh - 120px)); display: flex; flex-direction: column; overflow: hidden;
+  background: linear-gradient(180deg, #0C1220 0%, #050810 100%); border: 1px solid rgba(201,169,110,.28); border-radius: 20px; color: #F5F0E6;
+  box-shadow: 0 30px 70px rgba(0,0,0,.6), inset 0 1px 0 rgba(230,210,168,.08); animation: leda-in .28s cubic-bezier(.2,.8,.2,1); }
+@keyframes leda-in { from { opacity: 0; transform: translateY(14px) scale(.98); } to { opacity: 1; transform: none; } }
+.leda-head { display: flex; align-items: center; gap: 10px; padding: 14px 14px 12px; border-bottom: 1px solid rgba(201,169,110,.22); background: rgba(201,169,110,.05); }
+.leda-avatar { width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center; font-family: var(--font-display), serif; font-size: 20px; font-weight: 600;
+  color: #050810; background: radial-gradient(circle at 30% 25%, #E6D2A8, #C9A96E 60%, #8C6B3E); }
+.leda-head-txt { flex: 1; display: flex; flex-direction: column; line-height: 1.2; }
+.leda-head-txt strong { font-family: var(--font-display), serif; font-size: 19px; font-weight: 600; color: #E6D2A8; letter-spacing: .02em; }
+.leda-head-txt span { font-size: 11.5px; color: #9A9488; display: flex; align-items: center; gap: 6px; }
+.leda-dot { width: 7px; height: 7px; border-radius: 50%; background: #C9A96E; box-shadow: 0 0 8px #C9A96E; display: inline-block; }
+.leda-icon { width: 32px; height: 32px; display: grid; place-items: center; border-radius: 10px; color: #9A9488; background: transparent; border: 1px solid transparent; cursor: pointer; }
+.leda-icon:hover { color: #E6D2A8; border-color: rgba(201,169,110,.3); }
+.leda-list { flex: 1; overflow-y: auto; padding: 16px 14px; display: flex; flex-direction: column; gap: 10px; scrollbar-width: thin; scrollbar-color: rgba(201,169,110,.3) transparent; }
+.leda-msg { max-width: 86%; padding: 10px 13px; border-radius: 14px; font-size: 14px; line-height: 1.5; white-space: pre-wrap; word-wrap: break-word; }
+.leda-bot { align-self: flex-start; background: rgba(245,240,230,.05); border: 1px solid rgba(201,169,110,.18); border-top-left-radius: 4px; }
+.leda-me { align-self: flex-end; color: #050810; background: linear-gradient(135deg, #E6D2A8, #C9A96E); border-top-right-radius: 4px; font-weight: 500; }
+.leda-chips { display: flex; flex-wrap: wrap; gap: 7px; }
+.leda-chips button { font-size: 12.5px; color: #E6D2A8; background: transparent; border: 1px solid rgba(201,169,110,.4); border-radius: 999px; padding: 6px 11px; cursor: pointer; }
+.leda-chips button:hover { background: rgba(201,169,110,.12); }
+.leda-typing { display: flex; gap: 5px; padding: 13px 14px; }
+.leda-typing span { width: 7px; height: 7px; border-radius: 50%; background: #C9A96E; animation: leda-dots 1.2s infinite ease-in-out; }
+.leda-typing span:nth-child(2) { animation-delay: .15s; } .leda-typing span:nth-child(3) { animation-delay: .3s; }
+@keyframes leda-dots { 0%, 80%, 100% { opacity: .25; transform: translateY(0); } 40% { opacity: 1; transform: translateY(-4px); } }
+.leda-form { display: flex; align-items: flex-end; gap: 8px; padding: 10px 12px 12px; border-top: 1px solid rgba(201,169,110,.22); }
+.leda-form textarea { flex: 1; resize: none; max-height: 110px; min-height: 42px; padding: 11px 13px; border-radius: 12px; font-size: 14px; color: #F5F0E6;
+  background: rgba(245,240,230,.04); border: 1px solid rgba(201,169,110,.25); outline: none; font-family: inherit; }
+.leda-form textarea:focus { border-color: rgba(201,169,110,.65); }
+.leda-form textarea::placeholder { color: #9A9488; }
+.leda-form button { width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; color: #050810; background: linear-gradient(135deg, #E6D2A8, #C9A96E); border: 0; cursor: pointer; }
+.leda-form button:disabled { opacity: .4; cursor: default; }
+@media (max-width: 520px) {
+  .leda-widget { right: 14px; bottom: 14px; }
+  .leda-widget[data-open="1"] { left: 10px; right: 10px; bottom: 10px; }
+  .leda-panel { width: 100%; max-width: none; height: min(78vh, calc(100dvh - 96px)); }
+  .leda-bubble { width: 56px; height: 56px; }
+  .leda-form textarea { font-size: 16px; }
+}
