@@ -39,32 +39,32 @@ export default function HairSolutionsConnexion() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-yellow-50" style={{background: 'linear-gradient(120deg, #f7e1b5 0%, #fffbe6 100%)'}}>
-      <form onSubmit={handleSubmit} className="bg-white rounded-2xl shadow-xl p-8 w-full max-w-md flex flex-col gap-4 border border-yellow-200">
-        <h1 className="text-2xl font-bold text-yellow-800 mb-2 text-center">Iniciar sesión en SHEBAS</h1>
+    <div className="min-h-screen flex items-center justify-center bg-[#F5F0E6]" style={{background: 'linear-gradient(120deg, #E6D2A8 0%, #fffbe6 100%)'}}>
+      <form onSubmit={handleSubmit} className="bg-white rounded-2xl shadow-xl p-8 w-full max-w-md flex flex-col gap-4 border border-[#E6D2A8]">
+        <h1 className="text-2xl font-bold text-[#8C6B3E] mb-2 text-center">Iniciar sesión en SHEBAS</h1>
         <input
           type="email"
           placeholder="Correo electrónico"
           value={email}
           onChange={e => setEmail(e.target.value)}
-          className="border rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-600"
+          className="border rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#C9A96E]"
         />
         <input
           type="password"
           placeholder="Contraseña"
           value={password}
           onChange={e => setPassword(e.target.value)}
-          className="border rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-600"
+          className="border rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#C9A96E]"
         />
         {error && <div className="text-red-600 text-sm font-semibold text-center">{error}</div>}
         <button
           type="submit"
-          className="bg-yellow-700 text-white px-6 py-2 rounded font-semibold hover:bg-yellow-800 mt-2"
+          className="bg-[#8C6B3E] text-white px-6 py-2 rounded font-semibold hover:bg-[#C9A96E] mt-2"
         >
           Iniciar sesión
         </button>
         <div className="text-center mt-2">
-          <a href="/services/hair-solutions/register" className="text-yellow-700 hover:underline font-semibold">Crear cuenta</a>
+          <a href="/services/hair-solutions/register" className="text-[#8C6B3E] hover:underline font-semibold">Crear cuenta</a>
         </div>
       </form>
     </div>

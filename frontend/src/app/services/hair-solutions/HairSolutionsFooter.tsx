@@ -3,12 +3,12 @@ import { FaFacebookF, FaInstagram, FaTiktok, FaYoutube, FaWhatsapp } from "react
 
 export default function HairSolutionsFooter() {
   return (
-    <footer className="w-full bg-gradient-to-r from-[#2d2a1f] to-[#f7e1b5] text-black pt-12 pb-4 px-4 md:px-16 mt-0 border-t border-yellow-200/20">
+    <footer className="w-full bg-gradient-to-r from-[#0C1220] to-[#E6D2A8] text-black pt-12 pb-4 px-4 md:px-16 mt-0 border-t border-[#E6D2A8]/20">
       <div className="max-w-7xl mx-auto flex flex-col-reverse md:flex-row md:justify-between gap-12">
         {/* Bloque logo y contacto */}
         <div className="flex-1 min-w-[260px]">
           <div className="flex items-center gap-2 mb-4">
-            <div className="w-8 h-8 rounded bg-yellow-400 flex items-center justify-center font-bold text-2xl text-[#2d2a1f]">S</div>
+            <div className="w-8 h-8 rounded bg-[#C9A96E] flex items-center justify-center font-bold text-2xl text-[#0C1220]">S</div>
             <span className="text-3xl font-extrabold tracking-wide">SHEBAS</span>
           </div>
           <div className="text-black/80 mb-2">Dirección:</div>
@@ -22,7 +22,7 @@ export default function HairSolutionsFooter() {
           <div className="text-black/80 mb-3">Recibe nuestros consejos y ofertas capilares exclusivas.</div>
           <form className="flex items-center mb-2">
             <input type="email" placeholder="Tu correo" className="rounded-full px-5 py-3 w-full text-black focus:outline-none" />
-            <button type="submit" className="-ml-10 bg-yellow-400 rounded-full w-10 h-10 flex items-center justify-center shadow hover:bg-yellow-500 transition">
+            <button type="submit" className="-ml-10 bg-[#C9A96E] rounded-full w-10 h-10 flex items-center justify-center shadow hover:bg-[#C9A96E] transition">
               <svg width="22" height="22" fill="none" stroke="#111216" strokeWidth="2.5" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </button>
           </form>
@@ -32,26 +32,26 @@ export default function HairSolutionsFooter() {
         <div className="flex-1 min-w-[180px]">
           <div className="font-bold mb-3 text-lg">Nuestros Productos</div>
           <ul className="space-y-2 text-black/80">
-            <li><a href="/services/hair-solutions" className="hover:text-yellow-600">Cuidado capilar</a></li>
-            <li><a href="/services/hair-solutions" className="hover:text-yellow-600">Aceites naturales</a></li>
-            <li><a href="/services/hair-solutions" className="hover:text-yellow-600">Cremas moldeadoras</a></li>
-            <li><a href="/services/hair-solutions" className="hover:text-yellow-600">Champús</a></li>
-            <li><a href="/services/hair-solutions" className="hover:text-yellow-600">Accesorios</a></li>
+            <li><a href="/services/hair-solutions" className="hover:text-[#8C6B3E]">Cuidado capilar</a></li>
+            <li><a href="/services/hair-solutions" className="hover:text-[#8C6B3E]">Aceites naturales</a></li>
+            <li><a href="/services/hair-solutions" className="hover:text-[#8C6B3E]">Cremas moldeadoras</a></li>
+            <li><a href="/services/hair-solutions" className="hover:text-[#8C6B3E]">Champús</a></li>
+            <li><a href="/services/hair-solutions" className="hover:text-[#8C6B3E]">Accesorios</a></li>
           </ul>
         </div>
         {/* Bloque enlaces rápidos */}
         <div className="flex-1 min-w-[180px]">
           <div className="font-bold mb-3 text-lg">Enlaces rápidos</div>
           <ul className="space-y-2 text-black/80">
-            <li><a href="/" className="hover:text-yellow-600">Inicio</a></li>
-            <li><a href="/blog" className="hover:text-yellow-600">Blog</a></li>
-            <li><a href="/contact" className="hover:text-yellow-600">Contacto</a></li>
-            <li><a href="/faq" className="hover:text-yellow-600">FAQ</a></li>
-            <li><a href="/about" className="hover:text-yellow-600">Acerca de</a></li>
+            <li><a href="/" className="hover:text-[#8C6B3E]">Inicio</a></li>
+            <li><a href="/blog" className="hover:text-[#8C6B3E]">Blog</a></li>
+            <li><a href="/contact" className="hover:text-[#8C6B3E]">Contacto</a></li>
+            <li><a href="/faq" className="hover:text-[#8C6B3E]">FAQ</a></li>
+            <li><a href="/about" className="hover:text-[#8C6B3E]">Acerca de</a></li>
           </ul>
         </div>
       </div>
-      <hr className="my-8 border-yellow-200/20" />
+      <hr className="my-8 border-[#E6D2A8]/20" />
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:justify-between items-center gap-4 text-black/70 text-sm">
         <div>©2026 SHEBAS. Todos los derechos reservados.</div>
         <div className="flex gap-4 mt-2 md:mt-0">

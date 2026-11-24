@@ -132,6 +132,42 @@ const es: Dict = {
   "footer.rights": "©2026 Asmyne Group. Todos los derechos reservados.",
 
   "lang.label": "Idioma",
+
+  // --- Páginas dedicadas ---
+  "page.hair.card1.title": "Diagnóstico Personalizado",
+  "page.hair.card1.desc": "Análisis de su cuero cabelludo y recomendaciones personalizadas para una rutina adaptada.",
+  "page.hair.card2.title": "Cuidados y Tratamientos",
+  "page.hair.card2.desc": "Cuidados capilares profesionales, tratamientos anticaída, hidratación y reparación.",
+  "page.hair.card3.title": "Acompañamiento experto",
+  "page.hair.card3.desc": "Seguimiento personalizado y consejos de expertos para lograr resultados duraderos.",
+  "page.dating.hero.title": "Encuentros para adultos",
+  "page.dating.hero.title2": "Haz una conexión real",
+  "page.dating.hero.sub": "Comienza a conocer personas que están listas para comprometerse hoy mismo.",
+  "page.dating.hero.cta": "Empezar",
+  "page.dating.sec.title": "Inicia tu historia de amor",
+  "page.dating.sec.sub": "Asmyne Group: encuentra el amor con nuestro sitio de citas.",
+  "page.dating.sec.cta": "Iniciar sesión",
+  "page.agence.brand": "Asmyne Viajes",
+  "page.agence.nav.vols": "Vuelos",
+  "page.agence.nav.coches": "Coches",
+  "page.agence.contact": "Contacto: Asmyne Group",
+  "page.agence.hero.cta": "Contactar para reservar",
+  "page.conseil.hero.title": "Asesoría empresarial",
+  "page.conseil.sec.title": "Nuestras especialidades para impulsar el éxito de tu emprendimiento",
+  "page.blog.hero.title": "Blog de Yontikonsey",
+  "page.blog.hero.sub": "Categorías",
+  "page.monet.hero.title": "Plataforma de monetización Premium",
+  "page.monet.hero.sub": "Maximice sus ingresos con herramientas potentes: suscripciones, pagos recurrentes, comisiones, gestión automatizada e informes detallados.",
+  "page.monet.hero.cta": "Comenzar ahora",
+  "page.monet.card1.title": "Suscripciones y pagos",
+  "page.monet.card1.desc": "Gestione fácilmente las suscripciones, los pagos recurrentes y las ofertas premium para sus clientes.",
+  "page.monet.card2.title": "Informes y estadísticas",
+  "page.monet.card2.desc": "Siga sus ingresos, analice tendencias y exporte informes detallados con un clic.",
+  "page.monet.card3.title": "Automatización",
+  "page.monet.card3.desc": "Automatice la gestión de pagos, recordatorios, facturas y notificaciones para ahorrar tiempo.",
+  "page.monet.table.title": "Resumen de ingresos",
+  "page.chatbot.hero.title": "Chatbot inteligente",
+
 };
 
 const en: Dict = {
@@ -246,6 +282,42 @@ const en: Dict = {
   "footer.rights": "©2026 Asmyne Group. All rights reserved.",
 
   "lang.label": "Language",
+
+  // --- Páginas dedicadas ---
+  "page.hair.card1.title": "Personalized Diagnosis",
+  "page.hair.card1.desc": "Analysis of your scalp and personalized recommendations for a tailored routine.",
+  "page.hair.card2.title": "Care & Treatments",
+  "page.hair.card2.desc": "Professional hair care, anti-hair-loss treatments, hydration and repair.",
+  "page.hair.card3.title": "Expert Guidance",
+  "page.hair.card3.desc": "Personalized follow-up and expert advice to achieve lasting results.",
+  "page.dating.hero.title": "Dating for adults",
+  "page.dating.hero.title2": "Make a real connection",
+  "page.dating.hero.sub": "Start meeting people who are ready to commit today.",
+  "page.dating.hero.cta": "Get started",
+  "page.dating.sec.title": "Start your love story",
+  "page.dating.sec.sub": "Asmyne Group: find love with our dating site.",
+  "page.dating.sec.cta": "Sign in",
+  "page.agence.brand": "Asmyne Travel",
+  "page.agence.nav.vols": "Flights",
+  "page.agence.nav.coches": "Cars",
+  "page.agence.contact": "Contact: Asmyne Group",
+  "page.agence.hero.cta": "Contact us to book",
+  "page.conseil.hero.title": "Business Advisory",
+  "page.conseil.sec.title": "Our specialties to drive your venture's success",
+  "page.blog.hero.title": "Yontikonsey Blog",
+  "page.blog.hero.sub": "Categories",
+  "page.monet.hero.title": "Premium Monetization Platform",
+  "page.monet.hero.sub": "Maximize your revenue with powerful tools: subscriptions, recurring payments, commissions, automated management and detailed reports.",
+  "page.monet.hero.cta": "Start now",
+  "page.monet.card1.title": "Subscriptions & payments",
+  "page.monet.card1.desc": "Easily manage subscriptions, recurring payments and premium offers for your clients.",
+  "page.monet.card2.title": "Reports & analytics",
+  "page.monet.card2.desc": "Track your revenue, analyze trends and export detailed reports in one click.",
+  "page.monet.card3.title": "Automation",
+  "page.monet.card3.desc": "Automate payments, reminders, invoices and notifications to save time.",
+  "page.monet.table.title": "Revenue summary",
+  "page.chatbot.hero.title": "Smart Chatbot",
+
 };
 
 const fr: Dict = {
@@ -360,6 +432,42 @@ const fr: Dict = {
   "footer.rights": "©2026 Asmyne Group. Tous droits réservés.",
 
   "lang.label": "Langue",
+
+  // --- Páginas dedicadas ---
+  "page.hair.card1.title": "Diagnostic personnalisé",
+  "page.hair.card1.desc": "Analyse de votre cuir chevelu et recommandations personnalisées pour une routine adaptée.",
+  "page.hair.card2.title": "Soins et traitements",
+  "page.hair.card2.desc": "Soins capillaires professionnels, traitements anti-chute, hydratation et réparation.",
+  "page.hair.card3.title": "Accompagnement expert",
+  "page.hair.card3.desc": "Suivi personnalisé et conseils d'experts pour des résultats durables.",
+  "page.dating.hero.title": "Rencontres pour adultes",
+  "page.dating.hero.title2": "Créez une vraie connexion",
+  "page.dating.hero.sub": "Commencez à rencontrer des personnes prêtes à s'engager dès aujourd'hui.",
+  "page.dating.hero.cta": "Commencer",
+  "page.dating.sec.title": "Commencez votre histoire d'amour",
+  "page.dating.sec.sub": "Asmyne Group : trouvez l'amour avec notre site de rencontres.",
+  "page.dating.sec.cta": "Se connecter",
+  "page.agence.brand": "Asmyne Voyages",
+  "page.agence.nav.vols": "Vols",
+  "page.agence.nav.coches": "Voitures",
+  "page.agence.contact": "Contact : Asmyne Group",
+  "page.agence.hero.cta": "Contacter pour réserver",
+  "page.conseil.hero.title": "Conseil entrepreneurial",
+  "page.conseil.sec.title": "Nos spécialités pour booster le succès de votre entreprise",
+  "page.blog.hero.title": "Blog de Yontikonsey",
+  "page.blog.hero.sub": "Catégories",
+  "page.monet.hero.title": "Plateforme de monétisation Premium",
+  "page.monet.hero.sub": "Maximisez vos revenus avec des outils puissants : abonnements, paiements récurrents, commissions, gestion automatisée et rapports détaillés.",
+  "page.monet.hero.cta": "Commencer",
+  "page.monet.card1.title": "Abonnements et paiements",
+  "page.monet.card1.desc": "Gérez facilement les abonnements, les paiements récurrents et les offres premium pour vos clients.",
+  "page.monet.card2.title": "Rapports et statistiques",
+  "page.monet.card2.desc": "Suivez vos revenus, analysez les tendances et exportez des rapports détaillés en un clic.",
+  "page.monet.card3.title": "Automatisation",
+  "page.monet.card3.desc": "Automatisez les paiements, rappels, factures et notifications pour gagner du temps.",
+  "page.monet.table.title": "Résumé des revenus",
+  "page.chatbot.hero.title": "Chatbot intelligent",
+
 };
 
 export const dictionaries: Record<Locale, Dict> = { es, en, fr };
@@ -489,3 +597,94 @@ export const serviceSlugs = [
   "marketplace-global",
   "systeme-monetisation",
 ] as const;
+
+/** Editable content for the dedicated service pages, grouped BY PAGE for the admin. */
+export type EditableGroup = {
+  group: string;
+  path?: string;
+  image?: { key: string; fallback: string; label: string };
+  keys: { key: string; label: string; multiline?: boolean }[];
+};
+
+export const pagesContent: EditableGroup[] = [
+  {
+    group: "Soluciones capilares",
+    path: "/services/hair-solutions",
+    image: { key: "page.hair.hero", fallback: "/heroes/hair-solutions.png", label: "Imagen principal (hero)" },
+    keys: [
+      { key: "page.hair.card1.title", label: "Tarjeta 1 — título" },
+      { key: "page.hair.card1.desc", label: "Tarjeta 1 — texto", multiline: true },
+      { key: "page.hair.card2.title", label: "Tarjeta 2 — título" },
+      { key: "page.hair.card2.desc", label: "Tarjeta 2 — texto", multiline: true },
+      { key: "page.hair.card3.title", label: "Tarjeta 3 — título" },
+      { key: "page.hair.card3.desc", label: "Tarjeta 3 — texto", multiline: true },
+    ],
+  },
+  {
+    group: "Citas (Dating)",
+    path: "/services/dating",
+    image: { key: "page.dating.hero", fallback: "/heroes/dating.png", label: "Imagen principal (hero)" },
+    keys: [
+      { key: "page.dating.hero.title", label: "Título — línea 1" },
+      { key: "page.dating.hero.title2", label: "Título — línea 2" },
+      { key: "page.dating.hero.sub", label: "Subtítulo", multiline: true },
+      { key: "page.dating.hero.cta", label: "Botón principal" },
+      { key: "page.dating.sec.title", label: "Sección — título" },
+      { key: "page.dating.sec.sub", label: "Sección — texto", multiline: true },
+      { key: "page.dating.sec.cta", label: "Sección — botón" },
+    ],
+  },
+  {
+    group: "Agencia de viajes",
+    path: "/services/agence-voyage",
+    image: { key: "page.agence.hero", fallback: "/heroes/agence-voyage.png", label: "Imagen principal (hero)" },
+    keys: [
+      { key: "page.agence.brand", label: "Nombre en la barra" },
+      { key: "page.agence.nav.vols", label: "Menú — Vuelos" },
+      { key: "page.agence.nav.coches", label: "Menú — Coches" },
+      { key: "page.agence.contact", label: "Texto de contacto" },
+      { key: "page.agence.hero.cta", label: "Botón principal" },
+    ],
+  },
+  {
+    group: "Asesoría empresarial",
+    path: "/services/conseil-entrepreneurial",
+    image: { key: "page.conseil.hero", fallback: "/heroes/conseil-entrepreneurial.png", label: "Imagen principal (hero)" },
+    keys: [
+      { key: "page.conseil.hero.title", label: "Título principal" },
+      { key: "page.conseil.sec.title", label: "Título de especialidades", multiline: true },
+    ],
+  },
+  {
+    group: "Blog Yontikonsey",
+    path: "/services/yontikonsey-blog",
+    image: { key: "page.blog.hero", fallback: "/heroes/yontikonsey-blog.png", label: "Imagen principal (hero)" },
+    keys: [
+      { key: "page.blog.hero.title", label: "Título principal" },
+      { key: "page.blog.hero.sub", label: "Subtítulo (Categorías)" },
+    ],
+  },
+  {
+    group: "Sistema de monetización",
+    path: "/services/systeme-monetisation",
+    image: { key: "page.monet.hero", fallback: "/heroes/systeme-monetisation.png", label: "Imagen principal (hero)" },
+    keys: [
+      { key: "page.monet.hero.title", label: "Título principal" },
+      { key: "page.monet.hero.sub", label: "Subtítulo", multiline: true },
+      { key: "page.monet.hero.cta", label: "Botón principal" },
+      { key: "page.monet.card1.title", label: "Tarjeta 1 — título" },
+      { key: "page.monet.card1.desc", label: "Tarjeta 1 — texto", multiline: true },
+      { key: "page.monet.card2.title", label: "Tarjeta 2 — título" },
+      { key: "page.monet.card2.desc", label: "Tarjeta 2 — texto", multiline: true },
+      { key: "page.monet.card3.title", label: "Tarjeta 3 — título" },
+      { key: "page.monet.card3.desc", label: "Tarjeta 3 — texto", multiline: true },
+      { key: "page.monet.table.title", label: "Título de la tabla" },
+    ],
+  },
+  {
+    group: "Chatbot inteligente",
+    path: "/services/chatbot-intelligent",
+    image: { key: "page.chatbot.hero", fallback: "/heroes/chatbot-intelligent.png", label: "Imagen principal (hero)" },
+    keys: [{ key: "page.chatbot.hero.title", label: "Título principal" }],
+  },
+];

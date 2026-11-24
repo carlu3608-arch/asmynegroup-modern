@@ -10,14 +10,14 @@ export default function Shop() {
           <img src="/images/blog.png" alt="Livre" className="w-32 h-44 object-cover rounded mb-4 self-center" />
           <h3 className="text-lg font-bold text-[#2d72d9] mb-2">Titre du livre</h3>
           <p className="text-gray-700 mb-2">Description courte du livre à vendre.</p>
-          <button className="bg-[#2d72d9] text-white font-bold px-4 py-2 rounded-full shadow hover:bg-blue-500 transition mt-auto">Acheter</button>
+          <button className="bg-[#2d72d9] text-white font-bold px-4 py-2 rounded-full shadow hover:bg-[#C9A96E] transition mt-auto">Acheter</button>
         </div>
         {/* Exemple d’exposition */}
         <div className="bg-white rounded-2xl p-6 shadow border border-[#e0e7ef] flex flex-col">
           <img src="/images/service-blog.png" alt="Exposition" className="w-full h-44 object-cover rounded mb-4" />
           <h3 className="text-lg font-bold text-[#2d72d9] mb-2">Exposition en vedette</h3>
           <p className="text-gray-700 mb-2">Présentation ou affiche d’une exposition à venir ou en cours.</p>
-          <button className="bg-[#2d72d9] text-white font-bold px-4 py-2 rounded-full shadow hover:bg-blue-500 transition mt-auto">Découvrir</button>
+          <button className="bg-[#2d72d9] text-white font-bold px-4 py-2 rounded-full shadow hover:bg-[#C9A96E] transition mt-auto">Découvrir</button>
         </div>
       </div>
     </section>

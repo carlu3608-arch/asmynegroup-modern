@@ -21,18 +21,18 @@ export default function CheckoutCountrySelect({ value, onChange }: { value: stri
 
   return (
     <div ref={ref} className="relative">
-      <button type="button" className="w-full text-left px-4 py-2 border border-yellow-300 rounded-lg bg-white text-yellow-900" onClick={() => setOpen(v => !v)}>
+      <button type="button" className="w-full text-left px-4 py-2 border border-[#E6D2A8] rounded-lg bg-white text-[#8C6B3E]" onClick={() => setOpen(v => !v)}>
         {selected?.name}
       </button>
       {open && (
-        <div className="absolute left-0 right-0 mt-2 z-50 bg-white border border-yellow-200 rounded shadow-lg">
+        <div className="absolute left-0 right-0 mt-2 z-50 bg-white border border-[#E6D2A8] rounded shadow-lg">
           <div className="p-2">
             <input autoFocus value={filter} onChange={e => setFilter(e.target.value)} placeholder="Rechercher un pays..." className="w-full px-3 py-2 border rounded focus:outline-none" />
           </div>
           <ul className="max-h-56 overflow-y-auto">
             {list.map(c => (
               <li key={c.code}>
-                <button type="button" onClick={() => { onChange(c.code); setOpen(false); }} className="w-full text-left px-4 py-2 hover:bg-yellow-50">
+                <button type="button" onClick={() => { onChange(c.code); setOpen(false); }} className="w-full text-left px-4 py-2 hover:bg-[#F5F0E6]">
                   {c.name}
                 </button>
               </li>

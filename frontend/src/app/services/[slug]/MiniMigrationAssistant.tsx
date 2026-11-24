@@ -438,9 +438,9 @@ export default function MiniMigrationAssistant() {
   return (
     <>
       {isOpen && (
-        <div className="fixed bottom-24 right-6 z-[70] w-[320px] max-w-[calc(100vw-1.5rem)] h-[430px] rounded-2xl border border-[#e6b85c]/50 bg-[#0a174e] shadow-2xl flex flex-col overflow-hidden">
-          <div className="flex items-center justify-between px-4 py-3 border-b border-[#e6b85c]/30 bg-[#0f225f]">
-            <div className="text-sm font-bold text-[#e6b85c]">{t.title}</div>
+        <div className="fixed bottom-24 right-6 z-[70] w-[320px] max-w-[calc(100vw-1.5rem)] h-[430px] rounded-2xl border border-[#C9A96E]/50 bg-[#0a174e] shadow-2xl flex flex-col overflow-hidden">
+          <div className="flex items-center justify-between px-4 py-3 border-b border-[#C9A96E]/30 bg-[#0f225f]">
+            <div className="text-sm font-bold text-[#C9A96E]">{t.title}</div>
             <div className="flex items-center gap-1">
               {(["fr", "es", "en"] as ChatLanguage[]).map((lang) => (
                 <button
@@ -449,7 +449,7 @@ export default function MiniMigrationAssistant() {
                   onClick={() => setLanguage(lang)}
                   className={`text-[10px] px-2 py-1 rounded ${
                     language === lang
-                      ? "bg-[#e6b85c] text-[#0a174e]"
+                      ? "bg-[#C9A96E] text-[#0a174e]"
                       : "bg-white/10 text-[#f7d99a]"
                   }`}
                 >
@@ -460,7 +460,7 @@ export default function MiniMigrationAssistant() {
             <button
               type="button"
               onClick={() => setIsOpen(false)}
-              className="text-[#e6b85c] hover:text-white transition-colors"
+              className="text-[#C9A96E] hover:text-white transition-colors"
               aria-label={t.close}
             >
               x
@@ -474,7 +474,7 @@ export default function MiniMigrationAssistant() {
                 className={`max-w-[90%] rounded-lg px-3 py-2 text-xs leading-5 ${
                   message.role === "assistant"
                     ? "bg-white/10 text-[#f7d99a]"
-                    : "ml-auto bg-[#e6b85c] text-[#0a174e]"
+                    : "ml-auto bg-[#C9A96E] text-[#0a174e]"
                 }`}
               >
                 {message.text}
@@ -490,7 +490,7 @@ export default function MiniMigrationAssistant() {
                     onClick={() => {
                       void askQuestion(question);
                     }}
-                    className="w-full text-left text-xs rounded-lg border border-[#e6b85c]/40 px-3 py-2 text-[#f7d99a] hover:bg-[#ffffff14] transition-colors"
+                    className="w-full text-left text-xs rounded-lg border border-[#C9A96E]/40 px-3 py-2 text-[#f7d99a] hover:bg-[#ffffff14] transition-colors"
                   >
                     {question}
                   </button>
@@ -505,13 +505,13 @@ export default function MiniMigrationAssistant() {
             )}
 
             {showHumanHandoff && (
-              <div className="max-w-[95%] rounded-lg px-3 py-2 text-xs leading-5 bg-[#102a6f] text-[#f7d99a] border border-[#e6b85c]/40 space-y-2">
+              <div className="max-w-[95%] rounded-lg px-3 py-2 text-xs leading-5 bg-[#102a6f] text-[#f7d99a] border border-[#C9A96E]/40 space-y-2">
                 <div>{t.handoffQuestion}</div>
                 <div className="flex gap-2">
                   <button
                     type="button"
                     onClick={handleTransferYes}
-                    className="rounded-md bg-[#e6b85c] text-[#0a174e] font-semibold px-3 py-1 hover:bg-[#f1c777] transition-colors"
+                    className="rounded-md bg-[#C9A96E] text-[#0a174e] font-semibold px-3 py-1 hover:bg-[#f1c777] transition-colors"
                   >
                     {t.yes}
                   </button>
@@ -528,7 +528,7 @@ export default function MiniMigrationAssistant() {
           </div>
 
           <form
-            className="p-3 border-t border-[#e6b85c]/30 bg-[#0f225f] flex gap-2"
+            className="p-3 border-t border-[#C9A96E]/30 bg-[#0f225f] flex gap-2"
             onSubmit={(event) => {
               event.preventDefault();
               const question = input.trim();
@@ -546,7 +546,7 @@ export default function MiniMigrationAssistant() {
             <button
               type="submit"
               disabled={isLoading}
-              className="rounded-md bg-[#e6b85c] text-[#0a174e] text-xs font-semibold px-3 py-2 hover:bg-[#f1c777] transition-colors"
+              className="rounded-md bg-[#C9A96E] text-[#0a174e] text-xs font-semibold px-3 py-2 hover:bg-[#f1c777] transition-colors"
             >
               {t.send}
             </button>
@@ -558,7 +558,7 @@ export default function MiniMigrationAssistant() {
         type="button"
         aria-label="Ouvrir l'assistant IA"
         onClick={() => setIsOpen((prev) => !prev)}
-        className="fixed bottom-6 right-6 z-[80] h-14 w-14 rounded-full bg-[#e6b85c] text-[#0a174e] shadow-2xl flex items-center justify-center hover:scale-105 hover:bg-[#f1c777] focus:outline-none focus:ring-4 focus:ring-[#e6b85c]/50 transition-all"
+        className="fixed bottom-6 right-6 z-[80] h-14 w-14 rounded-full bg-[#C9A96E] text-[#0a174e] shadow-2xl flex items-center justify-center hover:scale-105 hover:bg-[#f1c777] focus:outline-none focus:ring-4 focus:ring-[#C9A96E]/50 transition-all"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

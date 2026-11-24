@@ -268,7 +268,7 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
                     <button
                       key={index}
                       type="button"
-                      className={`rounded-3xl overflow-hidden border ${selectedImage === image ? "border-blue-500" : "border-slate-200"}`}
+                      className={`rounded-3xl overflow-hidden border ${selectedImage === image ? "border-[#C9A96E]" : "border-slate-200"}`}
                       onClick={() => setSelectedImage(image)}
                     >
                       <img src={image} alt={`Miniature ${index + 1}`} className="h-20 w-full object-cover" />
@@ -347,7 +347,7 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
                       <button
                         type="button"
                         onClick={handleAddToCart}
-                        className="w-full sm:w-auto rounded-full bg-gradient-to-r from-cyan-700 via-sky-600 to-blue-600 px-8 py-4 text-base font-semibold text-white shadow-xl shadow-cyan-200/30 hover:brightness-105 transition"
+                        className="w-full sm:w-auto rounded-full bg-gradient-to-r from-[#0C1220] via-[#8C6B3E] to-[#8C6B3E] px-8 py-4 text-base font-semibold text-white shadow-xl shadow-[#E6D2A8]/30 hover:brightness-105 transition"
                       >
                         Añadir al carrito
                       </button>

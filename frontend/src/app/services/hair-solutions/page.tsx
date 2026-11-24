@@ -4,17 +4,19 @@ import React from "react";
 import MagazineMarquee from "./MagazineMarquee";
 import HairSolutionsNavbar from "./HairSolutionsNavbar";
 import HairSolutionsFooter from "./HairSolutionsFooter";
+import { useI18n } from "@/i18n/LanguageProvider";
 
 export default function HairSolutionsPage() {
+  const { t, image } = useI18n();
   return (
-    <div className="min-h-screen w-full font-sans flex flex-col items-center" style={{background: "linear-gradient(120deg, #2d2a1f 0%, #f7e1b5 100%)"}}>
+    <div className="min-h-screen w-full font-sans flex flex-col items-center" style={{background: "linear-gradient(120deg, #0C1220 0%, #E6D2A8 100%)"}}>
       {/* Navbar Shebas dynamique */}
       <HairSolutionsNavbar />
 
 
       {/* Hero Shebas */}
       <section className="w-full flex flex-col items-center justify-center min-h-[100vh] px-0 relative overflow-hidden">
-        <img src="/heroes/hair-solutions.png" alt="Soluciones capilares" className="absolute inset-0 w-full h-full object-cover pointer-events-none" style={{zIndex:0}} />
+        <img src={image("page.hair.hero") || "/heroes/hair-solutions.png"} alt="Soluciones capilares" className="absolute inset-0 w-full h-full object-cover pointer-events-none" style={{zIndex:0}} />
         {/* Hero sans images de produits */}
         <div className="relative z-10 w-full h-0" />
       </section>
@@ -24,22 +26,20 @@ export default function HairSolutionsPage() {
 
       {/* Section services (conserve l'existant) */}
       <section className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 px-4">
-        <div className="bg-white rounded-2xl p-8 flex flex-col items-center shadow-xl border border-yellow-300">
+        <div className="bg-white rounded-2xl p-8 flex flex-col items-center shadow-xl border border-[#E6D2A8]">
           <div className="text-5xl mb-4">🧴</div>
-          <div className="font-bold text-2xl mb-2 text-yellow-800">Diagnóstico Personalizado</div>
-          <div className="text-yellow-900/80 text-center">Análisis de su cuero cabelludo y recomendaciones personalizadas para una rutina adaptada.
-</div>
+          <div className="font-bold text-2xl mb-2 text-[#8C6B3E]">{t("page.hair.card1.title")}</div>
+          <div className="text-[#8C6B3E]/80 text-center">{t("page.hair.card1.desc")}</div>
         </div>
-        <div className="bg-white rounded-2xl p-8 flex flex-col items-center shadow-xl border border-yellow-300">
+        <div className="bg-white rounded-2xl p-8 flex flex-col items-center shadow-xl border border-[#E6D2A8]">
           <div className="text-5xl mb-4">💆‍♀️</div>
-          <div className="font-bold text-2xl mb-2 text-yellow-800">Cuidados y Tratamientos</div>
-          <div className="text-yellow-900/80 text-center">Cuidados capilares profesionales, tratamientos anticaída, hidratación y reparación.
-.</div>
+          <div className="font-bold text-2xl mb-2 text-[#8C6B3E]">{t("page.hair.card2.title")}</div>
+          <div className="text-[#8C6B3E]/80 text-center">{t("page.hair.card2.desc")}</div>
         </div>
-        <div className="bg-white rounded-2xl p-8 flex flex-col items-center shadow-xl border border-yellow-300">
+        <div className="bg-white rounded-2xl p-8 flex flex-col items-center shadow-xl border border-[#E6D2A8]">
           <div className="text-5xl mb-4">🌱</div>
-          <div className="font-bold text-2xl mb-2 text-yellow-800">Acompañamiento experto</div>
-          <div className="text-yellow-900/80 text-center">Seguimiento personalizado y consejos de expertos para lograr resultados duraderos.</div>
+          <div className="font-bold text-2xl mb-2 text-[#8C6B3E]">{t("page.hair.card3.title")}</div>
+          <div className="text-[#8C6B3E]/80 text-center">{t("page.hair.card3.desc")}</div>
         </div>
       </section>
       {/* Bandeau magazines défilant inversé en bas */}

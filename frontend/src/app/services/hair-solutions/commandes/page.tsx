@@ -49,11 +49,11 @@ export default function CommandesPage() {
   }, []);
 
   return (
-    <div className="min-h-screen w-full flex flex-col bg-yellow-50 font-sans">
+    <div className="min-h-screen w-full flex flex-col bg-[#F5F0E6] font-sans">
       <HairSolutionsNavbar />
       <main className="flex-1 flex flex-col items-center w-full px-2 md:px-0 py-12">
         <div className="bg-white rounded-2xl shadow-2xl p-8 max-w-2xl w-full flex flex-col items-center">
-          <h1 className="text-2xl font-bold text-yellow-800 mb-6">Mis pedidos</h1>
+          <h1 className="text-2xl font-bold text-[#8C6B3E] mb-6">Mis pedidos</h1>
           {loading ? (
             <div>Cargando...</div>
           ) : error ? (
@@ -64,18 +64,18 @@ export default function CommandesPage() {
             <ul className="w-full mb-6">
               {orders.map((order, idx) => (
                 <li key={order._id || idx} className="flex flex-col border-b border-gray-100 py-3 mb-2">
-                  <div className="font-bold text-yellow-700">Pedido n.º {order._id?.slice(-6) || idx+1}</div>
+                  <div className="font-bold text-[#8C6B3E]">Pedido n.º {order._id?.slice(-6) || idx+1}</div>
                   <div className="text-sm text-gray-600 mb-1">{order.createdAt ? new Date(order.createdAt).toLocaleString() : "Fecha desconocida"}</div>
                   <ul className="ml-4 mb-1">
                     {order.items?.map((item, i) => (
                       <li key={i} className="flex justify-between">
                         <span>{item.product?.name || "Producto"}</span>
                         <span>x{item.quantity}</span>
-                        <span className="text-yellow-700 font-bold">{item.product?.price} RD$</span>
+                        <span className="text-[#8C6B3E] font-bold">{item.product?.price} RD$</span>
                       </li>
                     ))}
                   </ul>
-                  <div className="text-right text-pink-700 font-bold">Total: {order.total || "-"} RD$</div>
+                  <div className="text-right text-[#8C6B3E] font-bold">Total: {order.total || "-"} RD$</div>
                 </li>
               ))}
             </ul>

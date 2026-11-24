@@ -41,7 +41,7 @@ export default function OrderDetailPage({ params }: { params: { orderId: string 
             <h1 className="text-2xl font-bold text-gray-900">Pedido #{orderId}</h1>
             <div className="flex items-center gap-3">
               <button onClick={() => router.back()} className="rounded-full border border-gray-200 px-3 py-2 text-sm text-gray-800 hover:bg-gray-50">Volver</button>
-              <Link href="/services/marketplace-global/orders" className="inline-flex rounded-full bg-pink-600 px-3 py-2 text-sm font-semibold text-white">Todos los pedidos</Link>
+              <Link href="/services/marketplace-global/orders" className="inline-flex rounded-full bg-[#8C6B3E] px-3 py-2 text-sm font-semibold text-white">Todos los pedidos</Link>
             </div>
           </div>
 

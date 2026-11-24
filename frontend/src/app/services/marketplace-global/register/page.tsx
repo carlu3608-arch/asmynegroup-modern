@@ -138,7 +138,7 @@ export default function RegisterPage() {
         )}
         <div className="mt-4 text-center">
           <span className="text-gray-600 dark:text-gray-300">¿Ya tienes cuenta? </span>
-          <Link href="/services/marketplace-global/login" className="text-blue-600 hover:underline">Iniciar sesión</Link>
+          <Link href="/services/marketplace-global/login" className="text-[#8C6B3E] hover:underline">Iniciar sesión</Link>
         </div>
       </div>
     </div>

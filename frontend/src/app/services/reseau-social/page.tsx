@@ -88,7 +88,7 @@ function SectionContent({ section }: { section: string }) {
   //       className="relative flex items-center gap-3 px-5 py-4 rounded-2xl bg-white text-black shadow-xl border border-gray-200 animate-fb-toast"
   //       style={{ minWidth: 320, maxWidth: 400 }}
   //     >
-  //       <span className="text-blue-500">
+  //       <span className="text-[#C9A96E]">
   //         <svg width="28" height="28" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><circle cx="12" cy="16" r="1.5"/></svg>
   //       </span>
   //       <span className="flex-1 text-base font-medium">{n.message}</span>
@@ -166,20 +166,20 @@ function SectionContent({ section }: { section: string }) {
       <div className="w-full max-w-2xl mx-auto flex flex-col gap-6 mt-8 px-8 pb-16">
         {/* Sélecteur d’utilisateur simulé */}
         <div className="flex gap-2 mb-4 items-center">
-          <span className="text-blue-200">Connecté en tant que :</span>
+          <span className="text-[#E6D2A8]">Connecté en tant que :</span>
           {fakeUsers.map(u => (
-            <button key={u.handle} onClick={() => setCurrentUser(u)} className={`flex items-center gap-2 px-3 py-1 rounded-full border ${currentUser.handle === u.handle ? 'bg-blue-700 text-white border-blue-700' : 'bg-blue-900 text-blue-200 border-blue-700 hover:bg-blue-800'}`}>
+            <button key={u.handle} onClick={() => setCurrentUser(u)} className={`flex items-center gap-2 px-3 py-1 rounded-full border ${currentUser.handle === u.handle ? 'bg-[#8C6B3E] text-white border-[#8C6B3E]' : 'bg-[#050810] text-[#E6D2A8] border-[#8C6B3E] hover:bg-[#C9A96E]'}`}>
               <img src={u.avatar} alt={u.name} className="w-6 h-6 rounded-full" />
               <span>{u.name}</span>
             </button>
           ))}
         </div>
         {/* Formulaire de création de post */}
-        <form onSubmit={handlePost} className="bg-blue-900/80 rounded-2xl p-6 flex flex-col gap-3 shadow border border-blue-800 mb-6">
+        <form onSubmit={handlePost} className="bg-[#050810]/80 rounded-2xl p-6 flex flex-col gap-3 shadow border border-[#8C6B3E] mb-6">
           <div className="flex gap-3 items-center">
-            <img src={currentUser.avatar} alt="avatar" className="w-12 h-12 rounded-full object-cover border-2 border-blue-400" />
+            <img src={currentUser.avatar} alt="avatar" className="w-12 h-12 rounded-full object-cover border-2 border-[#C9A96E]" />
             <textarea
-              className="flex-1 bg-blue-800/40 text-white rounded-lg p-3 outline-none resize-none min-h-[48px]"
+              className="flex-1 bg-[#0C1220]/40 text-white rounded-lg p-3 outline-none resize-none min-h-[48px]"
               placeholder="Exprimez-vous..."
               value={text}
               onChange={e => setText(e.target.value)}
@@ -188,37 +188,37 @@ function SectionContent({ section }: { section: string }) {
           {media && (
             <div className="mt-2">
               {media.type === "image" ? (
-                <img src={media.url} alt="aperçu" className="max-h-60 rounded-xl border border-blue-700" />
+                <img src={media.url} alt="aperçu" className="max-h-60 rounded-xl border border-[#8C6B3E]" />
               ) : (
-                <video src={media.url} controls className="max-h-60 rounded-xl border border-blue-700" />
+                <video src={media.url} controls className="max-h-60 rounded-xl border border-[#8C6B3E]" />
               )}
             </div>
           )}
           <div className="flex gap-3 items-center mt-2">
-            <label className="cursor-pointer text-blue-300 hover:text-blue-400">
+            <label className="cursor-pointer text-[#E6D2A8] hover:text-[#C9A96E]">
               <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M8 8h.01M12 8h.01M16 8h.01M8 12h.01M12 12h.01M16 12h.01M8 16h.01M12 16h.01M16 16h.01"/></svg>
               <input type="file" accept="image/*,video/*" className="hidden" onChange={handleMedia} />
             </label>
-            <button type="submit" className="ml-auto bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-lg disabled:opacity-50" disabled={!text.trim() && !media}>Publier</button>
+            <button type="submit" className="ml-auto bg-[#8C6B3E] hover:bg-[#C9A96E] text-white font-bold py-2 px-6 rounded-lg disabled:opacity-50" disabled={!text.trim() && !media}>Publier</button>
           </div>
         </form>
         {/* Affichage des posts */}
         {posts.map(post => (
-          <div key={post.id} className="bg-blue-900/80 rounded-2xl p-6 flex flex-col gap-3 shadow border border-blue-800">
+          <div key={post.id} className="bg-[#050810]/80 rounded-2xl p-6 flex flex-col gap-3 shadow border border-[#8C6B3E]">
             <div className="flex gap-3 items-center">
-              <img src={post.user.avatar} alt={post.user.name} className="w-12 h-12 rounded-full object-cover border-2 border-blue-400" />
+              <img src={post.user.avatar} alt={post.user.name} className="w-12 h-12 rounded-full object-cover border-2 border-[#C9A96E]" />
               <div>
                 <span className="font-bold text-white text-base">{post.user.name}</span>
-                <span className="text-blue-200 ml-2">{post.user.handle}</span>
-                <span className="text-blue-300 ml-2 text-sm">· {post.date}</span>
+                <span className="text-[#E6D2A8] ml-2">{post.user.handle}</span>
+                <span className="text-[#E6D2A8] ml-2 text-sm">· {post.date}</span>
               </div>
             </div>
             <div className="text-white text-lg whitespace-pre-line">{post.text}</div>
             {post.image && (
-              <img src={post.image} alt="post visuel" className="rounded-2xl w-full max-h-[500px] object-cover border border-blue-800 bg-black" />
+              <img src={post.image} alt="post visuel" className="rounded-2xl w-full max-h-[500px] object-cover border border-[#8C6B3E] bg-black" />
             )}
             {post.video && (
-              <video src={post.video} controls className="rounded-2xl w-full max-h-[500px] object-cover border border-blue-800 bg-black" />
+              <video src={post.video} controls className="rounded-2xl w-full max-h-[500px] object-cover border border-[#8C6B3E] bg-black" />
             )}
           </div>
         ))}
@@ -264,7 +264,7 @@ function SectionContent({ section }: { section: string }) {
                       <div className="flex items-center gap-2 mb-1">
                         <img src={video.userPic} alt={video.user} className="w-8 h-8 rounded-full border-2 border-white" />
                         <span className="text-white font-semibold text-sm">{video.user}</span>
-                        <span className="bg-white/20 text-white text-xs px-2 py-0.5 rounded ml-2 cursor-pointer hover:bg-blue-500/80 transition">Suivre</span>
+                        <span className="bg-white/20 text-white text-xs px-2 py-0.5 rounded ml-2 cursor-pointer hover:bg-[#C9A96E]/80 transition">Suivre</span>
                       </div>
                       <div className="flex items-center gap-2 text-white/80 text-xs">
                         <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/></svg>
@@ -276,14 +276,14 @@ function SectionContent({ section }: { section: string }) {
                   {/* Colonne de boutons à droite, EN DEHORS de la vidéo */}
                   <div className="flex flex-col gap-6 items-center justify-center py-8">
                     <button className="flex flex-col items-center group">
-                      <svg width="28" height="28" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" className="text-white group-hover:text-blue-400"><path d="M6 21v-2a4 4 0 0 1 4-4h0a4 4 0 0 1 4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                      <svg width="28" height="28" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" className="text-white group-hover:text-[#C9A96E]"><path d="M6 21v-2a4 4 0 0 1 4-4h0a4 4 0 0 1 4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
                     </button>
                     <button className="flex flex-col items-center group" onClick={() => handleLike(video.id)}>
-                      <svg width="28" height="28" fill={video.liked ? "#ec4899" : "none"} stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" className={video.liked ? "text-pink-400" : "text-white group-hover:text-pink-400"}><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+                      <svg width="28" height="28" fill={video.liked ? "#ec4899" : "none"} stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" className={video.liked ? "text-[#C9A96E]" : "text-white group-hover:text-[#C9A96E]"}><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
                       <span className="text-white text-xs">{video.likes}</span>
                     </button>
                     <button className="flex flex-col items-center group">
-                      <svg width="28" height="28" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" className="text-white group-hover:text-blue-400"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                      <svg width="28" height="28" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" className="text-white group-hover:text-[#C9A96E]"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
                       <span className="text-white text-xs">{video.comments}</span>
                     </button>
                     <button className="flex flex-col items-center group">
@@ -303,26 +303,26 @@ function SectionContent({ section }: { section: string }) {
       return <VideoWall />;
     case "send":
       return (
-        <div className="fixed left-[84px] top-0 h-screen w-[calc(100vw-84px)] bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 flex flex-col z-20">
+        <div className="fixed left-[84px] top-0 h-screen w-[calc(100vw-84px)] bg-gradient-to-br from-[#050810] via-[#0C1220] to-[#0C1220] flex flex-col z-20">
           <div className="flex items-center justify-between px-8 pt-8 pb-4">
             <span className="text-3xl font-bold text-white">keleshop0</span>
-            <svg width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" className="text-blue-300"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4z"/></svg>
+            <svg width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" className="text-[#E6D2A8]"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4z"/></svg>
           </div>
           <div className="flex gap-4 px-8 pb-4">
-            <button className="font-semibold border-b-2 border-blue-400 text-white pb-1 px-4">Primary</button>
+            <button className="font-semibold border-b-2 border-[#C9A96E] text-white pb-1 px-4">Primary</button>
             <button className="text-white/60 pb-1 px-4">General</button>
             <button className="text-white/60 pb-1 px-4">Requests</button>
           </div>
           <div className="px-8 pb-4">
-            <input className="w-full rounded-full bg-blue-950/60 px-4 py-3 text-white placeholder-white/60 outline-none border border-blue-700" placeholder="Search" />
+            <input className="w-full rounded-full bg-[#050810]/60 px-4 py-3 text-white placeholder-white/60 outline-none border border-[#8C6B3E]" placeholder="Search" />
           </div>
           <div className="flex-1 overflow-y-auto px-4 pb-8">
             {friends.map(friend => (
-              <div key={friend.id} className="flex items-center gap-4 px-4 py-4 hover:bg-blue-800/60 cursor-pointer rounded-lg transition">
-                <img src={friend.avatar} alt={friend.name} className="w-14 h-14 rounded-full object-cover border-2 border-blue-400" />
+              <div key={friend.id} className="flex items-center gap-4 px-4 py-4 hover:bg-[#C9A96E]/60 cursor-pointer rounded-lg transition">
+                <img src={friend.avatar} alt={friend.name} className="w-14 h-14 rounded-full object-cover border-2 border-[#C9A96E]" />
                 <div className="flex flex-col">
                   <span className="font-semibold text-white text-lg">{friend.name}</span>
-                  <span className="text-blue-200 text-sm">{friend.last}</span>
+                  <span className="text-[#E6D2A8] text-sm">{friend.last}</span>
                 </div>
               </div>
             ))}
@@ -331,15 +331,15 @@ function SectionContent({ section }: { section: string }) {
       );
     case "search":
       return (
-        <div className="w-full h-full bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 flex flex-col items-center">
+        <div className="w-full h-full bg-gradient-to-br from-[#050810] via-[#0C1220] to-[#0C1220] flex flex-col items-center">
           {/* Barre de recherche sticky */}
-          <div className="w-full max-w-2xl sticky top-0 z-10 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 pt-4 pb-2 px-4">
+          <div className="w-full max-w-2xl sticky top-0 z-10 bg-gradient-to-br from-[#050810] via-[#0C1220] to-[#0C1220] pt-4 pb-2 px-4">
             <div className="relative w-full">
               <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#8899a6] pointer-events-none">
                 <svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='2'><circle cx='11' cy='11' r='8'/><path d='M21 21l-4.35-4.35'/></svg>
               </span>
               <input
-                className="w-full pl-12 pr-4 py-2 rounded-full bg-[#202327] text-white placeholder:text-[#8899a6] border border-transparent focus:border-blue-500 focus:bg-[#181c20] transition duration-150 shadow-none outline-none text-base"
+                className="w-full pl-12 pr-4 py-2 rounded-full bg-[#202327] text-white placeholder:text-[#8899a6] border border-transparent focus:border-[#C9A96E] focus:bg-[#181c20] transition duration-150 shadow-none outline-none text-base"
                 placeholder="Search "
                 type="text"
                 autoComplete="off"
@@ -348,12 +348,12 @@ function SectionContent({ section }: { section: string }) {
             </div>
           </div>
           {/* Onglets */}
-          <div className="w-full max-w-2xl flex border-b border-blue-700 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 px-4">
+          <div className="w-full max-w-2xl flex border-b border-[#8C6B3E] bg-gradient-to-br from-[#050810] via-[#0C1220] to-[#0C1220] px-4">
             {['For You', 'Trending', 'News', 'Sports', 'Entertainment'].map((tab, idx) => (
               <button
                 key={tab}
                 className={`flex-1 py-3 text-center font-semibold relative transition-colors duration-150 
-                  ${idx === 0 ? 'text-blue-400 border-b-4 border-blue-400 bg-blue-900/40' : 'text-blue-200 hover:bg-blue-800/40'}`}
+                  ${idx === 0 ? 'text-[#C9A96E] border-b-4 border-[#C9A96E] bg-[#050810]/40' : 'text-[#E6D2A8] hover:bg-[#C9A96E]/40'}`}
                 style={{ borderBottom: idx === 0 ? '4px solid #C9A96E' : '4px solid transparent' }}
               >
                 {tab}
@@ -361,17 +361,17 @@ function SectionContent({ section }: { section: string }) {
             ))}
           </div>
           {/* Contenu exemple */}
-          <div className="w-full max-w-2xl flex-1 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 px-4 py-4">
-            <div className="bg-blue-800/80 rounded-2xl p-4 flex gap-4 items-start mb-4 border border-blue-700">
-              <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="avatar" className="w-12 h-12 rounded-full object-cover border-2 border-blue-400" />
+          <div className="w-full max-w-2xl flex-1 bg-gradient-to-br from-[#050810] via-[#0C1220] to-[#0C1220] px-4 py-4">
+            <div className="bg-[#0C1220]/80 rounded-2xl p-4 flex gap-4 items-start mb-4 border border-[#8C6B3E]">
+              <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="avatar" className="w-12 h-12 rounded-full object-cover border-2 border-[#C9A96E]" />
               <div className="flex-1">
                 <div className="flex items-center gap-2">
                   <span className="font-bold text-white">N</span>
-                  <span className="text-blue-200">@Ninaaa518 · May 4</span>
+                  <span className="text-[#E6D2A8]">@Ninaaa518 · May 4</span>
                 </div>
                 <div className="text-white mt-1 mb-2">Happy Monday</div>
-                <video src="/videos/video1.mp4" controls className="rounded-2xl w-full max-w-md object-cover mb-2 border border-blue-700 bg-black" poster="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" />
-                <div className="flex gap-8 text-blue-200 text-sm mt-2">
+                <video src="/videos/video1.mp4" controls className="rounded-2xl w-full max-w-md object-cover mb-2 border border-[#8C6B3E] bg-black" poster="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" />
+                <div className="flex gap-8 text-[#E6D2A8] text-sm mt-2">
                   <span>48</span>
                   <span>183</span>
                   <span>8.4K</span>
@@ -385,15 +385,15 @@ function SectionContent({ section }: { section: string }) {
       );
     case "explore":
       return (
-        <div className="fixed left-[84px] top-0 w-[calc(100vw-84px)] h-screen bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 flex flex-col items-center justify-center p-0 z-10">
-          <div className="w-full h-full max-w-2xl mx-auto flex flex-col bg-blue-800/60 rounded-xl shadow-lg p-0 overflow-y-auto">
+        <div className="fixed left-[84px] top-0 w-[calc(100vw-84px)] h-screen bg-gradient-to-br from-[#050810] via-[#0C1220] to-[#0C1220] flex flex-col items-center justify-center p-0 z-10">
+          <div className="w-full h-full max-w-2xl mx-auto flex flex-col bg-[#0C1220]/60 rounded-xl shadow-lg p-0 overflow-y-auto">
             {/* Onglets */}
             <div className="flex gap-2 px-6 pt-8 pb-2">
               {['Tout', 'Non lu', 'Mes publicités'].map((tab, idx) => (
                 <button
                   key={tab}
                   className={`px-4 py-1 rounded-full font-semibold text-sm transition-all duration-150 
-                    ${idx === 0 ? 'bg-blue-700 text-white' : 'bg-transparent text-blue-200 hover:bg-blue-800/60'}`}
+                    ${idx === 0 ? 'bg-[#8C6B3E] text-white' : 'bg-transparent text-[#E6D2A8] hover:bg-[#C9A96E]/60'}`}
                 >
                   {tab}
                 </button>
@@ -401,7 +401,7 @@ function SectionContent({ section }: { section: string }) {
             </div>
             <div className="flex items-center justify-between px-6 pb-2 text-white/80 text-sm font-semibold">
               <span>Plus tôt</span>
-              <button className="text-blue-300 hover:underline text-xs">Voir tout</button>
+              <button className="text-[#E6D2A8] hover:underline text-xs">Voir tout</button>
             </div>
             {/* Notifications */}
             <div className="flex-1 flex flex-col gap-1 px-2 pb-8 overflow-y-auto">
@@ -461,24 +461,24 @@ function SectionContent({ section }: { section: string }) {
                   unread: false
                 }
               ].map(n => (
-                <div key={n.id} className={`flex items-center gap-3 px-3 py-3 rounded-lg ${n.unread ? 'bg-blue-700/40' : 'bg-transparent'} hover:bg-blue-900/60 transition relative`}>
-                  <img src={n.avatar} alt={n.user} className="w-11 h-11 rounded-full object-cover border-2 border-blue-400" />
+                <div key={n.id} className={`flex items-center gap-3 px-3 py-3 rounded-lg ${n.unread ? 'bg-[#8C6B3E]/40' : 'bg-transparent'} hover:bg-[#050810]/60 transition relative`}>
+                  <img src={n.avatar} alt={n.user} className="w-11 h-11 rounded-full object-cover border-2 border-[#C9A96E]" />
                   <div className="flex-1 min-w-0">
                     <span className="font-semibold text-white truncate block">{n.user}</span>
                     <span className="text-white/80 text-sm block truncate">{n.text}</span>
-                    <span className="text-blue-300 text-xs block mt-0.5">{n.time}</span>
+                    <span className="text-[#E6D2A8] text-xs block mt-0.5">{n.time}</span>
                   </div>
                   {/* Badge ou icône selon le type */}
                   {n.icon === 'user' && (
-                    <span className="bg-blue-700 text-white rounded-full p-1"><svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M4 20v-1a8 8 0 0 1 16 0v1"/></svg></span>
+                    <span className="bg-[#8C6B3E] text-white rounded-full p-1"><svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M4 20v-1a8 8 0 0 1 16 0v1"/></svg></span>
                   )}
                   {n.icon === 'group' && (
-                    <span className="bg-blue-700 text-white rounded-full p-1"><svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="9" cy="7" r="4"/><circle cx="17" cy="7" r="4"/><path d="M17 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/></svg></span>
+                    <span className="bg-[#8C6B3E] text-white rounded-full p-1"><svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="9" cy="7" r="4"/><circle cx="17" cy="7" r="4"/><path d="M17 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/></svg></span>
                   )}
                   {n.icon === 'ads' && (
                     <span className="bg-orange-500 text-white rounded-full p-1"><svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M8 9h8M8 13h6"/></svg></span>
                   )}
-                  {n.unread && <span className="absolute right-2 top-1/2 -translate-y-1/2 w-3 h-3 bg-blue-400 rounded-full"></span>}
+                  {n.unread && <span className="absolute right-2 top-1/2 -translate-y-1/2 w-3 h-3 bg-[#C9A96E] rounded-full"></span>}
                 </div>
               ))}
             </div>
@@ -489,29 +489,29 @@ function SectionContent({ section }: { section: string }) {
       return <div className="text-2xl">Section Ajouter (à personnaliser)</div>;
     case "stats":
       return (
-        <div className="flex w-full h-full min-h-screen bg-gradient-to-br from-blue-950 via-blue-900 to-blue-800">
+        <div className="flex w-full h-full min-h-screen bg-gradient-to-br from-[#050810] via-[#050810] to-[#0C1220]">
           {/* Sidebar */}
-          <aside className="w-72 min-w-60 max-w-80 bg-gradient-to-b from-blue-900 via-blue-800 to-blue-700 p-6 flex flex-col gap-2 text-white h-full">
+          <aside className="w-72 min-w-60 max-w-80 bg-gradient-to-b from-[#050810] via-[#0C1220] to-[#0C1220] p-6 flex flex-col gap-2 text-white h-full">
             <h2 className="text-2xl font-bold mb-6">Tableau de bord<br />professionnel</h2>
             <nav className="flex flex-col gap-1 flex-1">
-              <button className="flex items-center gap-3 px-4 py-3 rounded-lg bg-blue-700 font-semibold text-base"><svg width='22' height='22' fill='none' stroke='currentColor' strokeWidth='2' viewBox='0 0 24 24'><path d='M3 12L12 3l9 9'/><path d='M9 21V9h6v12'/></svg>Accueil</button>
-              <button className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-blue-800/60 transition"><svg width='22' height='22' fill='none' stroke='currentColor' strokeWidth='2' viewBox='0 0 24 24'><rect x='3' y='13' width='4' height='8'/><rect x='9' y='9' width='4' height='12'/><rect x='15' y='5' width='4' height='16'/></svg>Statistiques</button>
-              <button className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-blue-800/60 transition"><svg width='22' height='22' fill='none' stroke='currentColor' strokeWidth='2' viewBox='0 0 24 24'><rect x='3' y='5' width='18' height='14' rx='2'/><path d='M8 9h8M8 13h6'/></svg>Contenu</button>
-              <button className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-blue-800/60 transition"><svg width='22' height='22' fill='none' stroke='currentColor' strokeWidth='2' viewBox='0 0 24 24'><path d='M12 8V12'/><path d='M12 16h.01'/><circle cx='12' cy='12' r='10'/></svg>Monétisation</button>
-              <button className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-blue-800/60 transition"><svg width='22' height='22' fill='none' stroke='currentColor' strokeWidth='2' viewBox='0 0 24 24'><path d='M17 1l4 4-4 4'/><path d='M3 11v-1a4 4 0 0 1 4-4h14'/></svg>Engagement</button>
-              <button className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-blue-800/60 transition"><svg width='22' height='22' fill='none' stroke='currentColor' strokeWidth='2' viewBox='0 0 24 24'><rect x='3' y='3' width='18' height='18' rx='4'/><path d='M7 7h.01M12 7h.01M17 7h.01M7 12h.01M12 12h.01M17 12h.01M7 17h.01M12 17h.01M17 17h.01'/></svg>Tous les outils</button>
+              <button className="flex items-center gap-3 px-4 py-3 rounded-lg bg-[#8C6B3E] font-semibold text-base"><svg width='22' height='22' fill='none' stroke='currentColor' strokeWidth='2' viewBox='0 0 24 24'><path d='M3 12L12 3l9 9'/><path d='M9 21V9h6v12'/></svg>Accueil</button>
+              <button className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-[#C9A96E]/60 transition"><svg width='22' height='22' fill='none' stroke='currentColor' strokeWidth='2' viewBox='0 0 24 24'><rect x='3' y='13' width='4' height='8'/><rect x='9' y='9' width='4' height='12'/><rect x='15' y='5' width='4' height='16'/></svg>Statistiques</button>
+              <button className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-[#C9A96E]/60 transition"><svg width='22' height='22' fill='none' stroke='currentColor' strokeWidth='2' viewBox='0 0 24 24'><rect x='3' y='5' width='18' height='14' rx='2'/><path d='M8 9h8M8 13h6'/></svg>Contenu</button>
+              <button className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-[#C9A96E]/60 transition"><svg width='22' height='22' fill='none' stroke='currentColor' strokeWidth='2' viewBox='0 0 24 24'><path d='M12 8V12'/><path d='M12 16h.01'/><circle cx='12' cy='12' r='10'/></svg>Monétisation</button>
+              <button className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-[#C9A96E]/60 transition"><svg width='22' height='22' fill='none' stroke='currentColor' strokeWidth='2' viewBox='0 0 24 24'><path d='M17 1l4 4-4 4'/><path d='M3 11v-1a4 4 0 0 1 4-4h14'/></svg>Engagement</button>
+              <button className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-[#C9A96E]/60 transition"><svg width='22' height='22' fill='none' stroke='currentColor' strokeWidth='2' viewBox='0 0 24 24'><rect x='3' y='3' width='18' height='18' rx='4'/><path d='M7 7h.01M12 7h.01M17 7h.01M7 12h.01M12 12h.01M17 12h.01M7 17h.01M12 17h.01M17 17h.01'/></svg>Tous les outils</button>
             </nav>
-            <button className="mt-8 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-lg w-full">Créer une publication <span className='ml-1'>▼</span></button>
+            <button className="mt-8 bg-[#8C6B3E] hover:bg-[#C9A96E] text-white font-bold py-3 rounded-lg w-full">Créer une publication <span className='ml-1'>▼</span></button>
           </aside>
           {/* Main content */}
           <main className="flex-1 flex flex-col gap-6 p-8 bg-transparent">
             {/* Statut du profil */}
-            <section className="bg-blue-900/80 rounded-2xl p-6 mb-4 text-white shadow border border-blue-800">
+            <section className="bg-[#050810]/80 rounded-2xl p-6 mb-4 text-white shadow border border-[#8C6B3E]">
               <div className="flex items-center gap-4 mb-2">
-                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="avatar" className="w-14 h-14 rounded-full object-cover border-2 border-blue-400" />
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="avatar" className="w-14 h-14 rounded-full object-cover border-2 border-[#C9A96E]" />
                 <div>
                   <span className="font-bold text-lg">Jorgensen Kervens Jarbatt</span>
-                  <div className="text-blue-200 text-sm">Le profil ne rencontre aucun problème. <a href="#" className="underline text-blue-300">En savoir plus</a></div>
+                  <div className="text-[#E6D2A8] text-sm">Le profil ne rencontre aucun problème. <a href="#" className="underline text-[#E6D2A8]">En savoir plus</a></div>
                 </div>
               </div>
               <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -521,30 +521,30 @@ function SectionContent({ section }: { section: string }) {
               </div>
             </section>
             {/* Progression hebdomadaire */}
-            <section className="bg-blue-900/80 rounded-2xl p-6 text-white shadow border border-blue-800">
+            <section className="bg-[#050810]/80 rounded-2xl p-6 text-white shadow border border-[#8C6B3E]">
               <div className="flex items-center justify-between mb-2">
                 <span className="font-bold text-lg">Votre progression hebdomadaire</span>
-                <button className="text-blue-300 hover:underline text-sm">Voir tout</button>
+                <button className="text-[#E6D2A8] hover:underline text-sm">Voir tout</button>
               </div>
               <div className="flex items-center gap-4 mb-4">
-                <div className="flex-1 h-2 bg-blue-700 rounded-full overflow-hidden">
-                  <div className="h-2 bg-blue-400 rounded-full w-1/12" style={{ width: '1%' }}></div>
+                <div className="flex-1 h-2 bg-[#8C6B3E] rounded-full overflow-hidden">
+                  <div className="h-2 bg-[#C9A96E] rounded-full w-1/12" style={{ width: '1%' }}></div>
                 </div>
-                <span className="text-blue-200 text-xs">Terminé à 1 %</span>
-                <span className="text-blue-200 text-xs">Il reste 5 jours</span>
+                <span className="text-[#E6D2A8] text-xs">Terminé à 1 %</span>
+                <span className="text-[#E6D2A8] text-xs">Il reste 5 jours</span>
               </div>
-              <ul className="divide-y divide-blue-800">
+              <ul className="divide-y divide-[#8C6B3E]">
                 <li className="py-3 flex items-center justify-between">
                   <span className="flex items-center gap-2"><svg width='20' height='20' fill='none' stroke='currentColor' strokeWidth='2' viewBox='0 0 24 24'><rect x='3' y='3' width='18' height='18' rx='4'/><path d='M7 7h.01M12 7h.01M17 7h.01M7 12h.01M12 12h.01M17 12h.01M7 17h.01M12 17h.01M17 17h.01'/></svg>Créer 6 nouveaux reels publics</span>
-                  <span className="text-blue-200 text-xs">0/6</span>
+                  <span className="text-[#E6D2A8] text-xs">0/6</span>
                 </li>
                 <li className="py-3 flex items-center justify-between">
                   <span className="flex items-center gap-2"><svg width='20' height='20' fill='none' stroke='currentColor' strokeWidth='2' viewBox='0 0 24 24'><circle cx='12' cy='12' r='10'/><path d='M16 8l-2.5 7L8 16l2.5-7L16 8z'/></svg>Obtenez 10 nouveaux followers</span>
-                  <span className="text-blue-200 text-xs">0/10</span>
+                  <span className="text-[#E6D2A8] text-xs">0/10</span>
                 </li>
                 <li className="py-3 flex items-center justify-between">
                   <span className="flex items-center gap-2"><svg width='20' height='20' fill='none' stroke='currentColor' strokeWidth='2' viewBox='0 0 24 24'><rect x='3' y='5' width='18' height='14' rx='2'/><path d='M8 9h8M8 13h6'/></svg>Obtenez encore 1000 vues sur votre contenu</span>
-                  <span className="text-blue-200 text-xs">30/1000 terminés</span>
+                  <span className="text-[#E6D2A8] text-xs">30/1000 terminés</span>
                 </li>
               </ul>
             </section>
@@ -553,36 +553,36 @@ function SectionContent({ section }: { section: string }) {
       );
     case "profile":
       return (
-        <div className="w-full min-h-screen bg-gradient-to-br from-blue-950 via-blue-900 to-blue-800 flex flex-col items-center">
+        <div className="w-full min-h-screen bg-gradient-to-br from-[#050810] via-[#050810] to-[#0C1220] flex flex-col items-center">
           {/* Bannière */}
-          <div className="w-full max-w-5xl h-64 bg-blue-900 relative flex items-end justify-end rounded-b-2xl overflow-hidden">
+          <div className="w-full max-w-5xl h-64 bg-[#050810] relative flex items-end justify-end rounded-b-2xl overflow-hidden">
             <video src="/videos/video2.mp4" controls className="absolute inset-0 w-full h-full object-cover opacity-70 bg-black" poster="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80" />
             <button className="absolute bottom-4 right-4 bg-white text-black px-4 py-2 rounded-lg flex items-center gap-2 shadow font-semibold"><svg width='18' height='18' fill='none' stroke='currentColor' strokeWidth='2' viewBox='0 0 24 24'><path d='M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2'/><polyline points='7 9 12 4 17 9'/><line x1='12' y1='4' x2='12' y2='16'/></svg>Changer la photo de couverture</button>
           </div>
           {/* Avatar et infos */}
           <div className="w-full max-w-5xl flex items-end gap-6 px-8 -mt-16 relative z-10">
-            <div className="w-36 h-36 rounded-full border-4 border-blue-900 bg-blue-800 overflow-hidden relative">
+            <div className="w-36 h-36 rounded-full border-4 border-[#8C6B3E] bg-[#0C1220] overflow-hidden relative">
               <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="avatar" className="w-full h-full object-cover" />
               <span className="absolute bottom-2 right-2 bg-black/70 rounded-full p-2"><svg width='20' height='20' fill='none' stroke='white' strokeWidth='2' viewBox='0 0 24 24'><path d='M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2'/><polyline points='7 9 12 4 17 9'/><line x1='12' y1='4' x2='12' y2='16'/></svg></span>
             </div>
             <div className="flex-1 flex flex-col gap-2">
               <h1 className="text-3xl font-bold text-white">Jorgensen Kervens Jarbatte</h1>
-              <div className="text-blue-200 font-semibold">4 K followers · 693 suivi(e)s</div>
+              <div className="text-[#E6D2A8] font-semibold">4 K followers · 693 suivi(e)s</div>
               <div className="text-white/80 text-base">don t hesitate</div>
               <div className="flex gap-4 mt-2">
-                <span className="bg-blue-700 text-white px-4 py-2 rounded-lg font-semibold flex items-center gap-2"><svg width='18' height='18' fill='none' stroke='currentColor' strokeWidth='2' viewBox='0 0 24 24'><rect x='3' y='13' width='4' height='8'/><rect x='9' y='9' width='4' height='12'/><rect x='15' y='5' width='4' height='16'/></svg>Tableau de bord</span>
-                <button className="bg-blue-900 text-white px-4 py-2 rounded-lg font-semibold flex items-center gap-2 border border-blue-700"><svg width='18' height='18' fill='none' stroke='currentColor' strokeWidth='2' viewBox='0 0 24 24'><path d='M12 20h9'/><path d='M16.5 3.5a2.121 2.121 0 1 1-3 3L7 13v4h4l6.5-6.5a2.121 2.121 0 0 0-3-3z'/></svg>Modifier</button>
+                <span className="bg-[#8C6B3E] text-white px-4 py-2 rounded-lg font-semibold flex items-center gap-2"><svg width='18' height='18' fill='none' stroke='currentColor' strokeWidth='2' viewBox='0 0 24 24'><rect x='3' y='13' width='4' height='8'/><rect x='9' y='9' width='4' height='12'/><rect x='15' y='5' width='4' height='16'/></svg>Tableau de bord</span>
+                <button className="bg-[#050810] text-white px-4 py-2 rounded-lg font-semibold flex items-center gap-2 border border-[#8C6B3E]"><svg width='18' height='18' fill='none' stroke='currentColor' strokeWidth='2' viewBox='0 0 24 24'><path d='M12 20h9'/><path d='M16.5 3.5a2.121 2.121 0 1 1-3 3L7 13v4h4l6.5-6.5a2.121 2.121 0 0 0-3-3z'/></svg>Modifier</button>
               </div>
-              <div className="flex gap-2 mt-2 text-blue-200 text-sm items-center">
+              <div className="flex gap-2 mt-2 text-[#E6D2A8] text-sm items-center">
                 <span className="font-semibold">Création digitale</span>
                 <span>@ keleshop0</span>
               </div>
             </div>
           </div>
           {/* Onglets */}
-          <div className="w-full max-w-5xl flex gap-6 mt-8 border-b border-blue-800 px-8">
+          <div className="w-full max-w-5xl flex gap-6 mt-8 border-b border-[#8C6B3E] px-8">
             {['Tout', 'À propos', 'Reels', 'Photos', 'Amis(es)', 'Plus'].map((tab, idx) => (
-              <button key={tab} className={`py-3 px-2 font-semibold text-lg transition-all duration-150 ${idx === 0 ? 'text-blue-400 border-b-4 border-blue-400' : 'text-white/80 hover:text-blue-300'}`}>{tab}</button>
+              <button key={tab} className={`py-3 px-2 font-semibold text-lg transition-all duration-150 ${idx === 0 ? 'text-[#C9A96E] border-b-4 border-[#C9A96E]' : 'text-white/80 hover:text-[#E6D2A8]'}`}>{tab}</button>
             ))}
           </div>
           {/* Section  style Twitter */}
@@ -607,18 +607,18 @@ function SectionContent({ section }: { section: string }) {
                 image: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80"
               }
             ].map(post => (
-              <div key={post.id} className="bg-blue-900/80 rounded-2xl p-6 flex flex-col gap-3 shadow border border-blue-800">
+              <div key={post.id} className="bg-[#050810]/80 rounded-2xl p-6 flex flex-col gap-3 shadow border border-[#8C6B3E]">
                 <div className="flex gap-3 items-center">
-                  <img src={post.avatar} alt={post.name} className="w-12 h-12 rounded-full object-cover border-2 border-blue-400" />
+                  <img src={post.avatar} alt={post.name} className="w-12 h-12 rounded-full object-cover border-2 border-[#C9A96E]" />
                   <div>
                     <span className="font-bold text-white text-base">{post.name}</span>
-                    <span className="text-blue-200 ml-2">{post.handle}</span>
-                    <span className="text-blue-300 ml-2 text-sm">· {post.date}</span>
+                    <span className="text-[#E6D2A8] ml-2">{post.handle}</span>
+                    <span className="text-[#E6D2A8] ml-2 text-sm">· {post.date}</span>
                   </div>
                 </div>
                 <div className="text-white text-lg whitespace-pre-line">{post.text}</div>
                 {post.image && (
-                  <video src={post.image ? post.image.replace(/\.jpg|\.jpeg|\.png|\.webp/, '.mp4') : undefined} controls className="rounded-2xl w-full max-h-[500px] object-cover border border-blue-800 bg-black" poster={post.image} />
+                  <video src={post.image ? post.image.replace(/\.jpg|\.jpeg|\.png|\.webp/, '.mp4') : undefined} controls className="rounded-2xl w-full max-h-[500px] object-cover border border-[#8C6B3E] bg-black" poster={post.image} />
                 )}
               </div>
             ))}
@@ -644,34 +644,34 @@ function SectionContent({ section }: { section: string }) {
         "Your account": (
           <div>
             <h2 className="text-2xl font-bold mb-2 text-white">Your Account</h2>
-            <p className="text-blue-200 mb-6">See information about your account, download an archive of your data, or learn about your account deactivation options</p>
+            <p className="text-[#E6D2A8] mb-6">See information about your account, download an archive of your data, or learn about your account deactivation options</p>
             <div className="flex flex-col gap-4">
-              <button className="flex items-center gap-3 p-4 rounded-lg hover:bg-blue-800/60 transition text-left">
-                <span className="text-blue-400"><svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20v-1a8 8 0 0 1 16 0v1"/></svg></span>
+              <button className="flex items-center gap-3 p-4 rounded-lg hover:bg-[#C9A96E]/60 transition text-left">
+                <span className="text-[#C9A96E]"><svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20v-1a8 8 0 0 1 16 0v1"/></svg></span>
                 <span>
                   <span className="block font-semibold text-white">Account information</span>
-                  <span className="block text-blue-200 text-sm">See your account information like your phone number and email address.</span>
+                  <span className="block text-[#E6D2A8] text-sm">See your account information like your phone number and email address.</span>
                 </span>
               </button>
-              <button className="flex items-center gap-3 p-4 rounded-lg hover:bg-blue-800/60 transition text-left">
-                <span className="text-blue-400"><svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M12 17v-6"/><path d="M9 10l3-3 3 3"/></svg></span>
+              <button className="flex items-center gap-3 p-4 rounded-lg hover:bg-[#C9A96E]/60 transition text-left">
+                <span className="text-[#C9A96E]"><svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M12 17v-6"/><path d="M9 10l3-3 3 3"/></svg></span>
                 <span>
                   <span className="block font-semibold text-white">Change your password</span>
-                  <span className="block text-blue-200 text-sm">Change your password at any time.</span>
+                  <span className="block text-[#E6D2A8] text-sm">Change your password at any time.</span>
                 </span>
               </button>
-              <button className="flex items-center gap-3 p-4 rounded-lg hover:bg-blue-800/60 transition text-left">
-                <span className="text-blue-400"><svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M4 4v16h16"/><path d="M4 4l16 16"/></svg></span>
+              <button className="flex items-center gap-3 p-4 rounded-lg hover:bg-[#C9A96E]/60 transition text-left">
+                <span className="text-[#C9A96E]"><svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M4 4v16h16"/><path d="M4 4l16 16"/></svg></span>
                 <span>
                   <span className="block font-semibold text-white">Download an archive of your data</span>
-                  <span className="block text-blue-200 text-sm">Get insights into the type of information stored for your account.</span>
+                  <span className="block text-[#E6D2A8] text-sm">Get insights into the type of information stored for your account.</span>
                 </span>
               </button>
-              <button className="flex items-center gap-3 p-4 rounded-lg hover:bg-blue-800/60 transition text-left">
-                <span className="text-blue-400"><svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>
+              <button className="flex items-center gap-3 p-4 rounded-lg hover:bg-[#C9A96E]/60 transition text-left">
+                <span className="text-[#C9A96E]"><svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>
                 <span>
                   <span className="block font-semibold text-white">Deactivate your account</span>
-                  <span className="block text-blue-200 text-sm">Find out how you can deactivate your account.</span>
+                  <span className="block text-[#E6D2A8] text-sm">Find out how you can deactivate your account.</span>
                 </span>
               </button>
             </div>
@@ -680,20 +680,20 @@ function SectionContent({ section }: { section: string }) {
         // Ajoute d'autres panneaux ici si besoin
       };
       return (
-        <div className="flex w-full min-h-[70vh] bg-gradient-to-br from-blue-950 via-blue-900 to-blue-800 rounded-2xl shadow-lg border border-blue-800">
+        <div className="flex w-full min-h-[70vh] bg-gradient-to-br from-[#050810] via-[#050810] to-[#0C1220] rounded-2xl shadow-lg border border-[#8C6B3E]">
           {/* Sidebar */}
-          <aside className="w-80 min-w-60 max-w-96 bg-gradient-to-b from-blue-900 via-blue-800 to-blue-700 p-6 flex flex-col gap-2 text-white h-full border-r border-blue-800">
+          <aside className="w-80 min-w-60 max-w-96 bg-gradient-to-b from-[#050810] via-[#0C1220] to-[#0C1220] p-6 flex flex-col gap-2 text-white h-full border-r border-[#8C6B3E]">
             <h2 className="text-xl font-bold mb-4">Settings</h2>
             <input
               type="text"
               placeholder="Search Settings"
-              className="mb-4 px-4 py-2 rounded-full bg-blue-950/60 text-white placeholder:text-blue-400 border border-blue-800 focus:border-blue-400 outline-none"
+              className="mb-4 px-4 py-2 rounded-full bg-[#050810]/60 text-white placeholder:text-[#C9A96E] border border-[#8C6B3E] focus:border-[#C9A96E] outline-none"
             />
             <nav className="flex flex-col gap-1 flex-1">
               {menuItems.map(item => (
                 <button
                   key={item}
-                  className={`flex items-center gap-3 px-4 py-3 rounded-lg font-semibold text-base transition-all duration-150 ${selected === item ? 'bg-blue-700 text-white' : 'bg-transparent text-blue-200 hover:bg-blue-800/60'}`}
+                  className={`flex items-center gap-3 px-4 py-3 rounded-lg font-semibold text-base transition-all duration-150 ${selected === item ? 'bg-[#8C6B3E] text-white' : 'bg-transparent text-[#E6D2A8] hover:bg-[#C9A96E]/60'}`}
                   onClick={() => setSelected(item)}
                 >
                   {item}
@@ -706,7 +706,7 @@ function SectionContent({ section }: { section: string }) {
             {rightPanel[selected] ?? (
               <div>
                 <h2 className="text-2xl font-bold mb-2 text-white">{selected}</h2>
-                <p className="text-blue-200">No content for this section yet.</p>
+                <p className="text-[#E6D2A8]">No content for this section yet.</p>
               </div>
             )}
           </main>
@@ -803,22 +803,22 @@ function Feed() {
   return (
     <div className="w-full max-w-2xl mx-auto pt-0 flex flex-col gap-6">
       {/* Formulaire de création de publication */}
-      <div className="bg-black/60 rounded-xl p-4 flex items-center gap-4 shadow border border-blue-900">
-        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="avatar" className="w-10 h-10 rounded-full object-cover border border-blue-400" />
+      <div className="bg-black/60 rounded-xl p-4 flex items-center gap-4 shadow border border-[#8C6B3E]">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="avatar" className="w-10 h-10 rounded-full object-cover border border-[#C9A96E]" />
         <input
           type="text"
           placeholder="Quoi de neuf, Jorgensen Kervens ?"
-          className="flex-1 bg-black/30 text-white px-4 py-2 rounded-full outline-none border border-transparent focus:border-blue-500 transition"
+          className="flex-1 bg-black/30 text-white px-4 py-2 rounded-full outline-none border border-transparent focus:border-[#C9A96E] transition"
           disabled
         />
         <div className="flex gap-2 ml-2">
-          <button className="bg-pink-700 hover:bg-pink-600 text-white rounded-full w-9 h-9 flex items-center justify-center" title="Vidéo">
+          <button className="bg-[#8C6B3E] hover:bg-[#C9A96E] text-white rounded-full w-9 h-9 flex items-center justify-center" title="Vidéo">
             <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9l5 3-5 3V9z"/></svg>
           </button>
           <button className="bg-green-600 hover:bg-green-500 text-white rounded-full w-9 h-9 flex items-center justify-center" title="Image">
             <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M8 13l3-3 4 4"/></svg>
           </button>
-          <button className="bg-pink-700 hover:bg-pink-600 text-white rounded-full w-9 h-9 flex items-center justify-center" title="Reel">
+          <button className="bg-[#8C6B3E] hover:bg-[#C9A96E] text-white rounded-full w-9 h-9 flex items-center justify-center" title="Reel">
             <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M7 7h.01M12 7h.01M17 7h.01M7 12h.01M12 12h.01M17 12h.01M7 17h.01M12 17h.01M17 17h.01"/></svg>
           </button>
         </div>
@@ -827,7 +827,7 @@ function Feed() {
       {posts.map((post) => (
         <div key={post.id} className="bg-white/10 rounded-xl p-4 shadow flex flex-col gap-2">
           <div className="flex gap-3 items-center mb-1">
-            <img src={post.avatar} alt={post.author} className="w-10 h-10 rounded-full border border-blue-400 object-cover" />
+            <img src={post.avatar} alt={post.author} className="w-10 h-10 rounded-full border border-[#C9A96E] object-cover" />
             <div>
               <span className="font-bold text-base">{post.author}</span>
               <div className="text-xs text-white/60">{post.time}</div>
@@ -835,12 +835,12 @@ function Feed() {
           </div>
           <div className="mb-1 text-base whitespace-pre-line">{post.text}</div>
           {post.image && (
-            <video src={post.image ? post.image.replace(/\.jpg|\.jpeg|\.png|\.webp/, '.mp4') : undefined} controls className="rounded-lg w-full max-h-80 object-cover border border-blue-900 bg-black" poster={post.image} />
+            <video src={post.image ? post.image.replace(/\.jpg|\.jpeg|\.png|\.webp/, '.mp4') : undefined} controls className="rounded-lg w-full max-h-80 object-cover border border-[#8C6B3E] bg-black" poster={post.image} />
           )}
           <div className="flex gap-8 mt-2 text-white/70 text-sm">
-            <button onClick={() => handleComment(post.id)} className="hover:text-blue-400 flex items-center gap-1"><svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>{post.comments}</button>
+            <button onClick={() => handleComment(post.id)} className="hover:text-[#C9A96E] flex items-center gap-1"><svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>{post.comments}</button>
             <button onClick={() => handleShare(post.id)} className="hover:text-green-400 flex items-center gap-1"><svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M17 1l4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/></svg>{post.shares}</button>
-            <button onClick={() => handleLike(post.id)} className={`flex items-center gap-1 ${post.liked ? 'text-pink-400' : 'hover:text-pink-400'}`}><svg width="18" height="18" fill={post.liked ? '#ec4899' : 'none'} stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>{post.likes}</button>
+            <button onClick={() => handleLike(post.id)} className={`flex items-center gap-1 ${post.liked ? 'text-[#C9A96E]' : 'hover:text-[#C9A96E]'}`}><svg width="18" height="18" fill={post.liked ? '#ec4899' : 'none'} stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>{post.likes}</button>
           </div>
         </div>
       ))}
@@ -850,12 +850,12 @@ function Feed() {
 
 export default function ReseauSocial() {
   return (
-    <div className="min-h-screen bg-[#050c24]">
+    <div className="min-h-screen bg-[#050810]">
       <section className="relative w-full min-h-[80vh] flex items-center justify-center overflow-hidden">
         <img src="/heroes/reseau-social.png" alt="" className="absolute inset-0 h-full w-full object-cover" />
-        <div className="absolute inset-0 bg-[#050c24]/45" />
+        <div className="absolute inset-0 bg-[#050810]/45" />
         <div className="relative z-10 px-6 text-center">
-          <h1 className="text-4xl md:text-6xl font-extrabold text-[#e6b85c] drop-shadow-lg">Red social</h1>
+          <h1 className="text-4xl md:text-6xl font-extrabold text-[#C9A96E] drop-shadow-lg">Red social</h1>
         </div>
       </section>
     </div>

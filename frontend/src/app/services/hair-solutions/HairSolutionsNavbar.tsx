@@ -19,21 +19,21 @@ export default function HairSolutionsNavbar() {
     return () => window.removeEventListener("storage", listener);
   }, []);
   return (
-    <nav className="w-full flex items-center justify-between px-8 py-4 shadow-md border-b border-gray-200" style={{background: "linear-gradient(120deg, #2d2a1f 0%, #f7e1b5 100%)"}}>
+    <nav className="w-full flex items-center justify-between px-8 py-4 shadow-md border-b border-gray-200" style={{background: "linear-gradient(120deg, #0C1220 0%, #E6D2A8 100%)"}}>
       <div className="flex items-center gap-2">
-        <span className="text-3xl font-extrabold text-yellow-700 tracking-widest">SHEBAS</span>
+        <span className="text-3xl font-extrabold text-[#8C6B3E] tracking-widest">SHEBAS</span>
       </div>
       <ul className="flex gap-8 text-lg font-semibold">
         <li>
-          <Link href="/services/hair-solutions" className="hover:text-yellow-600 cursor-pointer">INICIO</Link>
+          <Link href="/services/hair-solutions" className="hover:text-[#8C6B3E] cursor-pointer">INICIO</Link>
         </li>
-        <li className="hover:text-yellow-600 cursor-pointer">PRODUCTO</li>
-        <li className="hover:text-yellow-600 cursor-pointer">CONTACTO</li>
+        <li className="hover:text-[#8C6B3E] cursor-pointer">PRODUCTO</li>
+        <li className="hover:text-[#8C6B3E] cursor-pointer">CONTACTO</li>
       </ul>
       <div className="flex items-center gap-4 relative">
         {!isLogged ? (
           <Link href="/services/hair-solutions/connexion">
-            <button className="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-yellow-100 border border-yellow-300">
+            <button className="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-[#F5F0E6] border border-[#E6D2A8]">
               <svg width="28" height="28" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                 <circle cx="12" cy="8" r="4" />
                 <path d="M4 20c0-4 4-7 8-7s8 3 8 7" />
@@ -43,14 +43,14 @@ export default function HairSolutionsNavbar() {
         ) : (
           <>
             <Link href="/services/hair-solutions/panier" className="relative">
-              <button className="flex items-center justify-center w-10 h-10 rounded-full bg-yellow-600 hover:bg-yellow-700 border border-yellow-300 relative">
+              <button className="flex items-center justify-center w-10 h-10 rounded-full bg-[#8C6B3E] hover:bg-[#C9A96E] border border-[#E6D2A8] relative">
                 <svg width="28" height="28" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                   <circle cx="9" cy="21" r="1" />
                   <circle cx="20" cy="21" r="1" />
                   <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h7.72a2 2 0 0 0 2-1.61L23 6H6" />
                 </svg>
                 {shebasCount > 0 && (
-                  <span className="absolute -top-2 -right-2 bg-pink-600 text-white text-xs font-bold rounded-full px-2 py-0.5 border-2 border-white shadow">
+                  <span className="absolute -top-2 -right-2 bg-[#8C6B3E] text-white text-xs font-bold rounded-full px-2 py-0.5 border-2 border-white shadow">
                     {shebasCount}
                   </span>
                 )}

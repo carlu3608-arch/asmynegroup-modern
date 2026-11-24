@@ -1,11 +1,14 @@
 
 "use client";
 import React, { useEffect, useRef } from "react";
+import { useI18n } from "@/i18n/LanguageProvider";
 
 const HERO_BG = "/heroes/yontikonsey-blog.png";
 const CATEGORIES = ["", "", "", "", ""];
 
 export default function YontikonseyBlog() {
+  const { t, image } = useI18n();
+  const heroBg = image("page.blog.hero") || HERO_BG;
   // Référence pour le slider
   const sliderRef = useRef<HTMLDivElement>(null);
 
@@ -32,14 +35,14 @@ export default function YontikonseyBlog() {
       {/* HERO */}
       <section
         className="relative flex flex-col items-center justify-center min-h-[80vh] w-full overflow-hidden"
-        style={{ backgroundImage: `url(${HERO_BG})`, backgroundSize: "cover", backgroundPosition: "center" }}
+        style={{ backgroundImage: `url(${heroBg})`, backgroundSize: "cover", backgroundPosition: "center" }}
       >
         <div className="absolute inset-0 bg-black/30" />
         <div className="relative z-10 flex flex-col items-center justify-center w-full pt-24 pb-16">
           <h1 className="text-white text-center font-serif text-6xl md:text-7xl font-light tracking-tight mb-6" style={{letterSpacing: "-0.04em"}}>
-            Blog de Yontikonsey
+            {t("page.blog.hero.title")}
           </h1>
-          <div className="text-white text-center font-serif italic text-3xl md:text-4xl mb-2">Categorías</div>
+          <div className="text-white text-center font-serif italic text-3xl md:text-4xl mb-2">{t("page.blog.hero.sub")}</div>
           <div className="flex flex-col items-center mb-10">
             <svg width="32" height="32" fill="none" viewBox="0 0 24 24" className="text-white animate-bounce">
               <path stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M12 5v14m0 0l-6-6m6 6l6-6" />
@@ -230,7 +233,7 @@ export default function YontikonseyBlog() {
             <input
               type="email"
               placeholder="Correo electrónico"
-              className="w-full md:w-1/2 px-6 py-4 rounded bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-pink-300"
+              className="w-full md:w-1/2 px-6 py-4 rounded bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#E6D2A8]"
               required
             />
             <button
@@ -260,7 +263,7 @@ export default function YontikonseyBlog() {
               <input
                 type="email"
                 placeholder="Correo electrónico"
-                className="w-full px-6 py-4 rounded bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-pink-300"
+                className="w-full px-6 py-4 rounded bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#E6D2A8]"
                 required
               />
               <button

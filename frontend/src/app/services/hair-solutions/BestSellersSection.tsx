@@ -17,7 +17,7 @@ const products = [
           <li>✔️ Nutre profundamente desde la raíz</li>
           <li>✔️ Protege y da brillo natural</li>
         </ul>
-        <div className="italic text-yellow-900 font-semibold text-center mt-2">“Shebas Hair Solutions — Crecimiento, fuerza y belleza natural.”</div>
+        <div className="italic text-[#8C6B3E] font-semibold text-center mt-2">“Shebas Hair Solutions — Crecimiento, fuerza y belleza natural.”</div>
       </>
     ),
     slug: "shebas-hair-solutions"
@@ -35,7 +35,7 @@ const products = [
           <li>✔️ Nutre profundamente desde la raíz</li>
           <li>✔️ Protege y da brillo natural</li>
         </ul>
-        <div className="italic text-yellow-900 font-semibold text-center mt-2">“Shebas Hair Solutions — Crecimiento, fuerza y belleza natural.”</div>
+        <div className="italic text-[#8C6B3E] font-semibold text-center mt-2">“Shebas Hair Solutions — Crecimiento, fuerza y belleza natural.”</div>
       </>
     ),
     slug: "shebas-hair-solutions-pomada"
@@ -53,7 +53,7 @@ const products = [
           <li>✔️ Nutre profundamente desde la raíz</li>
           <li>✔️ Protege y da brillo natural</li>
         </ul>
-        <div className="italic text-yellow-900 font-semibold text-center mt-2">“Shebas Hair Solutions — Crecimiento, fuerza y belleza natural.”</div>
+        <div className="italic text-[#8C6B3E] font-semibold text-center mt-2">“Shebas Hair Solutions — Crecimiento, fuerza y belleza natural.”</div>
       </>
     ),
     slug: "shebas-hair-solutions-aceite"
@@ -64,9 +64,9 @@ export default function BestSellersSection() {
   const router = useRouter();
   // Le composant doit être marqué comme client ("use client") pour utiliser useRouter
   return (
-    <section className="w-full flex flex-col items-center py-16 rounded-2xl max-w-6xl mx-auto mt-16 shadow-2xl" style={{background: "linear-gradient(120deg, #2d2a1f 0%, #f7e1b5 100%)"}}>
-      <h2 className="text-5xl font-extrabold mb-2 text-yellow-400 text-center">LOS MÁS VENDIDOS</h2>
-      <p className="text-lg text-yellow-100 mb-10 text-center">Nuestros esenciales para un cabello hermoso y saludable.</p>
+    <section className="w-full flex flex-col items-center py-16 rounded-2xl max-w-6xl mx-auto mt-16 shadow-2xl" style={{background: "linear-gradient(120deg, #0C1220 0%, #E6D2A8 100%)"}}>
+      <h2 className="text-5xl font-extrabold mb-2 text-[#C9A96E] text-center">LOS MÁS VENDIDOS</h2>
+      <p className="text-lg text-[#E6D2A8] mb-10 text-center">Nuestros esenciales para un cabello hermoso y saludable.</p>
       <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {products.map((product, idx) => (
           <button
@@ -76,12 +76,12 @@ export default function BestSellersSection() {
             onClick={() => router.push(`/services/hair-solutions/produit/${product.slug}`)}
           >
             <img src={product.image} alt={product.name} className="rounded-xl object-contain w-full max-w-[260px] h-[260px] mb-4" />
-            <div className="text-xl font-semibold text-yellow-800 text-center mb-2">{product.name}</div>
-            <div className="text-lg font-bold text-yellow-700 mt-auto">{product.price}</div>
+            <div className="text-xl font-semibold text-[#8C6B3E] text-center mb-2">{product.name}</div>
+            <div className="text-lg font-bold text-[#8C6B3E] mt-auto">{product.price}</div>
           </button>
         ))}
       </div>
-      <div className="w-24 border-b-4 border-yellow-400 mt-10" />
+      <div className="w-24 border-b-4 border-[#C9A96E] mt-10" />
     </section>
   );
 }

@@ -165,7 +165,7 @@ export default function ProductForm({
               value={name}
               onChange={(e) => setName(e.target.value)}
               placeholder="Camiseta de manga corta"
-              className="w-full rounded-[28px] bg-slate-100 px-4 py-3 text-sm text-slate-900 outline-none focus:ring-2 focus:ring-blue-100"
+              className="w-full rounded-[28px] bg-slate-100 px-4 py-3 text-sm text-slate-900 outline-none focus:ring-2 focus:ring-[#E6D2A8]"
               required
             />
           </div>
@@ -174,7 +174,7 @@ export default function ProductForm({
             <select
               value={category}
               onChange={(e) => setCategory(e.target.value)}
-              className="w-full rounded-[28px] bg-slate-100 px-4 py-3 text-sm text-slate-900 outline-none focus:ring-2 focus:ring-blue-100"
+              className="w-full rounded-[28px] bg-slate-100 px-4 py-3 text-sm text-slate-900 outline-none focus:ring-2 focus:ring-[#E6D2A8]"
             >
               <option value="">Elige una categoría</option>
               {categoryOptions.map((option) => (
@@ -195,7 +195,7 @@ export default function ProductForm({
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             placeholder="Descripción del producto"
-            className="w-full rounded-[28px] bg-slate-100 px-4 py-3 text-sm text-slate-900 outline-none focus:ring-2 focus:ring-blue-100"
+            className="w-full rounded-[28px] bg-slate-100 px-4 py-3 text-sm text-slate-900 outline-none focus:ring-2 focus:ring-[#E6D2A8]"
           />
         </div>
       </div>
@@ -269,7 +269,7 @@ export default function ProductForm({
               value={variantInput}
               onChange={(e) => setVariantInput(e.target.value)}
               placeholder="Nueva opción"
-              className="rounded-[24px] bg-slate-100 px-4 py-3 text-sm text-slate-900 outline-none focus:ring-2 focus:ring-blue-100"
+              className="rounded-[24px] bg-slate-100 px-4 py-3 text-sm text-slate-900 outline-none focus:ring-2 focus:ring-[#E6D2A8]"
             />
             <button
               type="button"
@@ -304,7 +304,7 @@ export default function ProductForm({
           <select
             value={status}
             onChange={(e) => setStatus(e.target.value)}
-            className="w-full rounded-[28px] bg-slate-100 px-4 py-3 text-sm text-slate-900 outline-none focus:ring-2 focus:ring-blue-100"
+            className="w-full rounded-[28px] bg-slate-100 px-4 py-3 text-sm text-slate-900 outline-none focus:ring-2 focus:ring-[#E6D2A8]"
           >
             {STATUS_OPTIONS.map((option) => (
               <option key={option} value={option}>
@@ -319,7 +319,7 @@ export default function ProductForm({
               Cancelar
             </button>
           )}
-          <button type="submit" className="rounded-full bg-blue-600 px-5 py-3 text-sm font-semibold text-white hover:bg-blue-700 transition">
+          <button type="submit" className="rounded-full bg-[#8C6B3E] px-5 py-3 text-sm font-semibold text-white hover:bg-[#C9A96E] transition">
             {submitLabel}
           </button>
         </div>

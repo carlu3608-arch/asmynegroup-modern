@@ -1,10 +1,10 @@
         <div 
-          className="mb-8 p-4 bg-pink-50 border-l-4 border-pink-400 italic text-gray-800 text-center rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-2xl animate-fadeIn"
+          className="mb-8 p-4 bg-[#F5F0E6] border-l-4 border-[#C9A96E] italic text-gray-800 text-center rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-2xl animate-fadeIn"
           style={{boxShadow: '0 4px 24px 0 rgba(255, 0, 128, 0.10)'}}
         >
-          <b className="text-pink-700 text-lg">Mensaje personal de la consultora:</b><br/>
+          <b className="text-[#8C6B3E] text-lg">Mensaje personal de la consultora:</b><br/>
           <span className="block mt-2 mb-4 text-base">“Querido/a inmigrante, cada historia es única y valiosa. No dudes en compartir tus dudas, tus sueños y tus logros. Estoy aquí para acompañarte en tu camino y ayudarte a encontrar soluciones adaptadas a tu situación. ¡Juntos/as podemos avanzar más lejos!”</span>
-          <span className="font-bold text-pink-800 text-lg tracking-wide">— Asmyne, Consultora Migratoria</span>
+          <span className="font-bold text-[#8C6B3E] text-lg tracking-wide">— Asmyne, Consultora Migratoria</span>
         </div>
 import React from "react";
 
@@ -26,7 +26,7 @@ export default function BlogDetail() {
           <li><b>Trabaja en tus objetivos</b><br/>No te limites solo a sobrevivir. Busca aprender un oficio, abrir un pequeño negocio o desarrollarte cada día.</li>
           <li><b>Mantén la fe y la paciencia</b><br/>La vida del inmigrante no siempre es fácil. Hay días difíciles, pero con determinación, disciplina y fe, las cosas pueden cambiar.</li>
         </ol>
-        <div className="mb-8 p-4 bg-yellow-50 border-l-4 border-yellow-400 italic text-gray-800 text-center rounded">
+        <div className="mb-8 p-4 bg-[#F5F0E6] border-l-4 border-[#C9A96E] italic text-gray-800 text-center rounded">
           ✨ Palabras de ánimo:<br/>
           “Nunca te avergüences de tus comienzos. Cada pequeño paso que das hoy puede abrir grandes puertas para el mañana. Sigue luchando con dignidad, porque tu futuro se construye cada día.”
         </div>
@@ -132,7 +132,7 @@ export default function BlogDetail() {
             <li>Construcción</li>
           </ul>
         </ul>
-        <div className="mb-8 p-4 bg-blue-50 border-l-4 border-blue-400 italic text-gray-800 text-center rounded">
+        <div className="mb-8 p-4 bg-[#F5F0E6] border-l-4 border-[#C9A96E] italic text-gray-800 text-center rounded">
           <b>Consejos importantes:</b><br/>
           Elige un negocio que resuelva un problema real<br/>
           Haz que tus clientes se sientan respetados<br/>
@@ -150,7 +150,7 @@ export default function BlogDetail() {
           <br/>
           <b>Recuerda:</b> Cada día es una nueva oportunidad para crecer y avanzar. ¡No te rindas!
         </div>
-        <div className="mb-8 p-4 bg-purple-50 border-l-4 border-purple-400 italic text-gray-800 text-center rounded">
+        <div className="mb-8 p-4 bg-[#F5F0E6] border-l-4 border-[#C9A96E] italic text-gray-800 text-center rounded">
           <b>Más ideas para progresar:</b><br/>
           - Aprende informática básica para acceder a más empleos.<br/>
           - Participa en cursos gratuitos en línea (YouTube, Coursera, etc.).<br/>

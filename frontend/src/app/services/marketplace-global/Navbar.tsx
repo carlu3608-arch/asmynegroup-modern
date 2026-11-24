@@ -101,7 +101,7 @@ export default function Navbar({ collections = [], selectedCollection = "", onCo
               ) : (
                 <Link
                   href="/services/marketplace-global/login"
-                  className="block w-full text-left px-4 py-2 text-blue-600 hover:bg-gray-100"
+                  className="block w-full text-left px-4 py-2 text-[#8C6B3E] hover:bg-gray-100"
                   onClick={() => setProfileOpen(false)}
                 >Iniciar sesión</Link>
               )}

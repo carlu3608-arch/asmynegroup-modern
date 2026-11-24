@@ -58,7 +58,7 @@ function ConfirmationContent() {
   }, [orderId]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-pink-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-[#F5F0E6]">
       <Navbar />
       <div className="flex items-center justify-center px-4 py-12">
         <div className="bg-white rounded-3xl shadow-xl border border-gray-200 p-10 max-w-3xl w-full">
@@ -132,7 +132,7 @@ function ConfirmationContent() {
             <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
               <Link
                 href="/services/marketplace-global"
-                className="rounded-3xl bg-pink-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-pink-700"
+                className="rounded-3xl bg-[#8C6B3E] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#C9A96E]"
               >
                 Volver al marketplace
               </Link>

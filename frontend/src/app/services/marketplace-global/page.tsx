@@ -88,10 +88,10 @@ export default function MarketplaceGlobal() {
 
       <section className="relative min-h-[70vh] flex flex-col items-center justify-center text-white py-16 px-4 text-center overflow-hidden">
         <img src="/heroes/marketplace-global.png" alt="" className="absolute inset-0 w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-[#050c24]/55" />
-        <h1 className="relative z-10 text-4xl md:text-5xl font-bold mb-4 text-[#e6b85c] drop-shadow-lg">Bienvenido al Marketplace Global</h1>
+        <div className="absolute inset-0 bg-[#050810]/55" />
+        <h1 className="relative z-10 text-4xl md:text-5xl font-bold mb-4 text-[#C9A96E] drop-shadow-lg">Bienvenido al Marketplace Global</h1>
         <p className="relative z-10 text-lg md:text-xl mb-6">Descubre las mejores ofertas de tecnología, smartphones, consolas, accesorios ¡y mucho más!</p>
-        <a href="#products" className="relative z-10 inline-block px-8 py-3 bg-[#e6b85c] text-[#050c24] font-bold rounded-full shadow hover:bg-white">Ver productos</a>
+        <a href="#products" className="relative z-10 inline-block px-8 py-3 bg-[#C9A96E] text-[#050810] font-bold rounded-full shadow hover:bg-white">Ver productos</a>
       </section>
 
       <section id="collections" className="max-w-6xl mx-auto py-10 px-4">

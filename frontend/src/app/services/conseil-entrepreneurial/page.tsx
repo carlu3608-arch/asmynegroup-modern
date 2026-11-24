@@ -3,11 +3,13 @@
 import { useEffect, useState } from "react";
 import { FaRobot } from "react-icons/fa";
 import ChatWidget from "./ChatWidget";
+import { useI18n } from "@/i18n/LanguageProvider";
 
 
 
 
 export default function ConseilEntrepreneurialPage() {
+  const { t, image } = useI18n();
   const [opacity, setOpacity] = useState(1);
 
   useEffect(() => {
@@ -49,14 +51,14 @@ export default function ConseilEntrepreneurialPage() {
         </div>
       </nav>
       {/* Hero Section */}
-      <section className="w-full flex flex-col items-center justify-center min-h-[120vh] px-4 bg-[url('/heroes/conseil-entrepreneurial.png')] bg-cover bg-center pt-40">
-        <h1 className="text-6xl md:text-7xl font-extrabold mb-6 text-[#C9A96E] drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)] text-center">Asesoría empresarial</h1>
+      <section className="w-full flex flex-col items-center justify-center min-h-[120vh] px-4 bg-cover bg-center pt-40" style={{ backgroundImage: `url(${image("page.conseil.hero") || "/heroes/conseil-entrepreneurial.png"})` }}>
+        <h1 className="text-6xl md:text-7xl font-extrabold mb-6 text-[#C9A96E] drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)] text-center">{t("page.conseil.hero.title")}</h1>
       </section>
 
       {/* Section 4 blocs Asesoría empresarial */}
       <section className="w-full bg-black py-16 px-4 flex flex-col items-center">
         <h2 className="text-3xl md:text-4xl font-bold text-[#C9A96E] text-center mb-12 max-w-3xl">
-          Nuestras especialidades para impulsar el éxito de tu emprendimiento
+          {t("page.conseil.sec.title")}
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 w-full max-w-6xl">
           {/* Bloc 1 */}
@@ -228,7 +230,7 @@ Manejo de documentos</p>
           />
           <button
             type="submit"
-            className="bg-[#C9A96E] text-black font-bold py-2 rounded hover:bg-yellow-400 transition"
+            className="bg-[#C9A96E] text-black font-bold py-2 rounded hover:bg-[#C9A96E] transition"
           >
             Envoyer
           </button>
@@ -299,7 +301,7 @@ Manejo de documentos</p>
       {/* Bouton robot flottant */}
       <button
         onClick={() => setShowBot(true)}
-        className="fixed z-50 bottom-6 right-6 bg-[#C9A96E] text-black shadow-lg rounded-full w-16 h-16 flex items-center justify-center hover:bg-yellow-400 border-4 border-black transition-all"
+        className="fixed z-50 bottom-6 right-6 bg-[#C9A96E] text-black shadow-lg rounded-full w-16 h-16 flex items-center justify-center hover:bg-[#C9A96E] border-4 border-black transition-all"
         title="Asistente AI"
         aria-label="Asistente AI"
       >
@@ -309,11 +311,11 @@ Manejo de documentos</p>
       {/* Widget chatbot flottant en bas à droite */}
       {showBot && (
         <div className="fixed z-50 bottom-24 right-6 w-[350px] max-w-[95vw] bg-black rounded-2xl border-2 border-[#C9A96E] shadow-2xl overflow-hidden flex flex-col">
-          <div className="flex items-center justify-between px-4 py-2 bg-black border-b border-yellow-500">
-            <span className="font-bold text-yellow-400 text-base">Asesoría Empresarial</span>
+          <div className="flex items-center justify-between px-4 py-2 bg-black border-b border-[#C9A96E]">
+            <span className="font-bold text-[#C9A96E] text-base">Asesoría Empresarial</span>
             <button
               onClick={() => setShowBot(false)}
-              className="text-yellow-400 bg-black rounded-full w-8 h-8 flex items-center justify-center hover:bg-yellow-500 hover:text-black border border-yellow-500 transition"
+              className="text-[#C9A96E] bg-black rounded-full w-8 h-8 flex items-center justify-center hover:bg-[#C9A96E] hover:text-black border border-[#C9A96E] transition"
               title="Cerrar"
               aria-label="Cerrar"
             >✕</button>

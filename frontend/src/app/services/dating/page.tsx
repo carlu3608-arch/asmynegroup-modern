@@ -2,19 +2,21 @@
 "use client";
 import React from "react";
 import Link from "next/link";
+import { useI18n } from "@/i18n/LanguageProvider";
 
 export default function DatingLanding() {
+  const { t, image } = useI18n();
   return (
     <>
       <div className="relative min-h-screen flex flex-col justify-center items-center bg-black">
-        <div className="absolute inset-0 z-0 bg-[#1b0f1f]">
-          <img src="/heroes/dating.png" alt="" className="w-full h-full object-cover object-center" />
+        <div className="absolute inset-0 z-0 bg-[#050810]">
+          <img src={image("page.dating.hero") || "/heroes/dating.png"} alt="" className="w-full h-full object-cover object-center" />
           <div className="absolute inset-0 bg-black/60" />
         </div>
 
         <header className="relative z-10 w-full flex justify-between items-center px-8 pt-8">
           <div className="flex items-center gap-2">
-            <span className="bg-pink-500 rounded-full w-8 h-8 flex items-center justify-center text-white text-2xl font-bold">♥</span>
+            <span className="bg-[#8C6B3E] rounded-full w-8 h-8 flex items-center justify-center text-white text-2xl font-bold">♥</span>
             <span className="text-white text-2xl font-extrabold tracking-wide">Asmyne Group</span>
           </div>
           <button className="text-white text-3xl focus:outline-none">
@@ -25,19 +27,19 @@ export default function DatingLanding() {
 
         <main className="relative z-10 flex flex-col items-center justify-center flex-1 w-full px-4 text-center mt-24">
           <div className="flex gap-4 justify-center mb-6">
-            <a href="#" className="text-white text-2xl hover:text-pink-400"><i className="fab fa-Asmyn-Group-f"></i></a>
-            <a href="#" className="text-white text-2xl hover:text-pink-400"><i className="fab fa-twitter"></i></a>
-            <a href="#" className="text-white text-2xl hover:text-pink-400"><i className="fab fa-youtube"></i></a>
-            <a href="#" className="text-white text-2xl hover:text-pink-400"><i className="fab fa-instagram"></i></a>
-            <a href="#" className="text-white text-2xl hover:text-pink-400"><i className="fab fa-tumblr"></i></a>
+            <a href="#" className="text-white text-2xl hover:text-[#C9A96E]"><i className="fab fa-Asmyn-Group-f"></i></a>
+            <a href="#" className="text-white text-2xl hover:text-[#C9A96E]"><i className="fab fa-twitter"></i></a>
+            <a href="#" className="text-white text-2xl hover:text-[#C9A96E]"><i className="fab fa-youtube"></i></a>
+            <a href="#" className="text-white text-2xl hover:text-[#C9A96E]"><i className="fab fa-instagram"></i></a>
+            <a href="#" className="text-white text-2xl hover:text-[#C9A96E]"><i className="fab fa-tumblr"></i></a>
           </div>
-          <h1 className="text-white text-4xl md:text-6xl font-extrabold mb-2 leading-tight">Encuentros para adultos<br />Haz una conexión real</h1>
-          <p className="text-white text-lg md:text-2xl mb-8">Comienza a conocer personas que están listas para comprometerse hoy mismo.</p>
+          <h1 className="text-white text-4xl md:text-6xl font-extrabold mb-2 leading-tight">{t("page.dating.hero.title")}<br />{t("page.dating.hero.title2")}</h1>
+          <p className="text-white text-lg md:text-2xl mb-8">{t("page.dating.hero.sub")}</p>
           <Link
             href="/inscription"
-            className="bg-pink-500 hover:bg-pink-600 text-white font-bold px-10 py-4 rounded-full text-xl shadow-lg transition-all"
+            className="bg-[#8C6B3E] hover:bg-[#C9A96E] text-white font-bold px-10 py-4 rounded-full text-xl shadow-lg transition-all"
           >
-            Empezar
+            {t("page.dating.hero.cta")}
           </Link>
         </main>
 
@@ -47,7 +49,7 @@ export default function DatingLanding() {
           </svg>
         </div>
 
-        <section className="relative w-full flex flex-col items-center justify-center bg-pink-500 py-16">
+        <section className="relative w-full flex flex-col items-center justify-center bg-[#8C6B3E] py-16">
           <div className="absolute left-8 top-1/2 -translate-y-1/2 flex items-center space-x-[-24px] z-10">
             <img src="/destinations/person1.png" alt="Persona 1" className="w-20 h-20 rounded-full border-4 border-white object-cover shadow-lg" />
             <img src="/destinations/person2.png" alt="Persona 2" className="w-32 h-32 rounded-full border-4 border-white object-cover shadow-lg z-20" />
@@ -56,13 +58,13 @@ export default function DatingLanding() {
             <img src="/destinations/person5.png" alt="Persona 5" className="w-12 h-12 rounded-full border-4 border-white object-cover shadow-lg" />
           </div>
           <div className="flex flex-col items-center justify-center z-20">
-            <h2 className="text-white text-3xl md:text-4xl font-extrabold mb-2">Inicia tu historia de amor</h2>
-            <p className="text-white text-lg md:text-xl mb-8">Asmyne Group: encuentra el amor con nuestro sitio de citas.</p>
+            <h2 className="text-white text-3xl md:text-4xl font-extrabold mb-2">{t("page.dating.sec.title")}</h2>
+            <p className="text-white text-lg md:text-xl mb-8">{t("page.dating.sec.sub")}</p>
             <Link
               href="/connexion"
-              className="bg-white text-pink-500 font-bold px-10 py-3 rounded-full text-lg shadow-lg hover:bg-pink-100 transition-all"
+              className="bg-white text-[#C9A96E] font-bold px-10 py-3 rounded-full text-lg shadow-lg hover:bg-[#F5F0E6] transition-all"
             >
-              Iniciar sesión
+              {t("page.dating.sec.cta")}
             </Link>
           </div>
         </section>
@@ -71,8 +73,8 @@ export default function DatingLanding() {
       <section className="w-full bg-white py-16 flex flex-col items-center">
         <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-12 text-black">
           El número 1 en confianza <span className="relative inline-block">
-            <span className="z-10 relative text-pink-600 underline decoration-pink-300 decoration-4">Encuentros</span>
-            <span className="absolute left-0 right-0 -bottom-1 h-2 bg-pink-200 rounded-full -z-10"></span>
+            <span className="z-10 relative text-[#8C6B3E] underline decoration-[#E6D2A8] decoration-4">Encuentros</span>
+            <span className="absolute left-0 right-0 -bottom-1 h-2 bg-[#E6D2A8] rounded-full -z-10"></span>
           </span>
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl w-full px-4">
@@ -104,7 +106,7 @@ export default function DatingLanding() {
       <section className="w-full bg-gray-50 py-16 flex flex-col items-center relative overflow-hidden">
         <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-2 text-black">
           Explora los consejos de <span className="relative inline-block">
-            <span className="z-10 relative text-pink-600 underline decoration-pink-300 decoration-4">Encuentros</span>
+            <span className="z-10 relative text-[#8C6B3E] underline decoration-[#E6D2A8] decoration-4">Encuentros</span>
           </span>
         </h2>
         <p className="text-center text-xl text-black mb-10 font-semibold">Mantén la calma. Sé amable. Sé tú mismo.</p>
@@ -113,9 +115,9 @@ export default function DatingLanding() {
             Hola, soy Sarah y soy la primera IA de Encuentros para Asmyne Group. <span className="font-bold text-black">¿Cuáles son tus preferencias?</span>
           </div>
           <div className="flex flex-col gap-6 w-full">
-            <button className="w-full bg-pink-500 hover:bg-pink-600 text-white font-bold py-4 rounded-full text-lg shadow-lg transition-all">Hombres</button>
-            <button className="w-full bg-pink-500 hover:bg-pink-600 text-white font-bold py-4 rounded-full text-lg shadow-lg transition-all">Mujeres</button>
-            <button className="w-full bg-pink-500 hover:bg-pink-600 text-white font-bold py-4 rounded-full text-lg shadow-lg transition-all">Otro</button>
+            <button className="w-full bg-[#8C6B3E] hover:bg-[#C9A96E] text-white font-bold py-4 rounded-full text-lg shadow-lg transition-all">Hombres</button>
+            <button className="w-full bg-[#8C6B3E] hover:bg-[#C9A96E] text-white font-bold py-4 rounded-full text-lg shadow-lg transition-all">Mujeres</button>
+            <button className="w-full bg-[#8C6B3E] hover:bg-[#C9A96E] text-white font-bold py-4 rounded-full text-lg shadow-lg transition-all">Otro</button>
           </div>
         </div>
 
@@ -124,28 +126,28 @@ export default function DatingLanding() {
         </svg>
       </section>
 
-      <section className="w-full py-16 flex flex-col items-center bg-gradient-to-br from-pink-500 via-white to-pink-100">
-        <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-12 text-pink-600">Haz de Asmyne tu lugar favorito</h2>
+      <section className="w-full py-16 flex flex-col items-center bg-gradient-to-br from-[#8C6B3E] via-white to-[#F5F0E6]">
+        <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-12 text-[#8C6B3E]">Haz de Asmyne tu lugar favorito</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl w-full px-4">
           <div className="bg-white rounded-2xl shadow-lg flex flex-col items-center p-6">
             <img src="/destinations/Asmyne1.png" alt="Aplicación de chat" className="w-full h-48 object-cover rounded-xl mb-4" />
-            <h3 className="text-pink-600 text-xl font-extrabold mb-2 text-left w-full">Asmyne es tu aplicación de chat</h3>
-            <p className="text-pink-500 text-left w-full">Conoce rápidamente a nuevas personas que buscan lo mismo que tú.</p>
+            <h3 className="text-[#8C6B3E] text-xl font-extrabold mb-2 text-left w-full">Asmyne es tu aplicación de chat</h3>
+            <p className="text-[#C9A96E] text-left w-full">Conoce rápidamente a nuevas personas que buscan lo mismo que tú.</p>
           </div>
           <div className="bg-white rounded-2xl shadow-lg flex flex-col items-center p-6">
             <img src="/destinations/Asmyne2.png" alt="Filtrar por perfiles" className="w-full h-48 object-cover rounded-xl mb-4" />
-            <h3 className="text-pink-600 text-xl font-extrabold mb-2 text-left w-full">Filtra por perfiles</h3>
-            <p className="text-pink-500 text-left w-full">Encuentra personas que comparten tu forma de ser y lo que te importa.</p>
+            <h3 className="text-[#8C6B3E] text-xl font-extrabold mb-2 text-left w-full">Filtra por perfiles</h3>
+            <p className="text-[#C9A96E] text-left w-full">Encuentra personas que comparten tu forma de ser y lo que te importa.</p>
           </div>
           <div className="bg-white rounded-2xl shadow-lg flex flex-col items-center p-6">
             <img src="/destinations/Asmyne3.png" alt="Muéstrate en directo" className="w-full h-48 object-cover rounded-xl mb-4" />
-            <h3 className="text-pink-600 text-xl font-extrabold mb-2 text-left w-full">Muéstrate en directo</h3>
-            <p className="text-pink-500 text-left w-full">Chatea por video con personas nuevas en tiempo real y conócelas mejor.</p>
+            <h3 className="text-[#8C6B3E] text-xl font-extrabold mb-2 text-left w-full">Muéstrate en directo</h3>
+            <p className="text-[#C9A96E] text-left w-full">Chatea por video con personas nuevas en tiempo real y conócelas mejor.</p>
           </div>
           <div className="bg-white rounded-2xl shadow-lg flex flex-col items-center p-6">
             <img src="/destinations/Asmyne4.png" alt="Tus citas comienzan" className="w-full h-48 object-cover rounded-xl mb-4" />
-            <h3 className="text-pink-600 text-xl font-extrabold mb-2 text-left w-full">Tus citas comienzan</h3>
-            <p className="text-pink-500 text-left w-full">Descubre nuevos singles, chatea y flirtea: Asmyne hace que el dating en línea sea fácil.</p>
+            <h3 className="text-[#8C6B3E] text-xl font-extrabold mb-2 text-left w-full">Tus citas comienzan</h3>
+            <p className="text-[#C9A96E] text-left w-full">Descubre nuevos singles, chatea y flirtea: Asmyne hace que el dating en línea sea fácil.</p>
           </div>
         </div>
       </section>

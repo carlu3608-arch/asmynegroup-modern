@@ -285,7 +285,7 @@ export default function MarketplaceGlobalMessagesPage() {
                 <p className="mt-2 text-sm text-gray-600">Mensajería cargada desde la API interna.</p>
               </div>
               <div className="flex flex-wrap items-center gap-3">
-                <Link href="/services/marketplace-global" className="inline-flex items-center rounded-full bg-pink-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-pink-700">
+                <Link href="/services/marketplace-global" className="inline-flex items-center rounded-full bg-[#8C6B3E] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#C9A96E]">
                   Volver al Marketplace
                 </Link>
                 <button
@@ -333,7 +333,7 @@ export default function MarketplaceGlobalMessagesPage() {
                         type="search"
                         value={forwardSearch}
                         onChange={(event) => setForwardSearch(event.target.value)}
-                        className="w-full rounded-3xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-pink-500 focus:ring-2 focus:ring-pink-100"
+                        className="w-full rounded-3xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-[#C9A96E] focus:ring-2 focus:ring-[#E6D2A8]"
                         placeholder="Nombre del vendedor o comprador"
                       />
                     </div>
@@ -352,7 +352,7 @@ export default function MarketplaceGlobalMessagesPage() {
                               onClick={() => setSelectedRecipientId(target.id)}
                               className={`w-full rounded-3xl border px-4 py-3 text-left transition ${
                                 target.id === selectedRecipientId
-                                  ? "border-pink-600 bg-pink-50"
+                                  ? "border-[#C9A96E] bg-[#F5F0E6]"
                                   : "border-gray-200 bg-white hover:border-gray-300"
                               }`}
                             >
@@ -364,7 +364,7 @@ export default function MarketplaceGlobalMessagesPage() {
                                   <div className="flex items-center gap-2 text-sm font-semibold text-gray-900">
                                     <span>{target.name}</span>
                                     {target.isVerified ? (
-                                      <span className="rounded-full bg-pink-100 px-2 py-0.5 text-[11px] font-bold uppercase tracking-wide text-pink-700">Verificado</span>
+                                      <span className="rounded-full bg-[#F5F0E6] px-2 py-0.5 text-[11px] font-bold uppercase tracking-wide text-[#8C6B3E]">Verificado</span>
                                     ) : null}
                                   </div>
                                   <p className="text-sm text-gray-500">{target.handle}</p>
@@ -382,7 +382,7 @@ export default function MarketplaceGlobalMessagesPage() {
                         value={startingMessage}
                         onChange={(event) => setStartingMessage(event.target.value)}
                         rows={4}
-                        className="w-full rounded-3xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-pink-500 focus:ring-2 focus:ring-pink-100"
+                        className="w-full rounded-3xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-[#C9A96E] focus:ring-2 focus:ring-[#E6D2A8]"
                         placeholder="Hola, quisiera saber más sobre tu producto..."
                       />
                     </div>
@@ -399,7 +399,7 @@ export default function MarketplaceGlobalMessagesPage() {
                         type="button"
                         onClick={handleCreateThread}
                         disabled={!selectedRecipientId || !startingMessage.trim() || creatingThread}
-                        className="inline-flex items-center justify-center rounded-3xl bg-pink-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-pink-700 disabled:cursor-not-allowed disabled:opacity-60"
+                        className="inline-flex items-center justify-center rounded-3xl bg-[#8C6B3E] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#C9A96E] disabled:cursor-not-allowed disabled:opacity-60"
                       >
                         {creatingThread ? "Iniciando..." : "Iniciar conversación"}
                       </button>
@@ -428,7 +428,7 @@ export default function MarketplaceGlobalMessagesPage() {
                         onClick={() => setSelectedThreadId(thread.id)}
                         className={`w-full rounded-3xl border px-3 py-3 text-left transition ${
                           thread.id === selectedThreadId
-                            ? "border-pink-600 bg-white shadow-sm"
+                            ? "border-[#C9A96E] bg-white shadow-sm"
                             : "border-transparent bg-white/80 hover:border-gray-200"
                         }`}
                       >
@@ -459,7 +459,7 @@ export default function MarketplaceGlobalMessagesPage() {
                           <div className="flex items-center gap-2 text-lg font-semibold text-gray-900">
                             <span>{selectedThread.name}</span>
                             {selectedThread.isVerified ? (
-                              <span className="rounded-full bg-pink-50 px-2 py-1 text-[11px] font-bold uppercase text-pink-700">Verificado</span>
+                              <span className="rounded-full bg-[#F5F0E6] px-2 py-1 text-[11px] font-bold uppercase text-[#8C6B3E]">Verificado</span>
                             ) : null}
                           </div>
                           <p className="text-xs text-gray-500">{selectedThread.handle} · {selectedThread.joinedAt}</p>
@@ -488,7 +488,7 @@ export default function MarketplaceGlobalMessagesPage() {
                               key={message.id}
                               className={`rounded-3xl p-4 shadow-sm ${
                                 message.sender === "me"
-                                  ? "ml-auto bg-pink-600 text-white"
+                                  ? "ml-auto bg-[#8C6B3E] text-white"
                                   : "mr-auto bg-white text-gray-900 border border-gray-200"
                               }`}
                             >
@@ -517,7 +517,7 @@ export default function MarketplaceGlobalMessagesPage() {
                           value={composerValue}
                           onChange={(event) => setComposerValue(event.target.value)}
                           rows={3}
-                          className="w-full rounded-3xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-pink-500 focus:ring-2 focus:ring-pink-100"
+                          className="w-full rounded-3xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-[#C9A96E] focus:ring-2 focus:ring-[#E6D2A8]"
                           placeholder="Escribe un mensaje..."
                         />
                       </label>
@@ -525,7 +525,7 @@ export default function MarketplaceGlobalMessagesPage() {
                         type="button"
                         onClick={handleSendMessage}
                         disabled={!composerValue.trim() || sending}
-                        className="inline-flex shrink-0 items-center justify-center rounded-3xl bg-pink-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-pink-700 disabled:cursor-not-allowed disabled:opacity-60"
+                        className="inline-flex shrink-0 items-center justify-center rounded-3xl bg-[#8C6B3E] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#C9A96E] disabled:cursor-not-allowed disabled:opacity-60"
                       >
                         {sending ? "Enviando..." : "Enviar"}
                       </button>

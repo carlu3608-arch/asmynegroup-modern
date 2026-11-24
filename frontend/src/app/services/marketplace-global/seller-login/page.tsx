@@ -58,7 +58,7 @@ export default function SellerLoginPage() {
         </form>
         <div className="mt-4 text-center">
           <span className="text-gray-600 dark:text-gray-300">¿Aún no eres vendedor? </span>
-          <a href="/services/marketplace-global/register-vendor" className="text-blue-600 hover:underline">Crear una cuenta de vendedor</a>
+          <a href="/services/marketplace-global/register-vendor" className="text-[#8C6B3E] hover:underline">Crear una cuenta de vendedor</a>
         </div>
       </div>
     </div>

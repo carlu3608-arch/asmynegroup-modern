@@ -5,7 +5,9 @@ import { useRouter } from "next/navigation";
 import {
   dictionaries,
   editableContent,
+  pagesContent,
   locales,
+  type EditableGroup,
   localeNames,
   type Locale,
 } from "@/i18n/dictionaries";
@@ -19,7 +21,7 @@ import {
   DEFAULT_BRANDING,
 } from "@/lib/cms";
 
-type Tab = "contenido" | "servicios" | "marca" | "solicitudes" | "config";
+type Tab = "contenido" | "paginas" | "servicios" | "marca" | "solicitudes" | "config";
 type Overrides = Partial<Record<Locale, Record<string, string>>>;
 
 type ServiceRequest = {
@@ -146,7 +148,8 @@ export default function AdminDashboard({ adminEmail }: { adminEmail: string }) {
           <span className="admin-dot" /> Asmyne <b>CMS</b>
         </div>
         <nav>
-          <button className={tab === "contenido" ? "active" : ""} onClick={() => setTab("contenido")}>📝 Textos de la página</button>
+          <button className={tab === "contenido" ? "active" : ""} onClick={() => setTab("contenido")}>📝 Textos de la portada</button>
+          <button className={tab === "paginas" ? "active" : ""} onClick={() => setTab("paginas")}>📄 Páginas de servicios</button>
           <button className={tab === "servicios" ? "active" : ""} onClick={() => setTab("servicios")}>🧩 Servicios</button>
           <button className={tab === "marca" ? "active" : ""} onClick={() => setTab("marca")}>🎨 Marca e imágenes</button>
           <button className={tab === "solicitudes" ? "active" : ""} onClick={() => setTab("solicitudes")}>📥 Solicitudes</button>
@@ -161,7 +164,22 @@ export default function AdminDashboard({ adminEmail }: { adminEmail: string }) {
 
       <main className="admin-main">
         {toast && <div className={`admin-toast ${toast.ok ? "ok" : "err"}`}>{toast.msg}</div>}
-        {tab === "contenido" && <ContentEditor flash={flash} />}
+        {tab === "contenido" && (
+          <ContentEditor
+            flash={flash}
+            groups={editableContent}
+            title="Textos de la portada"
+            subtitle="Edita cualquier texto de la portada por idioma. Campo vacío = texto por defecto del sitio."
+          />
+        )}
+        {tab === "paginas" && (
+          <ContentEditor
+            flash={flash}
+            groups={pagesContent}
+            title="Páginas de servicios"
+            subtitle="Edita los textos e imagen principal de cada página de servicio, por idioma. Campo vacío = texto por defecto."
+          />
+        )}
         {tab === "servicios" && <ServicesManager flash={flash} />}
         {tab === "marca" && <BrandPanel flash={flash} />}
         {tab === "solicitudes" && <RequestsManager flash={flash} />}
@@ -172,8 +190,20 @@ export default function AdminDashboard({ adminEmail }: { adminEmail: string }) {
 }
 
 /* ------------------------------ Contenido ------------------------------ */
-function ContentEditor({ flash }: { flash: (ok: boolean, msg: string) => void }) {
+function ContentEditor({
+  flash,
+  groups,
+  title,
+  subtitle,
+}: {
+  flash: (ok: boolean, msg: string) => void;
+  groups: EditableGroup[];
+  title: string;
+  subtitle: string;
+}) {
   const [overrides, setOverrides] = useState<Overrides>({});
+  const [images, setImages] = useState<Record<string, string>>({});
+  const hasImages = groups.some((g) => g.image);
   const [activeLocale, setActiveLocale] = useState<Locale>("es");
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
@@ -184,6 +214,7 @@ function ContentEditor({ flash }: { flash: (ok: boolean, msg: string) => void })
       .then((r) => r.json())
       .then((d) => {
         setOverrides(d.overrides ?? {});
+        setImages(d.images ?? {});
         if (d.dbUnavailable) setWarn("La base de datos no está disponible. Puedes editar, pero no se guardará hasta que la conexión funcione.");
       })
       .catch(() => setWarn("No se pudo cargar el contenido."))
@@ -200,11 +231,11 @@ function ContentEditor({ flash }: { flash: (ok: boolean, msg: string) => void })
       const res = await fetch("/api/admin/content", {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ overrides }),
+        body: JSON.stringify(hasImages ? { overrides, images } : { overrides }),
       });
       const d = await res.json();
       if (!res.ok) flash(false, d.error ?? "No se pudo guardar.");
-      else flash(true, "Textos guardados. Recarga el sitio para verlos.");
+      else flash(true, "Cambios guardados. Recarga el sitio para verlos.");
     } catch {
       flash(false, "Error de red al guardar.");
     } finally {
@@ -218,8 +249,8 @@ function ContentEditor({ flash }: { flash: (ok: boolean, msg: string) => void })
     <section>
       <header className="admin-head">
         <div>
-          <h1>Textos de la página</h1>
-          <p>Edita cualquier texto de la portada por idioma. Campo vacío = texto por defecto del sitio.</p>
+          <h1>{title}</h1>
+          <p>{subtitle}</p>
         </div>
         <button className="admin-btn-gold" onClick={save} disabled={saving}>{saving ? "Guardando…" : "Guardar textos"}</button>
       </header>
@@ -229,9 +260,24 @@ function ContentEditor({ flash }: { flash: (ok: boolean, msg: string) => void })
           <button key={l} className={l === activeLocale ? "active" : ""} onClick={() => setActiveLocale(l)}>{localeNames[l]}</button>
         ))}
       </div>
-      {editableContent.map((group) => (
+      {groups.map((group) => (
         <div key={group.group} className="admin-card">
-          <h2>{group.group}</h2>
+          <h2>
+            {group.group}
+            {group.path && (
+              <a href={group.path} target="_blank" rel="noreferrer" className="admin-page-link">Ver página ↗</a>
+            )}
+          </h2>
+          {group.image && (
+            <div style={{ marginBottom: 14 }}>
+              <div className="admin-field"><span>{group.image.label} (todas las lenguas)</span></div>
+              <ImageUploadButton
+                label="Cambiar imagen"
+                value={images[group.image.key] || group.image.fallback}
+                onChange={(url) => setImages((p) => ({ ...p, [group.image!.key]: url }))}
+              />
+            </div>
+          )}
           {group.keys.map(({ key, label, multiline }) => {
             const val = overrides[activeLocale]?.[key] ?? "";
             const placeholder = dictionaries[activeLocale]?.[key] ?? "";

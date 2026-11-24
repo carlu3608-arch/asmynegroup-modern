@@ -51,7 +51,7 @@ export default function MarketplaceGlobalOrdersPage() {
             <h1 className="text-3xl font-bold text-gray-900">Tus pedidos</h1>
             <div className="flex items-center gap-3">
               <button className="rounded-full border border-gray-300 bg-white px-4 py-2 text-sm font-semibold text-gray-800 hover:bg-gray-50">Enviar comprobante de pago</button>
-              <Link href="/services/marketplace-global" className="inline-flex rounded-full bg-pink-600 px-4 py-2 text-sm font-semibold text-white hover:bg-pink-700">
+              <Link href="/services/marketplace-global" className="inline-flex rounded-full bg-[#8C6B3E] px-4 py-2 text-sm font-semibold text-white hover:bg-[#C9A96E]">
                 Volver al Marketplace
               </Link>
             </div>
@@ -74,7 +74,7 @@ export default function MarketplaceGlobalOrdersPage() {
                 <p className="text-sm text-gray-700">Ve a la página principal o haz clic abajo para empezar.</p>
                 <div className="mt-4 flex gap-3">
                   <Link href="/" className="inline-flex items-center justify-center rounded-full border border-gray-300 px-6 py-3 text-sm font-semibold text-gray-800">Ir al inicio</Link>
-                  <Link href="/cart" className="inline-flex items-center justify-center rounded-full bg-pink-600 px-6 py-3 text-sm font-semibold text-white">Ver carrito</Link>
+                  <Link href="/cart" className="inline-flex items-center justify-center rounded-full bg-[#8C6B3E] px-6 py-3 text-sm font-semibold text-white">Ver carrito</Link>
                 </div>
               </div>
             ) : (
@@ -92,7 +92,7 @@ export default function MarketplaceGlobalOrdersPage() {
                         <div className="font-semibold text-gray-900">{typeof order.grandTotal === "number" ? `${order.grandTotal.toFixed(2)} USD` : "-"}</div>
                       </div>
                       <div className="text-sm text-gray-800 px-3 py-1 rounded-full border border-gray-200 bg-gray-50">{order.status ?? "pendiente"}</div>
-                      <Link href={`/services/marketplace-global/orders/${order.id}`} className="inline-flex items-center rounded-full bg-pink-50 text-pink-700 px-3 py-2 text-sm font-semibold border border-pink-100">Ver</Link>
+                      <Link href={`/services/marketplace-global/orders/${order.id}`} className="inline-flex items-center rounded-full bg-[#F5F0E6] text-[#8C6B3E] px-3 py-2 text-sm font-semibold border border-[#E6D2A8]">Ver</Link>
                     </div>
                   </div>
                 ))}

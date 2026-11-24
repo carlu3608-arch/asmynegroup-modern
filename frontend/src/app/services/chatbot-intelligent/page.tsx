@@ -2,6 +2,7 @@
 
 import React from "react";
 import { FaPlus, FaRegCommentDots, FaSearch, FaRegFolder, FaRegCompass, FaUserCircle, FaMicrophone, FaRegEdit, FaGlobe, FaImage } from "react-icons/fa";
+import { useI18n } from "@/i18n/LanguageProvider";
 
 type Message = {
   role: 'user'|'ai',
@@ -12,6 +13,7 @@ type Message = {
 type SpeechRecognitionConstructorType = new () => any;
 
 export default function ChatbotPage() {
+  const { t, image } = useI18n();
   // Chat state
   const [messages, setMessages] = React.useState<Message[]>([]);
   // ...existing code...
@@ -54,9 +56,9 @@ export default function ChatbotPage() {
   return (
     <div className="min-h-screen w-full bg-black text-white flex font-sans flex-col">
       <section className="relative w-full min-h-[28rem] flex items-center justify-center overflow-hidden">
-        <img src="/heroes/chatbot-intelligent.png" alt="" className="absolute inset-0 w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-[#050c24]/40" />
-        <h1 className="relative z-10 text-4xl md:text-5xl font-extrabold text-[#e6b85c] drop-shadow-lg text-center px-4">Chatbot inteligente</h1>
+        <img src={image("page.chatbot.hero") || "/heroes/chatbot-intelligent.png"} alt="" className="absolute inset-0 w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-[#050810]/40" />
+        <h1 className="relative z-10 text-4xl md:text-5xl font-extrabold text-[#C9A96E] drop-shadow-lg text-center px-4">{t("page.chatbot.hero.title")}</h1>
       </section>
       <div className="flex flex-1 w-full">
       {/* Barra lateral de iconos */}
@@ -134,7 +136,7 @@ export default function ChatbotPage() {
               {inputValue.trim() ? (
                 <button
                   type="button"
-                  className="ml-2 text-[#ececf1] hover:text-[#e6b85c] text-xl"
+                  className="ml-2 text-[#ececf1] hover:text-[#C9A96E] text-xl"
                   onClick={async () => {
                     setMessages(msgs => [...msgs, {role: 'user', text: inputValue}]);
                     const userMsg = inputValue;
@@ -198,7 +200,7 @@ export default function ChatbotPage() {
               ) : (
                 <button
                   type="button"
-                  className={`ml-2 text-[#ececf1] hover:text-[#e6b85c] text-xl ${isListening ? 'animate-pulse' : ''}`}
+                  className={`ml-2 text-[#ececf1] hover:text-[#C9A96E] text-xl ${isListening ? 'animate-pulse' : ''}`}
                   onClick={() => {
                     const SpeechRecognitionConstructor = ((window as unknown) as {
                       SpeechRecognition?: SpeechRecognitionConstructorType;
@@ -338,7 +340,7 @@ export default function ChatbotPage() {
           />
           <div className="flex gap-2 w-full justify-end">
             <button
-              className="px-4 py-2 rounded bg-[#343541] text-[#ececf1] hover:bg-[#e6b85c]"
+              className="px-4 py-2 rounded bg-[#343541] text-[#ececf1] hover:bg-[#C9A96E]"
               onClick={() => {
                 alert(`Entrée : ${promptValue}`);
                 setPrompt(null);

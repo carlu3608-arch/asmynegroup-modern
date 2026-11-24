@@ -115,20 +115,20 @@ function PaymentForm({ items, total, onSuccess, setError }: StripeCheckoutProps)
   return (
     <form onSubmit={handleSubmit} className="w-full flex flex-col gap-4">
       <div>
-        <label className="block text-yellow-900 font-semibold mb-2">Correo electrónico</label>
+        <label className="block text-[#8C6B3E] font-semibold mb-2">Correo electrónico</label>
         <input
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="tu@correo.com"
           required
-          className="w-full px-4 py-2 border border-yellow-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-600"
+          className="w-full px-4 py-2 border border-[#E6D2A8] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#C9A96E]"
         />
       </div>
 
       <div>
-        <label className="block text-yellow-900 font-semibold mb-2">Tarjeta de crédito</label>
-        <div className="p-4 border border-yellow-300 rounded-lg bg-white">
+        <label className="block text-[#8C6B3E] font-semibold mb-2">Tarjeta de crédito</label>
+        <div className="p-4 border border-[#E6D2A8] rounded-lg bg-white">
           <CardElement
             options={{
               style: {
@@ -148,7 +148,7 @@ function PaymentForm({ items, total, onSuccess, setError }: StripeCheckoutProps)
       <button
         type="submit"
         disabled={loading || !stripe}
-        className="bg-pink-600 hover:bg-pink-700 disabled:bg-gray-400 text-white font-bold py-3 px-8 rounded-lg w-full"
+        className="bg-[#8C6B3E] hover:bg-[#C9A96E] disabled:bg-gray-400 text-white font-bold py-3 px-8 rounded-lg w-full"
       >
         {loading ? 'Procesando...' : `Pagar ${total.toFixed(2)} $`}
       </button>

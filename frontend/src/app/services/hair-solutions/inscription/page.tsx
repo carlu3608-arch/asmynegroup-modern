@@ -44,9 +44,9 @@ export default function HairSolutionsInscription() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-yellow-50" style={{background: 'linear-gradient(120deg, #f7e1b5 0%, #fffbe6 100%)'}}>
+    <div className="min-h-screen flex items-center justify-center bg-[#F5F0E6]" style={{background: 'linear-gradient(120deg, #E6D2A8 0%, #fffbe6 100%)'}}>
       <form onSubmit={handleSubmit} className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
-        <h2 className="text-2xl font-bold mb-6 text-yellow-800">Crear cuenta</h2>
+        <h2 className="text-2xl font-bold mb-6 text-[#8C6B3E]">Crear cuenta</h2>
         {error && <div className="mb-4 text-red-600">{error}</div>}
         <input
           type="email"
@@ -69,9 +69,9 @@ export default function HairSolutionsInscription() {
           onChange={e => setConfirm(e.target.value)}
           className="w-full mb-6 px-4 py-2 border rounded"
         />
-        <button type="submit" className="w-full bg-yellow-600 text-white py-2 rounded hover:bg-yellow-700">Registrarse</button>
+        <button type="submit" className="w-full bg-[#8C6B3E] text-white py-2 rounded hover:bg-[#C9A96E]">Registrarse</button>
         <div className="mt-4 text-center">
-          <a href="/services/hair-solutions/connexion" className="text-yellow-700 hover:underline">¿Ya tienes cuenta? Inicia sesión</a>
+          <a href="/services/hair-solutions/connexion" className="text-[#8C6B3E] hover:underline">¿Ya tienes cuenta? Inicia sesión</a>
         </div>
       </form>
     </div>

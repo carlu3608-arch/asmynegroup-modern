@@ -59,7 +59,7 @@ export default function LoginPage() {
         </form>
         <div className="mt-4 text-center">
           <span className="text-gray-600 dark:text-gray-300">¿No tienes cuenta? </span>
-          <Link href="/services/marketplace-global/register" className="text-blue-600 hover:underline">Crear una cuenta</Link>
+          <Link href="/services/marketplace-global/register" className="text-[#8C6B3E] hover:underline">Crear una cuenta</Link>
         </div>
       </div>
     </div>

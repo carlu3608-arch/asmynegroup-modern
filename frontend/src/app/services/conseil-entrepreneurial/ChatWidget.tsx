@@ -150,18 +150,18 @@ export default function ChatWidget({ onClose }: ChatWidgetProps) {
   // Header, suggestions, chat, input stylés
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end">
-      <div className="w-72 max-w-full flex flex-col h-[370px] bg-black rounded-xl shadow-2xl border-2 border-yellow-500">
+      <div className="w-72 max-w-full flex flex-col h-[370px] bg-black rounded-xl shadow-2xl border-2 border-[#C9A96E]">
         {/* Header */}
-        <div className="flex items-center justify-between px-3 py-2 bg-black border-b-2 border-yellow-500 rounded-t-xl">
-          <span className="font-bold text-yellow-400 text-sm">Asesoría Empresarial</span>
+        <div className="flex items-center justify-between px-3 py-2 bg-black border-b-2 border-[#C9A96E] rounded-t-xl">
+          <span className="font-bold text-[#C9A96E] text-sm">Asesoría Empresarial</span>
           <div className="flex gap-1 items-center">
-            <button onClick={() => setLang('fr')} className={`px-2 py-1 rounded text-xs font-bold ${lang==='fr' ? 'bg-yellow-400 text-black' : 'bg-black text-yellow-400 border border-yellow-500'}`}>FR</button>
-            <button onClick={() => setLang('es')} className={`px-2 py-1 rounded text-xs font-bold ${lang==='es' ? 'bg-yellow-400 text-black' : 'bg-black text-yellow-400 border border-yellow-500'}`}>ES</button>
-            <button onClick={() => setLang('en')} className={`px-2 py-1 rounded text-xs font-bold ${lang==='en' ? 'bg-yellow-400 text-black' : 'bg-black text-yellow-400 border border-yellow-500'}`}>EN</button>
+            <button onClick={() => setLang('fr')} className={`px-2 py-1 rounded text-xs font-bold ${lang==='fr' ? 'bg-[#C9A96E] text-black' : 'bg-black text-[#C9A96E] border border-[#C9A96E]'}`}>FR</button>
+            <button onClick={() => setLang('es')} className={`px-2 py-1 rounded text-xs font-bold ${lang==='es' ? 'bg-[#C9A96E] text-black' : 'bg-black text-[#C9A96E] border border-[#C9A96E]'}`}>ES</button>
+            <button onClick={() => setLang('en')} className={`px-2 py-1 rounded text-xs font-bold ${lang==='en' ? 'bg-[#C9A96E] text-black' : 'bg-black text-[#C9A96E] border border-[#C9A96E]'}`}>EN</button>
             {onClose && (
               <button
                 onClick={onClose}
-                className="ml-2 text-yellow-400 bg-black rounded-full w-7 h-7 flex items-center justify-center hover:bg-yellow-500 hover:text-black border border-yellow-500 transition"
+                className="ml-2 text-[#C9A96E] bg-black rounded-full w-7 h-7 flex items-center justify-center hover:bg-[#C9A96E] hover:text-black border border-[#C9A96E] transition"
                 title="Cerrar"
                 aria-label="Cerrar"
               >✕</button>
@@ -171,16 +171,16 @@ export default function ChatWidget({ onClose }: ChatWidgetProps) {
         {/* Chat area */}
         <div className="flex-1 overflow-y-auto px-3 py-2 space-y-2 bg-black">
           {messages.length === 0 && (
-            <div className="bg-black text-yellow-400 text-xs mb-2 rounded-xl p-2 shadow">Hola, soy tu asistente empresarial. ¿En qué puedo ayudarte?</div>
+            <div className="bg-black text-[#C9A96E] text-xs mb-2 rounded-xl p-2 shadow">Hola, soy tu asistente empresarial. ¿En qué puedo ayudarte?</div>
           )}
           {messages.map((msg, idx) =>
             msg.role === "user" ? (
               <div key={idx} className="flex justify-end">
-                <div className="px-2 py-1 rounded-2xl max-w-[80%] text-xs bg-yellow-400 text-black">{msg.text}</div>
+                <div className="px-2 py-1 rounded-2xl max-w-[80%] text-xs bg-[#C9A96E] text-black">{msg.text}</div>
               </div>
             ) : (
               <div key={idx} className="flex flex-col items-start">
-                <span className="text-xs bg-yellow-900 text-yellow-200 mb-1 rounded-xl px-2 py-1 shadow">{msg.text}</span>
+                <span className="text-xs bg-[#050810] text-[#E6D2A8] mb-1 rounded-xl px-2 py-1 shadow">{msg.text}</span>
               </div>
             )
           )}
@@ -190,7 +190,7 @@ export default function ChatWidget({ onClose }: ChatWidgetProps) {
               {SUGGESTIONS.map((s, i) => (
                 <button
                   key={i}
-                  className="w-full text-left px-2 py-1 rounded bg-yellow-900 text-yellow-300 hover:bg-yellow-400 hover:text-black border border-yellow-500 transition font-semibold text-xs"
+                  className="w-full text-left px-2 py-1 rounded bg-[#050810] text-[#E6D2A8] hover:bg-[#C9A96E] hover:text-black border border-[#C9A96E] transition font-semibold text-xs"
                   onClick={() => sendMessage(s)}
                 >{s}</button>
               ))}
@@ -199,7 +199,7 @@ export default function ChatWidget({ onClose }: ChatWidgetProps) {
         </div>
         {/* Input */}
         <form
-          className="w-full flex items-center bg-black px-2 py-2 border-t-2 border-yellow-500 rounded-b-xl"
+          className="w-full flex items-center bg-black px-2 py-2 border-t-2 border-[#C9A96E] rounded-b-xl"
           onSubmit={e => {
             e.preventDefault();
             if (inputValue.trim() && !loading) sendMessage(inputValue.trim());
@@ -207,7 +207,7 @@ export default function ChatWidget({ onClose }: ChatWidgetProps) {
         >
           <input
             type="text"
-            className="flex-1 bg-black text-yellow-400 border border-yellow-500 py-1 px-2 rounded-l focus:outline-none focus:ring-2 focus:ring-yellow-400 placeholder-yellow-600 text-xs"
+            className="flex-1 bg-black text-[#C9A96E] border border-[#C9A96E] py-1 px-2 rounded-l focus:outline-none focus:ring-2 focus:ring-[#C9A96E] placeholder-[#8C6B3E] text-xs"
             placeholder={lang === 'es' ? "Escriba una pregunta empresarial" : lang === 'fr' ? "Écrivez une question d'entreprise" : "Type a business question"}
             value={inputValue}
             onChange={e => setInputValue(e.target.value)}
@@ -215,7 +215,7 @@ export default function ChatWidget({ onClose }: ChatWidgetProps) {
           />
           <button
             type="submit"
-            className="ml-1 px-3 py-1 rounded-r bg-yellow-400 text-black font-bold text-xs border border-yellow-500 hover:bg-yellow-500 transition disabled:opacity-60"
+            className="ml-1 px-3 py-1 rounded-r bg-[#C9A96E] text-black font-bold text-xs border border-[#C9A96E] hover:bg-[#C9A96E] transition disabled:opacity-60"
             title={lang === 'es' ? "Enviar" : lang === 'fr' ? "Envoyer" : "Send"}
             disabled={loading}
           >

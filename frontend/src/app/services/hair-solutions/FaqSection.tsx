@@ -27,20 +27,20 @@ const faqs = [
 export default function FaqSection() {
   const [open, setOpen] = React.useState<number | null>(null);
   return (
-    <section className="w-full py-16 flex flex-col items-center" style={{background: "linear-gradient(120deg, #2d2a1f 0%, #f7e1b5 100%)"}}>
-      <h2 className="text-4xl font-extrabold text-yellow-400 mb-2 text-center">PREGUNTAS FRECUENTES</h2>
-      <p className="text-lg text-yellow-100 mb-8 text-center">Todo lo que necesitas saber sobre nuestros productos</p>
+    <section className="w-full py-16 flex flex-col items-center" style={{background: "linear-gradient(120deg, #0C1220 0%, #E6D2A8 100%)"}}>
+      <h2 className="text-4xl font-extrabold text-[#C9A96E] mb-2 text-center">PREGUNTAS FRECUENTES</h2>
+      <p className="text-lg text-[#E6D2A8] mb-8 text-center">Todo lo que necesitas saber sobre nuestros productos</p>
       <div className="w-full max-w-3xl">
         {faqs.map((faq, idx) => (
-          <div key={idx} className="mb-4 border-b border-yellow-200">
+          <div key={idx} className="mb-4 border-b border-[#E6D2A8]">
             <button
-              className="w-full flex justify-between items-center py-4 text-left font-semibold text-yellow-400 focus:outline-none"
+              className="w-full flex justify-between items-center py-4 text-left font-semibold text-[#C9A96E] focus:outline-none"
               onClick={() => setOpen(open === idx ? null : idx)}
               aria-expanded={open === idx}
               aria-controls={`faq-panel-${idx}`}
             >
-              <span className="text-yellow-400">{faq.question}</span>
-              <span className="ml-2 text-2xl text-yellow-400">{open === idx ? "▲" : "▼"}</span>
+              <span className="text-[#C9A96E]">{faq.question}</span>
+              <span className="ml-2 text-2xl text-[#C9A96E]">{open === idx ? "▲" : "▼"}</span>
             </button>
             <div
               id={`faq-panel-${idx}`}

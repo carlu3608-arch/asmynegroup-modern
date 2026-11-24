@@ -11,15 +11,15 @@ export default function AgenceVoyageFooter() {
         </div>
         <div className="flex-1 flex flex-col items-end">
           <div className="flex gap-4 mb-2">
-            <a href="https://www.instagram.com/asmynegroup?igsh=M3FpNzA2dTZzdXl4" className="text-blue-600 hover:text-blue-800" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram text-2xl"></i></a>
-            <a href="https://www.facebook.com/share/1KGpFstMcy/" className="text-blue-600 hover:text-blue-800" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook text-2xl"></i></a>
-            <a href="https://www.youtube.com/@asmynegroup" className="text-blue-600 hover:text-blue-800" aria-label="YouTube" target="_blank" rel="noopener noreferrer"><i className="fab fa-youtube text-2xl"></i></a>
-            <a href="https://www.tiktok.com/@asmynegroup?_r=1&_t=ZS-98GMg7lSOjB" className="text-blue-600 hover:text-blue-800" aria-label="TikTok" target="_blank" rel="noopener noreferrer"><i className="fab fa-tiktok text-2xl"></i></a>
+            <a href="https://www.instagram.com/asmynegroup?igsh=M3FpNzA2dTZzdXl4" className="text-[#8C6B3E] hover:text-[#8C6B3E]" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram text-2xl"></i></a>
+            <a href="https://www.facebook.com/share/1KGpFstMcy/" className="text-[#8C6B3E] hover:text-[#8C6B3E]" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook text-2xl"></i></a>
+            <a href="https://www.youtube.com/@asmynegroup" className="text-[#8C6B3E] hover:text-[#8C6B3E]" aria-label="YouTube" target="_blank" rel="noopener noreferrer"><i className="fab fa-youtube text-2xl"></i></a>
+            <a href="https://www.tiktok.com/@asmynegroup?_r=1&_t=ZS-98GMg7lSOjB" className="text-[#8C6B3E] hover:text-[#8C6B3E]" aria-label="TikTok" target="_blank" rel="noopener noreferrer"><i className="fab fa-tiktok text-2xl"></i></a>
           </div>
-          <div className="flex gap-6 text-blue-600 text-sm">
-            <a href="#" className="hover:text-blue-800 underline">Privacy Policy</a>
-            <a href="#" className="hover:text-blue-800 underline">Terms of Service</a>
-            <a href="#" className="hover:text-blue-800 underline">Contact</a>
+          <div className="flex gap-6 text-[#8C6B3E] text-sm">
+            <a href="#" className="hover:text-[#8C6B3E] underline">Privacy Policy</a>
+            <a href="#" className="hover:text-[#8C6B3E] underline">Terms of Service</a>
+            <a href="#" className="hover:text-[#8C6B3E] underline">Contact</a>
           </div>
         </div>
       </div>

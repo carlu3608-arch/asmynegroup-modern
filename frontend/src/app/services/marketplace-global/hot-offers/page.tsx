@@ -20,7 +20,7 @@ export default function HotOffersPage() {
     <div className="min-h-screen w-full bg-gray-50 font-sans flex flex-col">
       <Navbar />
       <main className="flex-1 flex flex-col items-center w-full px-2 md:px-0">
-        <h1 className="text-2xl font-bold mt-8 mb-4 text-pink-600">Ofertas destacadas</h1>
+        <h1 className="text-2xl font-bold mt-8 mb-4 text-[#8C6B3E]">Ofertas destacadas</h1>
         {loading ? (
           <div className="mt-12">Cargando...</div>
         ) : products.length === 0 ? (

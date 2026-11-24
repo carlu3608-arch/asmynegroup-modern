@@ -17,7 +17,7 @@ const product = {
         <li>✔️ Nutre profundamente desde la raíz</li>
         <li>✔️ Protege y da brillo natural</li>
       </ul>
-      <div className="italic text-yellow-900 font-semibold text-center mt-2">“Shebas Hair Solutions — Crecimiento, fuerza y belleza natural.”</div>
+      <div className="italic text-[#8C6B3E] font-semibold text-center mt-2">“Shebas Hair Solutions — Crecimiento, fuerza y belleza natural.”</div>
     </>
   ),
 };
@@ -39,7 +39,7 @@ export default function ShebasPomadaPage() {
   }
 
   return (
-    <div className="min-h-screen w-full flex flex-col bg-yellow-50 font-sans">
+    <div className="min-h-screen w-full flex flex-col bg-[#F5F0E6] font-sans">
       <HairSolutionsNavbar />
       <main className="flex-1 flex flex-col items-center w-full px-2 md:px-0 py-12">
         <div className="bg-white rounded-2xl shadow-2xl p-0 max-w-4xl w-full flex flex-col md:flex-row items-stretch">
@@ -50,24 +50,24 @@ export default function ShebasPomadaPage() {
           {/* Infos à droite */}
           <div className="flex-1 flex flex-col p-8 gap-2">
             <div className="flex items-center gap-2 mb-2">
-              <span className="text-2xl font-bold text-yellow-800">{product.name}</span>
+              <span className="text-2xl font-bold text-[#8C6B3E]">{product.name}</span>
               <span className="bg-green-100 text-green-700 text-xs font-bold px-2 py-1 rounded">En stock</span>
             </div>
-            <div className="mb-2 text-yellow-900/80">{product.description}</div>
-            <div className="text-3xl font-extrabold text-yellow-700 mb-4">{product.price}</div>
+            <div className="mb-2 text-[#8C6B3E]/80">{product.description}</div>
+            <div className="text-3xl font-extrabold text-[#8C6B3E] mb-4">{product.price}</div>
             <div className="flex items-center gap-2 mb-4">
-              <span className="text-yellow-700 font-semibold">Cantidad:</span>
-              <input ref={qtyRef} type="number" min={1} defaultValue={1} className="w-16 border border-yellow-300 rounded px-2 py-1 text-yellow-900 placeholder-yellow-300 font-bold bg-white" />
+              <span className="text-[#8C6B3E] font-semibold">Cantidad:</span>
+              <input ref={qtyRef} type="number" min={1} defaultValue={1} className="w-16 border border-[#E6D2A8] rounded px-2 py-1 text-[#8C6B3E] placeholder-[#E6D2A8] font-bold bg-white" />
             </div>
-            <textarea className="w-full border border-yellow-300 rounded-lg p-2 mb-4 text-yellow-900 placeholder-yellow-300 font-semibold bg-white" placeholder="Tu comentario..." rows={2} />
+            <textarea className="w-full border border-[#E6D2A8] rounded-lg p-2 mb-4 text-[#8C6B3E] placeholder-[#E6D2A8] font-semibold bg-white" placeholder="Tu comentario..." rows={2} />
             <div className="flex gap-4 mb-4">
               <button
-                className="flex-1 bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 rounded-lg"
+                className="flex-1 bg-[#8C6B3E] hover:bg-[#C9A96E] text-white font-bold py-3 rounded-lg"
                 onClick={e => { e.preventDefault(); handleAddToCart(); }}
               >
                 Añadir al carrito
               </button>
-              <button className="flex-1 bg-pink-600 hover:bg-pink-700 text-white font-bold py-3 rounded-lg" onClick={() => router.push("/services/hair-solutions/panier")}>Pagar</button>
+              <button className="flex-1 bg-[#8C6B3E] hover:bg-[#C9A96E] text-white font-bold py-3 rounded-lg" onClick={() => router.push("/services/hair-solutions/panier")}>Pagar</button>
             </div>
             {/* Erreur supprimée, la gestion réseau est côté contexte panier */}
             <ul className="text-sm text-gray-500 space-y-1 mt-2">

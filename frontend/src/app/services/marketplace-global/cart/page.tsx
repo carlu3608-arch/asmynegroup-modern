@@ -161,7 +161,7 @@ function MarketplacePaymentForm({ items, total, buyerEmail, onSuccess, setError 
           <button
             type="submit"
             disabled={loading}
-            className="w-full rounded-full bg-pink-600 px-4 py-3 text-sm font-semibold text-white hover:bg-pink-700 disabled:cursor-not-allowed disabled:opacity-60"
+            className="w-full rounded-full bg-[#8C6B3E] px-4 py-3 text-sm font-semibold text-white hover:bg-[#C9A96E] disabled:cursor-not-allowed disabled:opacity-60"
           >
             {loading ? "Procesando pago…" : `Pagar ${total.toFixed(2)} $`}
           </button>
@@ -289,10 +289,10 @@ export default function MarketplaceCartPage() {
               <div className="rounded-3xl bg-white border border-gray-200 p-8 shadow-sm">
                 <div className="flex items-start justify-between gap-4 mb-6">
                   <div>
-                    <span className="text-sm font-semibold uppercase tracking-[0.3em] text-pink-700">Paso 1</span>
+                    <span className="text-sm font-semibold uppercase tracking-[0.3em] text-[#8C6B3E]">Paso 1</span>
                     <h2 className="mt-2 text-2xl font-bold text-gray-900">Dirección de envío</h2>
                   </div>
-                  <span className="rounded-full bg-pink-50 px-4 py-2 text-sm font-semibold text-pink-700">{marketplaceCart.length} artículo{marketplaceCart.length > 1 ? "s" : ""}</span>
+                  <span className="rounded-full bg-[#F5F0E6] px-4 py-2 text-sm font-semibold text-[#8C6B3E]">{marketplaceCart.length} artículo{marketplaceCart.length > 1 ? "s" : ""}</span>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -303,7 +303,7 @@ export default function MarketplaceCartPage() {
                       value={firstName}
                       onChange={(event) => setFirstName(event.target.value)}
                       placeholder="Juan"
-                      className="w-full rounded-3xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-pink-500 focus:ring-2 focus:ring-pink-100"
+                      className="w-full rounded-3xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-[#C9A96E] focus:ring-2 focus:ring-[#E6D2A8]"
                     />
                   </div>
                   <div>
@@ -313,7 +313,7 @@ export default function MarketplaceCartPage() {
                       value={lastName}
                       onChange={(event) => setLastName(event.target.value)}
                       placeholder="Pérez"
-                      className="w-full rounded-3xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-pink-500 focus:ring-2 focus:ring-pink-100"
+                      className="w-full rounded-3xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-[#C9A96E] focus:ring-2 focus:ring-[#E6D2A8]"
                     />
                   </div>
                 </div>
@@ -326,7 +326,7 @@ export default function MarketplaceCartPage() {
                       value={buyerEmail}
                       onChange={(event) => setBuyerEmail(event.target.value)}
                       placeholder="email@ejemplo.com"
-                      className="w-full rounded-3xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-pink-500 focus:ring-2 focus:ring-pink-100"
+                      className="w-full rounded-3xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-[#C9A96E] focus:ring-2 focus:ring-[#E6D2A8]"
                     />
                   </div>
                   <div>
@@ -336,7 +336,7 @@ export default function MarketplaceCartPage() {
                       value={phone}
                       onChange={(event) => setPhone(event.target.value)}
                       placeholder="+1 809 123 4567"
-                      className="w-full rounded-3xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-pink-500 focus:ring-2 focus:ring-pink-100"
+                      className="w-full rounded-3xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-[#C9A96E] focus:ring-2 focus:ring-[#E6D2A8]"
                     />
                   </div>
                 </div>
@@ -349,7 +349,7 @@ export default function MarketplaceCartPage() {
                       value={address}
                       onChange={(event) => setAddress(event.target.value)}
                       placeholder="123 Calle Ejemplo"
-                      className="w-full rounded-3xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-pink-500 focus:ring-2 focus:ring-pink-100"
+                      className="w-full rounded-3xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-[#C9A96E] focus:ring-2 focus:ring-[#E6D2A8]"
                     />
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -360,7 +360,7 @@ export default function MarketplaceCartPage() {
                         value={city}
                         onChange={(event) => setCity(event.target.value)}
                         placeholder="Santo Domingo"
-                        className="w-full rounded-3xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-pink-500 focus:ring-2 focus:ring-pink-100"
+                        className="w-full rounded-3xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-[#C9A96E] focus:ring-2 focus:ring-[#E6D2A8]"
                       />
                     </div>
                     <div>
@@ -370,7 +370,7 @@ export default function MarketplaceCartPage() {
                         value={postalCode}
                         onChange={(event) => setPostalCode(event.target.value)}
                         placeholder="01000"
-                        className="w-full rounded-3xl border border-gray-200 bg-gray-50 px-4 py-3 texto-sm text-gray-900 outline-none transition focus:border-pink-500 focus:ring-2 focus:ring-pink-100"
+                        className="w-full rounded-3xl border border-gray-200 bg-gray-50 px-4 py-3 texto-sm text-gray-900 outline-none transition focus:border-[#C9A96E] focus:ring-2 focus:ring-[#E6D2A8]"
                       />
                     </div>
                   </div>
@@ -381,7 +381,7 @@ export default function MarketplaceCartPage() {
                   <select
                     value={country}
                     onChange={(event) => setCountry(event.target.value)}
-                    className="w-full rounded-3xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-pink-500 focus:ring-2 focus:ring-pink-100"
+                    className="w-full rounded-3xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-[#C9A96E] focus:ring-2 focus:ring-[#E6D2A8]"
                   >
                     <option value="FR">Francia</option>
                     <option value="CA">Canadá</option>
@@ -394,7 +394,7 @@ export default function MarketplaceCartPage() {
                 <button
                   type="button"
                   onClick={handleContinueToPayment}
-                  className="mt-8 w-full rounded-3xl bg-pink-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-pink-700"
+                  className="mt-8 w-full rounded-3xl bg-[#8C6B3E] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#C9A96E]"
                 >
                   Continuar al pago
                 </button>
@@ -403,31 +403,31 @@ export default function MarketplaceCartPage() {
               <div className="rounded-3xl bg-white border border-gray-200 p-8 shadow-sm">
                 <div className="flex items-center justify-between mb-6">
                   <div>
-                    <span className="text-sm font-semibold uppercase tracking-[0.3em] text-pink-700">Paso 2</span>
+                    <span className="text-sm font-semibold uppercase tracking-[0.3em] text-[#8C6B3E]">Paso 2</span>
                     <h2 className="mt-2 text-2xl font-bold text-gray-900">Método de pago</h2>
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 gap-3">
-                  <label className={`cursor-pointer rounded-3xl border p-4 transition ${paymentMethod === "card" ? "border-pink-500 bg-pink-50 text-gray-900" : "border-gray-200 bg-white text-gray-900"}`}>
+                  <label className={`cursor-pointer rounded-3xl border p-4 transition ${paymentMethod === "card" ? "border-[#C9A96E] bg-[#F5F0E6] text-gray-900" : "border-gray-200 bg-white text-gray-900"}`}>
                     <input
                       type="radio"
                       name="paymentMethod"
                       value="card"
                       checked={paymentMethod === "card"}
                       onChange={() => setPaymentMethod("card")}
-                      className="mr-3 accent-pink-600"
+                      className="mr-3 accent-[#C9A96E]"
                     />
                     <span className="font-semibold">Tarjeta de crédito</span>
                   </label>
-                  <label className={`cursor-pointer rounded-3xl border p-4 transition ${paymentMethod === "paypal" ? "border-pink-500 bg-pink-50 text-gray-900" : "border-gray-200 bg-white text-gray-900"}`}>
+                  <label className={`cursor-pointer rounded-3xl border p-4 transition ${paymentMethod === "paypal" ? "border-[#C9A96E] bg-[#F5F0E6] text-gray-900" : "border-gray-200 bg-white text-gray-900"}`}>
                     <input
                       type="radio"
                       name="paymentMethod"
                       value="paypal"
                       checked={paymentMethod === "paypal"}
                       onChange={() => setPaymentMethod("paypal")}
-                      className="mr-3 accent-pink-600"
+                      className="mr-3 accent-[#C9A96E]"
                     />
                     <span className="font-semibold">PayPal (próximamente disponible)</span>
                   </label>
@@ -444,7 +444,7 @@ export default function MarketplaceCartPage() {
                         setError={setCheckoutError}
                       />
                     ) : (
-                      <div className="rounded-3xl border border-yellow-200 bg-yellow-50 p-6 text-sm text-yellow-900">
+                      <div className="rounded-3xl border border-[#E6D2A8] bg-[#F5F0E6] p-6 text-sm text-[#8C6B3E]">
                         PayPal estará disponible próximamente. Selecciona tarjeta bancaria para finalizar tu pago ahora.
                       </div>
                     )
@@ -533,13 +533,13 @@ export default function MarketplaceCartPage() {
                 <h3 className="text-base font-semibold text-gray-900 mb-3">Envío y soporte</h3>
                 <ul className="space-y-3 text-sm text-gray-600">
                   <li className="flex items-start gap-3">
-                    <span className="mt-1 h-2.5 w-2.5 rounded-full bg-pink-600" /> Envío estándar 5-10 días hábiles.
+                    <span className="mt-1 h-2.5 w-2.5 rounded-full bg-[#8C6B3E]" /> Envío estándar 5-10 días hábiles.
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="mt-1 h-2.5 w-2.5 rounded-full bg-pink-600" /> Pago seguro con Stripe.
+                    <span className="mt-1 h-2.5 w-2.5 rounded-full bg-[#8C6B3E]" /> Pago seguro con Stripe.
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="mt-1 h-2.5 w-2.5 rounded-full bg-pink-600" /> Atención al cliente disponible 7/7.
+                    <span className="mt-1 h-2.5 w-2.5 rounded-full bg-[#8C6B3E]" /> Atención al cliente disponible 7/7.
                   </li>
                 </ul>
               </div>

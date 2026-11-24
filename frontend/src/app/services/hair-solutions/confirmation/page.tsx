@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function ConfirmationPage() {
   return (
-    <div className="min-h-screen w-full flex flex-col bg-yellow-50 font-sans">
+    <div className="min-h-screen w-full flex flex-col bg-[#F5F0E6] font-sans">
       <HairSolutionsNavbar />
       <main className="flex-1 flex items-center justify-center w-full px-4 py-12">
         <div className="bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full text-center">
@@ -21,14 +21,14 @@ export default function ConfirmationPage() {
             </svg>
           </div>
 
-          <h1 className="text-3xl font-bold text-yellow-900 mb-2">¡Pedido confirmado!</h1>
+          <h1 className="text-3xl font-bold text-[#8C6B3E] mb-2">¡Pedido confirmado!</h1>
           <p className="text-gray-600 mb-6">
             Gracias por tu compra. Tu pedido se ha procesado correctamente.
           </p>
 
-          <div className="bg-yellow-50 rounded-lg p-4 mb-6 border border-yellow-200">
+          <div className="bg-[#F5F0E6] rounded-lg p-4 mb-6 border border-[#E6D2A8]">
             <p className="text-sm text-gray-600 mb-2">Número de pedido</p>
-            <p className="text-xl font-bold text-yellow-900">#SHEBAS-{Math.random().toString(36).substr(2, 9).toUpperCase()}</p>
+            <p className="text-xl font-bold text-[#8C6B3E]">#SHEBAS-{Math.random().toString(36).substr(2, 9).toUpperCase()}</p>
           </div>
 
           <div className="space-y-2 mb-8 text-left text-sm text-gray-600">
@@ -46,7 +46,7 @@ export default function ConfirmationPage() {
           <div className="space-y-3">
             <Link
               href="/services/hair-solutions"
-              className="block w-full bg-pink-600 hover:bg-pink-700 text-white font-bold py-3 px-6 rounded-lg text-center"
+              className="block w-full bg-[#8C6B3E] hover:bg-[#C9A96E] text-white font-bold py-3 px-6 rounded-lg text-center"
             >
               Continuer vos achats
             </Link>
