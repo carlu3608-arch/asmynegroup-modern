@@ -23,7 +23,7 @@ export default function ProfileSidebar({ userInitials }: ProfileSidebarProps) {
     <aside className="fixed left-0 top-0 z-40 flex h-screen w-16 flex-col border-r border-[#4e2b62]/50 bg-[#16081f]/90 px-1.5 pb-4 pt-7 backdrop-blur md:w-20 md:px-2 md:pt-9">
       <Link
         href="/espace-client"
-        className="mx-auto mb-5 flex h-9 w-9 items-center justify-center rounded-xl bg-[#6f3f88] text-white md:h-10 md:w-10"
+        className="mx-auto mb-5 flex h-9 w-9 items-center justify-center rounded-xl bg-[#8C6B3E] text-white md:h-10 md:w-10"
         title="Home"
       >
         <FiHome size={18} />
@@ -39,7 +39,7 @@ export default function ProfileSidebar({ userInitials }: ProfileSidebarProps) {
               key={item.label}
               href={item.href}
               className={`group mx-auto flex w-full items-center justify-center rounded-xl px-2 py-2.5 text-[#e6c8f5] transition hover:bg-[#5e3475] hover:text-white md:rounded-2xl md:py-3 ${
-                active ? "bg-[#6f3f88] text-white" : ""
+                active ? "bg-[#8C6B3E] text-white" : ""
               }`}
               title={item.label}
             >

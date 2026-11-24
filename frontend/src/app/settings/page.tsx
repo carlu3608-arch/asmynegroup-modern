@@ -177,8 +177,8 @@ function Toggle({ checked, onChange }: { checked: boolean; onChange: (v: boolean
       role="switch"
       aria-checked={checked}
       onClick={() => onChange(!checked)}
-      className={`relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#6f3f88] focus:ring-offset-2 focus:ring-offset-black ${
-        checked ? "bg-[#6f3f88]" : "bg-neutral-700"
+      className={`relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#8C6B3E] focus:ring-offset-2 focus:ring-offset-black ${
+        checked ? "bg-[#8C6B3E]" : "bg-neutral-700"
       }`}
     >
       <span
@@ -244,7 +244,7 @@ function SelectRow({
       <select
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="shrink-0 rounded-xl bg-neutral-800 px-3 py-1.5 text-xs text-white outline-none focus:ring-2 focus:ring-[#6f3f88] cursor-pointer"
+        className="shrink-0 rounded-xl bg-neutral-800 px-3 py-1.5 text-xs text-white outline-none focus:ring-2 focus:ring-[#8C6B3E] cursor-pointer"
       >
         {options.map((o) => (
           <option key={o.value} value={o.value}>{o.label}</option>
@@ -710,7 +710,7 @@ export default function SettingsPage() {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Search Settings"
-              className="w-full rounded-full bg-neutral-900 py-2 pl-9 pr-4 text-sm text-white placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-[#6f3f88]"
+              className="w-full rounded-full bg-neutral-900 py-2 pl-9 pr-4 text-sm text-white placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-[#8C6B3E]"
             />
           </div>
         </div>
@@ -1042,7 +1042,7 @@ export default function SettingsPage() {
                           ua.includes("curl") ? "curl" : "Unknown browser";
                         const device = ua.includes("Mobile") ? "Mobile" : "Desktop";
                         return (
-                          <div key={i} className={`flex items-center justify-between rounded-xl px-4 py-3 ${i === 0 ? "border border-[#6f3f88]/50 bg-[#6f3f88]/10" : "bg-neutral-900"}`}>
+                          <div key={i} className={`flex items-center justify-between rounded-xl px-4 py-3 ${i === 0 ? "border border-[#8C6B3E]/50 bg-[#8C6B3E]/10" : "bg-neutral-900"}`}>
                             <div className="flex items-center gap-3">
                               <FiShield className={`shrink-0 ${i === 0 ? "text-[#a06ac4]" : "text-neutral-600"}`} />
                               <div>
@@ -1204,7 +1204,7 @@ export default function SettingsPage() {
                           type="button"
                           onClick={() => void createStripeAccount()}
                           disabled={stripeSaving}
-                          className="self-start rounded-xl bg-[#6f3f88] px-4 py-2 text-xs font-semibold text-white hover:bg-[#8b5fb3] disabled:opacity-60"
+                          className="self-start rounded-xl bg-[#8C6B3E] px-4 py-2 text-xs font-semibold text-white hover:bg-[#8b5fb3] disabled:opacity-60"
                         >
                           {stripeSaving ? "Connecting…" : "Connect Stripe"}
                         </button>
@@ -1361,10 +1361,10 @@ export default function SettingsPage() {
                 href="https://docs.asmyne.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-2xl border border-neutral-800 bg-neutral-950/60 p-5 transition-all hover:border-[#6f3f88]/50 hover:bg-neutral-900/80"
+                className="rounded-2xl border border-neutral-800 bg-neutral-950/60 p-5 transition-all hover:border-[#8C6B3E]/50 hover:bg-neutral-900/80"
               >
                 <div className="mb-3 flex items-center gap-2">
-                  <FiGlobe className="text-[#6f3f88]" size={20} />
+                  <FiGlobe className="text-[#8C6B3E]" size={20} />
                   <h3 className="font-semibold text-white">Documentation</h3>
                 </div>
                 <p className="text-sm text-neutral-400">
@@ -1377,10 +1377,10 @@ export default function SettingsPage() {
                 href="https://community.asmyne.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-2xl border border-neutral-800 bg-neutral-950/60 p-5 transition-all hover:border-[#6f3f88]/50 hover:bg-neutral-900/80"
+                className="rounded-2xl border border-neutral-800 bg-neutral-950/60 p-5 transition-all hover:border-[#8C6B3E]/50 hover:bg-neutral-900/80"
               >
                 <div className="mb-3 flex items-center gap-2">
-                  <FiMessageCircle className="text-[#6f3f88]" size={20} />
+                  <FiMessageCircle className="text-[#8C6B3E]" size={20} />
                   <h3 className="font-semibold text-white">Community Forum</h3>
                 </div>
                 <p className="text-sm text-neutral-400">
@@ -1393,10 +1393,10 @@ export default function SettingsPage() {
                 href="https://youtube.com/channel/asmyne"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-2xl border border-neutral-800 bg-neutral-950/60 p-5 transition-all hover:border-[#6f3f88]/50 hover:bg-neutral-900/80"
+                className="rounded-2xl border border-neutral-800 bg-neutral-950/60 p-5 transition-all hover:border-[#8C6B3E]/50 hover:bg-neutral-900/80"
               >
                 <div className="mb-3 flex items-center gap-2">
-                  <FiDownload className="text-[#6f3f88]" size={20} />
+                  <FiDownload className="text-[#8C6B3E]" size={20} />
                   <h3 className="font-semibold text-white">Video Tutorials</h3>
                 </div>
                 <p className="text-sm text-neutral-400">
@@ -1409,10 +1409,10 @@ export default function SettingsPage() {
                 href="https://status.asmyne.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-2xl border border-neutral-800 bg-neutral-950/60 p-5 transition-all hover:border-[#6f3f88]/50 hover:bg-neutral-900/80"
+                className="rounded-2xl border border-neutral-800 bg-neutral-950/60 p-5 transition-all hover:border-[#8C6B3E]/50 hover:bg-neutral-900/80"
               >
                 <div className="mb-3 flex items-center gap-2">
-                  <FiShield className="text-[#6f3f88]" size={20} />
+                  <FiShield className="text-[#8C6B3E]" size={20} />
                   <h3 className="font-semibold text-white">Status Page</h3>
                 </div>
                 <p className="text-sm text-neutral-400">
@@ -1425,10 +1425,10 @@ export default function SettingsPage() {
                 href="https://blog.asmyne.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-2xl border border-neutral-800 bg-neutral-950/60 p-5 transition-all hover:border-[#6f3f88]/50 hover:bg-neutral-900/80"
+                className="rounded-2xl border border-neutral-800 bg-neutral-950/60 p-5 transition-all hover:border-[#8C6B3E]/50 hover:bg-neutral-900/80"
               >
                 <div className="mb-3 flex items-center gap-2">
-                  <FiGlobe className="text-[#6f3f88]" size={20} />
+                  <FiGlobe className="text-[#8C6B3E]" size={20} />
                   <h3 className="font-semibold text-white">Blog</h3>
                 </div>
                 <p className="text-sm text-neutral-400">
@@ -1441,10 +1441,10 @@ export default function SettingsPage() {
                 href="https://support.asmyne.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-2xl border border-neutral-800 bg-neutral-950/60 p-5 transition-all hover:border-[#6f3f88]/50 hover:bg-neutral-900/80"
+                className="rounded-2xl border border-neutral-800 bg-neutral-950/60 p-5 transition-all hover:border-[#8C6B3E]/50 hover:bg-neutral-900/80"
               >
                 <div className="mb-3 flex items-center gap-2">
-                  <FiHelpCircle className="text-[#6f3f88]" size={20} />
+                  <FiHelpCircle className="text-[#8C6B3E]" size={20} />
                   <h3 className="font-semibold text-white">Contact Support</h3>
                 </div>
                 <p className="text-sm text-neutral-400">
@@ -1507,10 +1507,10 @@ export default function SettingsPage() {
                   href="https://support.asmyne.com/report"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-2xl border border-neutral-800 bg-neutral-950/60 p-5 transition-all hover:border-[#6f3f88]/50 hover:bg-neutral-900/80"
+                  className="rounded-2xl border border-neutral-800 bg-neutral-950/60 p-5 transition-all hover:border-[#8C6B3E]/50 hover:bg-neutral-900/80"
                 >
                   <div className="mb-3 flex items-center gap-2">
-                    <FiShield className="text-[#6f3f88]" size={20} />
+                    <FiShield className="text-[#8C6B3E]" size={20} />
                     <h4 className="font-semibold text-white">Report a Problem</h4>
                   </div>
                   <p className="text-sm text-neutral-400">
@@ -1523,10 +1523,10 @@ export default function SettingsPage() {
                   href="https://support.asmyne.com/account"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-2xl border border-neutral-800 bg-neutral-950/60 p-5 transition-all hover:border-[#6f3f88]/50 hover:bg-neutral-900/80"
+                  className="rounded-2xl border border-neutral-800 bg-neutral-950/60 p-5 transition-all hover:border-[#8C6B3E]/50 hover:bg-neutral-900/80"
                 >
                   <div className="mb-3 flex items-center gap-2">
-                    <FiUser className="text-[#6f3f88]" size={20} />
+                    <FiUser className="text-[#8C6B3E]" size={20} />
                     <h4 className="font-semibold text-white">Account Help</h4>
                   </div>
                   <p className="text-sm text-neutral-400">
@@ -1539,10 +1539,10 @@ export default function SettingsPage() {
                   href="https://support.asmyne.com/privacy"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-2xl border border-neutral-800 bg-neutral-950/60 p-5 transition-all hover:border-[#6f3f88]/50 hover:bg-neutral-900/80"
+                  className="rounded-2xl border border-neutral-800 bg-neutral-950/60 p-5 transition-all hover:border-[#8C6B3E]/50 hover:bg-neutral-900/80"
                 >
                   <div className="mb-3 flex items-center gap-2">
-                    <FiEyeOff className="text-[#6f3f88]" size={20} />
+                    <FiEyeOff className="text-[#8C6B3E]" size={20} />
                     <h4 className="font-semibold text-white">Privacy & Safety</h4>
                   </div>
                   <p className="text-sm text-neutral-400">
@@ -1555,10 +1555,10 @@ export default function SettingsPage() {
                   href="https://support.asmyne.com/content"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-2xl border border-neutral-800 bg-neutral-950/60 p-5 transition-all hover:border-[#6f3f88]/50 hover:bg-neutral-900/80"
+                  className="rounded-2xl border border-neutral-800 bg-neutral-950/60 p-5 transition-all hover:border-[#8C6B3E]/50 hover:bg-neutral-900/80"
                 >
                   <div className="mb-3 flex items-center gap-2">
-                    <FiTag className="text-[#6f3f88]" size={20} />
+                    <FiTag className="text-[#8C6B3E]" size={20} />
                     <h4 className="font-semibold text-white">Content & Copyright</h4>
                   </div>
                   <p className="text-sm text-neutral-400">
@@ -1571,10 +1571,10 @@ export default function SettingsPage() {
                   href="https://support.asmyne.com/technical"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-2xl border border-neutral-800 bg-neutral-950/60 p-5 transition-all hover:border-[#6f3f88]/50 hover:bg-neutral-900/80"
+                  className="rounded-2xl border border-neutral-800 bg-neutral-950/60 p-5 transition-all hover:border-[#8C6B3E]/50 hover:bg-neutral-900/80"
                 >
                   <div className="mb-3 flex items-center gap-2">
-                    <FiGlobe className="text-[#6f3f88]" size={20} />
+                    <FiGlobe className="text-[#8C6B3E]" size={20} />
                     <h4 className="font-semibold text-white">Technical Support</h4>
                   </div>
                   <p className="text-sm text-neutral-400">
@@ -1587,10 +1587,10 @@ export default function SettingsPage() {
                   href="https://support.asmyne.com/contact"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-2xl border border-neutral-800 bg-neutral-950/60 p-5 transition-all hover:border-[#6f3f88]/50 hover:bg-neutral-900/80"
+                  className="rounded-2xl border border-neutral-800 bg-neutral-950/60 p-5 transition-all hover:border-[#8C6B3E]/50 hover:bg-neutral-900/80"
                 >
                   <div className="mb-3 flex items-center gap-2">
-                    <FiMessageCircle className="text-[#6f3f88]" size={20} />
+                    <FiMessageCircle className="text-[#8C6B3E]" size={20} />
                     <h4 className="font-semibold text-white">Contact Support</h4>
                   </div>
                   <p className="text-sm text-neutral-400">
@@ -1607,10 +1607,10 @@ export default function SettingsPage() {
                 href="https://community.asmyne.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-2xl border border-neutral-800 bg-neutral-950/60 p-5 transition-all hover:border-[#6f3f88]/50 hover:bg-neutral-900/80"
+                className="rounded-2xl border border-neutral-800 bg-neutral-950/60 p-5 transition-all hover:border-[#8C6B3E]/50 hover:bg-neutral-900/80"
               >
                 <div className="mb-3 flex items-center gap-2">
-                  <FiMessageCircle className="text-[#6f3f88]" size={20} />
+                  <FiMessageCircle className="text-[#8C6B3E]" size={20} />
                   <h4 className="font-semibold text-white">Community Forum</h4>
                 </div>
                 <p className="text-sm text-neutral-400">
@@ -1680,13 +1680,13 @@ export default function SettingsPage() {
           <p className="text-sm text-neutral-400">Loading account informationâ€¦</p>
         ) : (
           <div className="grid gap-3 sm:grid-cols-2">
-            <input className="rounded-xl bg-neutral-900 px-3 py-2 text-sm text-white placeholder:text-neutral-500 outline-none focus:ring-2 focus:ring-[#6f3f88]" placeholder="Name" value={profile.name} onChange={(e) => setProfile((p) => ({ ...p, name: e.target.value }))} />
-            <input className="rounded-xl bg-neutral-900 px-3 py-2 text-sm text-white placeholder:text-neutral-500 outline-none focus:ring-2 focus:ring-[#6f3f88]" placeholder="Email" value={profile.email} onChange={(e) => setProfile((p) => ({ ...p, email: e.target.value }))} />
-            <input className="rounded-xl bg-neutral-900 px-3 py-2 text-sm text-white placeholder:text-neutral-500 outline-none focus:ring-2 focus:ring-[#6f3f88]" placeholder="Phone" value={profile.phone} onChange={(e) => setProfile((p) => ({ ...p, phone: e.target.value }))} />
-            <input className="rounded-xl bg-neutral-900 px-3 py-2 text-sm text-white placeholder:text-neutral-500 outline-none focus:ring-2 focus:ring-[#6f3f88]" placeholder="City" value={profile.city} onChange={(e) => setProfile((p) => ({ ...p, city: e.target.value }))} />
-            <input className="rounded-xl bg-neutral-900 px-3 py-2 text-sm text-white placeholder:text-neutral-500 outline-none focus:ring-2 focus:ring-[#6f3f88]" placeholder="Country" value={profile.country} onChange={(e) => setProfile((p) => ({ ...p, country: e.target.value }))} />
-            <input className="rounded-xl bg-neutral-900 px-3 py-2 text-sm text-white placeholder:text-neutral-500 outline-none focus:ring-2 focus:ring-[#6f3f88]" placeholder="Location" value={profile.location} onChange={(e) => setProfile((p) => ({ ...p, location: e.target.value }))} />
-            <textarea className="rounded-xl bg-neutral-900 px-3 py-2 text-sm text-white placeholder:text-neutral-500 outline-none focus:ring-2 focus:ring-[#6f3f88] sm:col-span-2" rows={3} placeholder="Bio" value={profile.bio} onChange={(e) => setProfile((p) => ({ ...p, bio: e.target.value }))} />
+            <input className="rounded-xl bg-neutral-900 px-3 py-2 text-sm text-white placeholder:text-neutral-500 outline-none focus:ring-2 focus:ring-[#8C6B3E]" placeholder="Name" value={profile.name} onChange={(e) => setProfile((p) => ({ ...p, name: e.target.value }))} />
+            <input className="rounded-xl bg-neutral-900 px-3 py-2 text-sm text-white placeholder:text-neutral-500 outline-none focus:ring-2 focus:ring-[#8C6B3E]" placeholder="Email" value={profile.email} onChange={(e) => setProfile((p) => ({ ...p, email: e.target.value }))} />
+            <input className="rounded-xl bg-neutral-900 px-3 py-2 text-sm text-white placeholder:text-neutral-500 outline-none focus:ring-2 focus:ring-[#8C6B3E]" placeholder="Phone" value={profile.phone} onChange={(e) => setProfile((p) => ({ ...p, phone: e.target.value }))} />
+            <input className="rounded-xl bg-neutral-900 px-3 py-2 text-sm text-white placeholder:text-neutral-500 outline-none focus:ring-2 focus:ring-[#8C6B3E]" placeholder="City" value={profile.city} onChange={(e) => setProfile((p) => ({ ...p, city: e.target.value }))} />
+            <input className="rounded-xl bg-neutral-900 px-3 py-2 text-sm text-white placeholder:text-neutral-500 outline-none focus:ring-2 focus:ring-[#8C6B3E]" placeholder="Country" value={profile.country} onChange={(e) => setProfile((p) => ({ ...p, country: e.target.value }))} />
+            <input className="rounded-xl bg-neutral-900 px-3 py-2 text-sm text-white placeholder:text-neutral-500 outline-none focus:ring-2 focus:ring-[#8C6B3E]" placeholder="Location" value={profile.location} onChange={(e) => setProfile((p) => ({ ...p, location: e.target.value }))} />
+            <textarea className="rounded-xl bg-neutral-900 px-3 py-2 text-sm text-white placeholder:text-neutral-500 outline-none focus:ring-2 focus:ring-[#8C6B3E] sm:col-span-2" rows={3} placeholder="Bio" value={profile.bio} onChange={(e) => setProfile((p) => ({ ...p, bio: e.target.value }))} />
             <div className="sm:col-span-2">
               <button type="button" onClick={() => void saveAccountInfo()} disabled={profileSaving} className="rounded-xl bg-white px-4 py-2 text-sm font-semibold text-black hover:bg-neutral-200 disabled:opacity-60">
                 {profileSaving ? "Savingâ€¦" : "Save"}
@@ -1705,7 +1705,7 @@ export default function SettingsPage() {
             <label className="mb-1 block text-xs font-semibold text-neutral-400">Current password <span className="text-red-400">*</span></label>
             <input
               type="password"
-              className="w-full rounded-xl bg-neutral-900 px-3 py-2 text-sm text-white placeholder:text-neutral-500 outline-none focus:ring-2 focus:ring-[#6f3f88]"
+              className="w-full rounded-xl bg-neutral-900 px-3 py-2 text-sm text-white placeholder:text-neutral-500 outline-none focus:ring-2 focus:ring-[#8C6B3E]"
               placeholder="Enter your current password"
               value={currentPassword}
               onChange={(e) => setCurrentPassword(e.target.value)}
@@ -1717,7 +1717,7 @@ export default function SettingsPage() {
             <label className="mb-1 block text-xs font-semibold text-neutral-400">New password <span className="text-red-400">*</span></label>
             <input
               type="password"
-              className="w-full rounded-xl bg-neutral-900 px-3 py-2 text-sm text-white placeholder:text-neutral-500 outline-none focus:ring-2 focus:ring-[#6f3f88]"
+              className="w-full rounded-xl bg-neutral-900 px-3 py-2 text-sm text-white placeholder:text-neutral-500 outline-none focus:ring-2 focus:ring-[#8C6B3E]"
               placeholder="Min. 8 characters"
               value={newPassword}
               onChange={(e) => setNewPassword(e.target.value)}
@@ -1728,7 +1728,7 @@ export default function SettingsPage() {
             <label className="mb-1 block text-xs font-semibold text-neutral-400">Confirm new password <span className="text-red-400">*</span></label>
             <input
               type="password"
-              className="w-full rounded-xl bg-neutral-900 px-3 py-2 text-sm text-white placeholder:text-neutral-500 outline-none focus:ring-2 focus:ring-[#6f3f88]"
+              className="w-full rounded-xl bg-neutral-900 px-3 py-2 text-sm text-white placeholder:text-neutral-500 outline-none focus:ring-2 focus:ring-[#8C6B3E]"
               placeholder="Repeat new password"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}

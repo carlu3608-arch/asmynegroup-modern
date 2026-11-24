@@ -32,8 +32,8 @@ export default function ConseilEntrepreneurialPage() {
       >
         {/* Logo et titre à gauche */}
         <div className="flex items-center gap-2 min-w-[170px]">
-          <img src="/asmyne-group-logo.png" alt="Asmyne Group" width={40} height={40} className="object-contain rounded-full border-2 border-[#f2c46f] bg-black" />
-          <span className="text-lg font-bold tracking-tight text-[#f2c46f] ml-2">Asmyne Group</span>
+          <img src="/asmyne-group-logo.png" alt="Asmyne Group" width={40} height={40} className="object-contain rounded-full border-2 border-[#C9A96E] bg-black" />
+          <span className="text-lg font-bold tracking-tight text-[#C9A96E] ml-2">Asmyne Group</span>
         </div>
         {/* Contact à droite */}
         <div className="text-sm md:text-base font-medium whitespace-nowrap flex items-center gap-1 ml-auto">
@@ -50,23 +50,23 @@ export default function ConseilEntrepreneurialPage() {
       </nav>
       {/* Hero Section */}
       <section className="w-full flex flex-col items-center justify-center min-h-[120vh] px-4 bg-[url('/heroes/conseil-entrepreneurial.png')] bg-cover bg-center pt-40">
-        <h1 className="text-6xl md:text-7xl font-extrabold mb-6 text-[#f2c46f] drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)] text-center">Asesoría empresarial</h1>
+        <h1 className="text-6xl md:text-7xl font-extrabold mb-6 text-[#C9A96E] drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)] text-center">Asesoría empresarial</h1>
       </section>
 
       {/* Section 4 blocs Asesoría empresarial */}
       <section className="w-full bg-black py-16 px-4 flex flex-col items-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-[#f2c46f] text-center mb-12 max-w-3xl">
+        <h2 className="text-3xl md:text-4xl font-bold text-[#C9A96E] text-center mb-12 max-w-3xl">
           Nuestras especialidades para impulsar el éxito de tu emprendimiento
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 w-full max-w-6xl">
           {/* Bloc 1 */}
           <div className="flex flex-col items-center text-center">
-            <span className="mb-4 text-[#f2c46f]">
+            <span className="mb-4 text-[#C9A96E]">
               {/* Icône générique */}
               <svg width="60" height="60" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M3 17v-2a4 4 0 014-4h10a4 4 0 014 4v2"/><circle cx="12" cy="7" r="4"/></svg>
             </span>
-            <h3 className="font-bold text-xl mb-2 text-[#f2c46f]">Nuestros Servicios</h3>
-            <p className="text-[#f2c46f]">1. Creación y Registro de Empresas
+            <h3 className="font-bold text-xl mb-2 text-[#C9A96E]">Nuestros Servicios</h3>
+            <p className="text-[#C9A96E]">1. Creación y Registro de Empresas
 
 Registro de compañías
 
@@ -88,11 +88,11 @@ Apertura legal para emprendedores</p>
           </div>
           {/* Bloc 2 */}
           <div className="flex flex-col items-center text-center">
-            <span className="mb-4 text-[#f2c46f]">
+            <span className="mb-4 text-[#C9A96E]">
               <svg width="60" height="60" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 3v4M8 3v4M2 11h20"/></svg>
             </span>
-            <h3 className="font-bold text-xl mb-2 text-[#f2c46f]">Asesoría para Emprendedores</h3>
-            <p className="text-[#f2c46f]">Orientación para nuevos negocios
+            <h3 className="font-bold text-xl mb-2 text-[#C9A96E]">Asesoría para Emprendedores</h3>
+            <p className="text-[#C9A96E]">Orientación para nuevos negocios
 
 Evaluación de ideas de negocio
 
@@ -111,11 +111,11 @@ Acompañamiento empresarial
           </div>
           {/* Bloc 3 */}
           <div className="flex flex-col items-center text-center">
-            <span className="mb-4 text-[#f2c46f]">
+            <span className="mb-4 text-[#C9A96E]">
               <svg width="60" height="60" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87M16 3.13a4 4 0 010 7.75M8 3.13a4 4 0 000 7.75"/></svg>
             </span>
-            <h3 className="font-bold text-xl mb-2 text-[#f2c46f]">Servicios Migratorios y Documentación</h3>
-            <p className="text-[#f2c46f]">Renovación de documentos
+            <h3 className="font-bold text-xl mb-2 text-[#C9A96E]">Servicios Migratorios y Documentación</h3>
+            <p className="text-[#C9A96E]">Renovación de documentos
 
 Asistencia migratoria
 
@@ -132,11 +132,11 @@ Formularios y procesos administrativos
           </div>
           {/* Bloc 4 */}
           <div className="flex flex-col items-center text-center">
-            <span className="mb-4 text-[#f2c46f]">
+            <span className="mb-4 text-[#C9A96E]">
               <svg width="60" height="60" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M16 2v4M8 2v4M2 10h20"/></svg>
             </span>
-            <h3 className="font-bold text-xl mb-2 text-[#f2c46f]">Servicios Financieros y Administrativos</h3>
-            <p className="text-[#f2c46f]">Apertura de cuentas empresariales
+            <h3 className="font-bold text-xl mb-2 text-[#C9A96E]">Servicios Financieros y Administrativos</h3>
+            <p className="text-[#C9A96E]">Apertura de cuentas empresariales
 
 Organización financiera
 
@@ -164,36 +164,36 @@ Manejo de documentos</p>
       </section>
       {/* Section chiffres clés professionnelle */}
       <section className="w-full bg-black py-20 px-4 flex flex-col items-center">
-        <h2 className="text-4xl md:text-5xl font-extrabold text-[#f2c46f] text-center mb-14 max-w-4xl leading-tight drop-shadow-lg uppercase tracking-wide">
+        <h2 className="text-4xl md:text-5xl font-extrabold text-[#C9A96E] text-center mb-14 max-w-4xl leading-tight drop-shadow-lg uppercase tracking-wide">
           Acompañando a los emprendedores hacia el éxito desde hace más de 10 años
         </h2>
         <div className="flex flex-col md:flex-row justify-center items-stretch gap-12 md:gap-24 w-full max-w-6xl">
           {/* Chiffre 1 */}
           <div className="flex-1 flex flex-col items-center justify-center">
-            <span className="text-6xl md:text-7xl font-extrabold text-[#f2c46f] mb-3 font-mono">500+</span>
-            <span className="font-semibold text-lg md:text-xl text-[#f2c46f] text-center mt-2">Empresas acompañadas</span>
+            <span className="text-6xl md:text-7xl font-extrabold text-[#C9A96E] mb-3 font-mono">500+</span>
+            <span className="font-semibold text-lg md:text-xl text-[#C9A96E] text-center mt-2">Empresas acompañadas</span>
           </div>
           {/* Chiffre 2 */}
           <div className="flex-1 flex flex-col items-center justify-center">
-            <span className="text-6xl md:text-7xl font-extrabold text-[#f2c46f] mb-3 font-mono">2000+</span>
-            <span className="font-semibold text-lg md:text-xl text-[#f2c46f] text-center mt-2">Proyectos empresariales<br className='md:hidden'/> realizados</span>
+            <span className="text-6xl md:text-7xl font-extrabold text-[#C9A96E] mb-3 font-mono">2000+</span>
+            <span className="font-semibold text-lg md:text-xl text-[#C9A96E] text-center mt-2">Proyectos empresariales<br className='md:hidden'/> realizados</span>
           </div>
           {/* Chiffre 3 */}
           <div className="flex-1 flex flex-col items-center justify-center">
-            <span className="text-6xl md:text-7xl font-extrabold text-[#f2c46f] mb-3 font-mono">12 Ans</span>
-            <span className="font-semibold text-lg md:text-xl text-[#f2c46f] text-center mt-2">de experiencia al servicio de los<br className='md:hidden'/> emprendedores</span>
+            <span className="text-6xl md:text-7xl font-extrabold text-[#C9A96E] mb-3 font-mono">12 Ans</span>
+            <span className="font-semibold text-lg md:text-xl text-[#C9A96E] text-center mt-2">de experiencia al servicio de los<br className='md:hidden'/> emprendedores</span>
           </div>
         </div>
       </section>
       {/* Section mini-formulaire de contact large */}
-      <section className="w-full bg-black py-16 px-4 flex flex-col items-center border-t border-[#f2c46f]">
-        <h2 className="text-3xl md:text-4xl font-bold text-[#f2c46f] text-center mb-8">Contáctanos</h2>
-        <form className="w-full max-w-2xl bg-[#181818] rounded-xl p-8 flex flex-col gap-5 border border-[#f2c46f] shadow-lg">
-          <label htmlFor="servicio" className="text-[#f2c46f] font-semibold">¿Qué servicio le interesa?</label>
+      <section className="w-full bg-black py-16 px-4 flex flex-col items-center border-t border-[#C9A96E]">
+        <h2 className="text-3xl md:text-4xl font-bold text-[#C9A96E] text-center mb-8">Contáctanos</h2>
+        <form className="w-full max-w-2xl bg-[#181818] rounded-xl p-8 flex flex-col gap-5 border border-[#C9A96E] shadow-lg">
+          <label htmlFor="servicio" className="text-[#C9A96E] font-semibold">¿Qué servicio le interesa?</label>
           <select
             id="servicio"
             name="servicio"
-            className="px-4 py-2 rounded bg-black text-white border border-[#f2c46f] focus:outline-none focus:ring-2 focus:ring-[#f2c46f]"
+            className="px-4 py-2 rounded bg-black text-white border border-[#C9A96E] focus:outline-none focus:ring-2 focus:ring-[#C9A96E]"
             required
           >
             <option value="">Seleccione un servicio</option>
@@ -209,66 +209,66 @@ Manejo de documentos</p>
             type="text"
             name="nom"
             placeholder="Votre nom"
-            className="px-4 py-2 rounded bg-black text-white border border-[#f2c46f] focus:outline-none focus:ring-2 focus:ring-[#f2c46f]"
+            className="px-4 py-2 rounded bg-black text-white border border-[#C9A96E] focus:outline-none focus:ring-2 focus:ring-[#C9A96E]"
             required
           />
           <input
             type="email"
             name="email"
             placeholder="Votre email"
-            className="px-4 py-2 rounded bg-black text-white border border-[#f2c46f] focus:outline-none focus:ring-2 focus:ring-[#f2c46f]"
+            className="px-4 py-2 rounded bg-black text-white border border-[#C9A96E] focus:outline-none focus:ring-2 focus:ring-[#C9A96E]"
             required
           />
           <textarea
             name="message"
             placeholder="Votre message"
             rows={4}
-            className="px-4 py-2 rounded bg-black text-white border border-[#f2c46f] focus:outline-none focus:ring-2 focus:ring-[#f2c46f]"
+            className="px-4 py-2 rounded bg-black text-white border border-[#C9A96E] focus:outline-none focus:ring-2 focus:ring-[#C9A96E]"
             required
           />
           <button
             type="submit"
-            className="bg-[#f2c46f] text-black font-bold py-2 rounded hover:bg-yellow-400 transition"
+            className="bg-[#C9A96E] text-black font-bold py-2 rounded hover:bg-yellow-400 transition"
           >
             Envoyer
           </button>
         </form>
       </section>
       {/* Footer unique pour cette page */}
-      <footer className="w-full bg-black text-[#f2c46f] pt-12 pb-6 px-4 border-t border-[#f2c46f] mt-0">
+      <footer className="w-full bg-black text-[#C9A96E] pt-12 pb-6 px-4 border-t border-[#C9A96E] mt-0">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row md:justify-between gap-10">
           {/* Bloc logo & description */}
           <div className="flex-1 min-w-[220px] flex flex-col items-center md:items-start mb-6 md:mb-0">
             <div className="flex items-center gap-2 mb-3">
-              <img src="/asmyne-group-logo.png" alt="Asmyne Group" width={40} height={40} className="object-contain rounded-full border-2 border-[#f2c46f] bg-black" />
+              <img src="/asmyne-group-logo.png" alt="Asmyne Group" width={40} height={40} className="object-contain rounded-full border-2 border-[#C9A96E] bg-black" />
               <span className="text-2xl font-extrabold tracking-wide">Asmyne Group</span>
             </div>
-            <div className="text-[#f2c46f]/90 mb-2 font-semibold">Consultoría Empresarial</div>
-            <div className="text-[#f2c46f]/70 text-sm">Acompañamiento, formación y soluciones a medida para emprendedores, pymes y creadores de proyectos.</div>
+            <div className="text-[#C9A96E]/90 mb-2 font-semibold">Consultoría Empresarial</div>
+            <div className="text-[#C9A96E]/70 text-sm">Acompañamiento, formación y soluciones a medida para emprendedores, pymes y creadores de proyectos.</div>
           </div>
           {/* Bloc liens rapides */}
           <div className="flex-1 min-w-[180px]">
             <div className="font-bold mb-3 text-lg">Enlaces rápidos</div>
-            <ul className="space-y-2 text-[#f2c46f]/80">
+            <ul className="space-y-2 text-[#C9A96E]/80">
               <li>
                 <a href="#specialidades" className="hover:text-white font-semibold">Especialidades</a>
-                <div className="text-xs text-[#f2c46f]/60 ml-2">Nuestros servicios clave para emprendedores</div>
+                <div className="text-xs text-[#C9A96E]/60 ml-2">Nuestros servicios clave para emprendedores</div>
               </li>
               <li>
                 <a href="#testimonios" className="hover:text-white font-semibold">Testimonios</a>
-                <div className="text-xs text-[#f2c46f]/60 ml-2">Opiniones de clientes satisfechos</div>
+                <div className="text-xs text-[#C9A96E]/60 ml-2">Opiniones de clientes satisfechos</div>
               </li>
               <li>
                 <a href="#contacto" className="hover:text-white font-semibold">Contacto</a>
-                <div className="text-xs text-[#f2c46f]/60 ml-2">Solicita tu asesoría personalizada</div>
+                <div className="text-xs text-[#C9A96E]/60 ml-2">Solicita tu asesoría personalizada</div>
               </li>
               <li>
                 <a href="#equipo" className="hover:text-white font-semibold">Nuestro equipo</a>
-                <div className="text-xs text-[#f2c46f]/60 ml-2">Expertos a tu servicio</div>
+                <div className="text-xs text-[#C9A96E]/60 ml-2">Expertos a tu servicio</div>
               </li>
               <li>
                 <a href="#faq" className="hover:text-white font-semibold">Preguntas frecuentes</a>
-                <div className="text-xs text-[#f2c46f]/60 ml-2">Respuestas a tus dudas</div>
+                <div className="text-xs text-[#C9A96E]/60 ml-2">Respuestas a tus dudas</div>
               </li>
             </ul>
           </div>
@@ -289,8 +289,8 @@ Manejo de documentos</p>
             </div>
           </div>
         </div>
-        <hr className="my-8 border-[#f2c46f]/20" />
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row md:justify-between items-center gap-4 text-[#f2c46f]/70 text-sm">
+        <hr className="my-8 border-[#C9A96E]/20" />
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row md:justify-between items-center gap-4 text-[#C9A96E]/70 text-sm">
           <div>©2026 Asmyne Group. Todos los derechos reservados.</div>
           <div><a href="#" className="underline hover:text-white">Aviso legal</a></div>
         </div>
@@ -299,7 +299,7 @@ Manejo de documentos</p>
       {/* Bouton robot flottant */}
       <button
         onClick={() => setShowBot(true)}
-        className="fixed z-50 bottom-6 right-6 bg-[#f2c46f] text-black shadow-lg rounded-full w-16 h-16 flex items-center justify-center hover:bg-yellow-400 border-4 border-black transition-all"
+        className="fixed z-50 bottom-6 right-6 bg-[#C9A96E] text-black shadow-lg rounded-full w-16 h-16 flex items-center justify-center hover:bg-yellow-400 border-4 border-black transition-all"
         title="Asistente AI"
         aria-label="Asistente AI"
       >
@@ -308,7 +308,7 @@ Manejo de documentos</p>
 
       {/* Widget chatbot flottant en bas à droite */}
       {showBot && (
-        <div className="fixed z-50 bottom-24 right-6 w-[350px] max-w-[95vw] bg-black rounded-2xl border-2 border-[#f2c46f] shadow-2xl overflow-hidden flex flex-col">
+        <div className="fixed z-50 bottom-24 right-6 w-[350px] max-w-[95vw] bg-black rounded-2xl border-2 border-[#C9A96E] shadow-2xl overflow-hidden flex flex-col">
           <div className="flex items-center justify-between px-4 py-2 bg-black border-b border-yellow-500">
             <span className="font-bold text-yellow-400 text-base">Asesoría Empresarial</span>
             <button
@@ -358,26 +358,26 @@ function TestimonialSlider() {
   const next = () => setIndex((i) => (i === testimonials.length - 1 ? 0 : i + 1));
   const t = testimonials[index];
   return (
-    <div className="w-full max-w-5xl flex flex-col md:flex-row items-center justify-center gap-8 relative bg-black rounded-2xl p-8 border-2 border-[#f2c46f] shadow-xl">
+    <div className="w-full max-w-5xl flex flex-col md:flex-row items-center justify-center gap-8 relative bg-black rounded-2xl p-8 border-2 border-[#C9A96E] shadow-xl">
       <button
         onClick={prev}
-        className="absolute left-0 md:-left-12 top-1/2 -translate-y-1/2 text-[#f2c46f] text-4xl font-bold bg-transparent border-none cursor-pointer hover:scale-125 transition"
+        className="absolute left-0 md:-left-12 top-1/2 -translate-y-1/2 text-[#C9A96E] text-4xl font-bold bg-transparent border-none cursor-pointer hover:scale-125 transition"
         aria-label="Précédent"
       >&#60;</button>
-      <div className="flex-1 text-[#f2c46f] text-2xl italic font-light flex flex-col gap-6">
+      <div className="flex-1 text-[#C9A96E] text-2xl italic font-light flex flex-col gap-6">
         <p>"{t.text}"</p>
         <div className="flex items-center gap-3 mt-4">
-          {t.logo && <img src={t.logo} alt={t.author} className="h-10 w-10 object-contain bg-white rounded-full p-1 border-2 border-[#f2c46f]" />}
-          <span className="font-bold text-[#f2c46f]">- {t.author}</span>
-          <span className="text-base font-normal text-[#f2c46f]">, {t.role}</span>
+          {t.logo && <img src={t.logo} alt={t.author} className="h-10 w-10 object-contain bg-white rounded-full p-1 border-2 border-[#C9A96E]" />}
+          <span className="font-bold text-[#C9A96E]">- {t.author}</span>
+          <span className="text-base font-normal text-[#C9A96E]">, {t.role}</span>
         </div>
       </div>
       <div className="flex-1 flex items-center justify-center">
-        <img src={t.image} alt="Site" className="rounded-xl shadow-2xl max-h-72 w-auto object-cover border-2 border-[#f2c46f] bg-black" />
+        <img src={t.image} alt="Site" className="rounded-xl shadow-2xl max-h-72 w-auto object-cover border-2 border-[#C9A96E] bg-black" />
       </div>
       <button
         onClick={next}
-        className="absolute right-0 md:-right-12 top-1/2 -translate-y-1/2 text-[#f2c46f] text-4xl font-bold bg-transparent border-none cursor-pointer hover:scale-125 transition"
+        className="absolute right-0 md:-right-12 top-1/2 -translate-y-1/2 text-[#C9A96E] text-4xl font-bold bg-transparent border-none cursor-pointer hover:scale-125 transition"
         aria-label="Suivant"
       >&#62;</button>
     </div>

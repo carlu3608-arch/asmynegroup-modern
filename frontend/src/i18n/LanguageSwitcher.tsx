@@ -4,7 +4,13 @@ import { useState, useRef, useEffect } from "react";
 import { useI18n } from "./LanguageProvider";
 import { locales, localeNames, localeFlags, type Locale } from "./dictionaries";
 
-export default function LanguageSwitcher({ compact = false }: { compact?: boolean }) {
+export default function LanguageSwitcher({
+  compact = false,
+  inline = false,
+}: {
+  compact?: boolean;
+  inline?: boolean;
+}) {
   const { locale, setLocale } = useI18n();
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -16,6 +22,25 @@ export default function LanguageSwitcher({ compact = false }: { compact?: boolea
     document.addEventListener("mousedown", onClick);
     return () => document.removeEventListener("mousedown", onClick);
   }, []);
+
+  if (inline) {
+    return (
+      <div className="lang-inline" role="group" aria-label="Idioma">
+        {locales.map((l: Locale, i) => (
+          <span key={l} className="lang-inline-item">
+            {i > 0 && <span className="lang-sep" aria-hidden="true">·</span>}
+            <button
+              type="button"
+              className={l === locale ? "is-active" : ""}
+              onClick={() => setLocale(l)}
+            >
+              {l.toUpperCase()}
+            </button>
+          </span>
+        ))}
+      </div>
+    );
+  }
 
   return (
     <div className="lang-switcher" ref={ref}>

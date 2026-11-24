@@ -1,7 +1,7 @@
 
 import type { Metadata } from "next";
 import { cookies } from "next/headers";
-import { Geist, Geist_Mono, Outfit, Cormorant_Garamond } from "next/font/google";
+import { Geist, Geist_Mono, Outfit, Cormorant_Garamond, Manrope } from "next/font/google";
 import "./globals.css";
 
 import CartProviderBridge from "./shared/CartProviderBridge";
@@ -27,7 +27,14 @@ const outfit = Outfit({
 const display = Cormorant_Garamond({
   variable: "--font-display",
   subsets: ["latin"],
-  weight: "600",
+  weight: ["400", "500", "600"],
+  style: ["normal", "italic"],
+});
+
+const manrope = Manrope({
+  variable: "--font-manrope",
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
 });
 
 export const metadata: Metadata = {
@@ -54,7 +61,7 @@ export default async function RootLayout({
   return (
     <html
       lang="es"
-      className={`${geistSans.variable} ${geistMono.variable} ${outfit.variable} ${display.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${outfit.variable} ${display.variable} ${manrope.variable} h-full antialiased`}
     >
       <head />
       <body className="relative min-h-full flex flex-col overflow-x-hidden text-gray-800 bg-gray-50">

@@ -354,7 +354,7 @@ function SectionContent({ section }: { section: string }) {
                 key={tab}
                 className={`flex-1 py-3 text-center font-semibold relative transition-colors duration-150 
                   ${idx === 0 ? 'text-blue-400 border-b-4 border-blue-400 bg-blue-900/40' : 'text-blue-200 hover:bg-blue-800/40'}`}
-                style={{ borderBottom: idx === 0 ? '4px solid #3b82f6' : '4px solid transparent' }}
+                style={{ borderBottom: idx === 0 ? '4px solid #C9A96E' : '4px solid transparent' }}
               >
                 {tab}
               </button>

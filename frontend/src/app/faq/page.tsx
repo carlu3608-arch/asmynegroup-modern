@@ -56,7 +56,7 @@ const faqItems = [
 export default function FaqPage() {
   return (
     <main className="relative min-h-screen overflow-hidden bg-gradient-to-b from-[#0d1a38] via-[#13254d] to-[#0e1c3f] text-white px-4 md:px-16 py-12 md:py-16">
-      <div className="pointer-events-none absolute -top-24 -left-24 h-72 w-72 rounded-full bg-[#2563eb]/20 blur-3xl" />
+      <div className="pointer-events-none absolute -top-24 -left-24 h-72 w-72 rounded-full bg-[#C9A96E]/20 blur-3xl" />
       <div className="pointer-events-none absolute top-1/2 -right-24 h-80 w-80 rounded-full bg-[#e6b85c]/15 blur-3xl" />
 
       <div className="relative z-10 max-w-6xl mx-auto">
@@ -76,7 +76,7 @@ export default function FaqPage() {
             </div>
             <Link
               href="/"
-              className="inline-flex items-center justify-center rounded-xl bg-[#2563eb] px-5 py-3 font-semibold hover:bg-[#1b4fa0] transition-colors shadow-lg"
+              className="inline-flex items-center justify-center rounded-xl bg-[#C9A96E] px-5 py-3 font-semibold hover:bg-[#8C6B3E] transition-colors shadow-lg"
             >
               Volver al inicio
             </Link>

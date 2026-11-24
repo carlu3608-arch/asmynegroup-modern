@@ -156,22 +156,22 @@ const blueTheme: FooterTheme = {
 
 const deepNightGoldTheme: FooterTheme = {
   bg: "bg-[#16213e]",
-  text: "text-[#ffd700]",
+  text: "text-[#C9A96E]",
   muted: "text-[#ffe38a]",
-  border: "border-[#ffd700]/40",
-  logoBadgeBg: "bg-[#ffd700]",
+  border: "border-[#C9A96E]/40",
+  logoBadgeBg: "bg-[#C9A96E]",
   logoBadgeText: "text-[#16213e]",
   inputBg: "bg-[#fef3c7]",
   inputText: "text-[#16213e]",
   inputPlaceholder: "placeholder:text-[#6b7280]",
-  actionBg: "bg-[#ffd700]",
+  actionBg: "bg-[#C9A96E]",
   actionText: "text-[#16213e]",
-  actionHover: "hover:bg-yellow-300",
+  actionHover: "hover:bg-[#E6D2A8]",
   linkHover: "hover:text-white",
   socialHover: "hover:text-white",
-  topBtnBg: "bg-[#ffd700]",
+  topBtnBg: "bg-[#C9A96E]",
   topBtnText: "text-[#16213e]",
-  topBtnHover: "hover:bg-yellow-300",
+  topBtnHover: "hover:bg-[#E6D2A8]",
 };
 
 const creamBusinessTheme: FooterTheme = {

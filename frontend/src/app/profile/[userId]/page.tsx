@@ -470,7 +470,7 @@ export default async function ProfileUserPage({
                   className={`relative px-1 py-1.5 text-center sm:px-1.5 sm:py-2 ${isActive ? "font-semibold text-[#fff8ff]" : ""}`}
                 >
                   {tab.label}
-                  {isActive ? <span className="absolute bottom-0 left-1/2 h-0.5 w-7 -translate-x-1/2 rounded-full bg-[#b87bda]" /> : null}
+                  {isActive ? <span className="absolute bottom-0 left-1/2 h-0.5 w-7 -translate-x-1/2 rounded-full bg-[#C9A96E]" /> : null}
                 </Link>
               );
             })}

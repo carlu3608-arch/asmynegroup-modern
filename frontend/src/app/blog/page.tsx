@@ -40,7 +40,7 @@ export default function Blog() {
             onChange={e => setSearchCity(e.target.value)}
             className="flex-1 rounded-full px-6 py-3 text-lg bg-white/90 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#e6b85c] border-none shadow-md"
           />
-          <button type="submit" className="rounded-full px-6 py-3 bg-[#e6b85c] text-[#0a174e] font-bold text-lg shadow-md hover:bg-[#ffd700] transition">Buscar</button>
+          <button type="submit" className="rounded-full px-6 py-3 bg-[#e6b85c] text-[#0a174e] font-bold text-lg shadow-md hover:bg-[#C9A96E] transition">Buscar</button>
         </form>
         <span className="mt-10 text-white/80 animate-bounce">▼ Scroll para más</span>
       </section>

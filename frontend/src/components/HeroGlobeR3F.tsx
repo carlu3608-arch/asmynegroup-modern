@@ -43,7 +43,7 @@ function Globe() {
   return (
     <>
       <ambientLight intensity={0.7} color="#6b7aa8" />
-      <pointLight position={[2.2, 1.4, 3.2]} color="#d4af37" intensity={5} distance={14} />
+      <pointLight position={[2.2, 1.4, 3.2]} color="#C9A96E" intensity={5} distance={14} />
       <pointLight position={[-3, -1, -2]} color="#1a2a6c" intensity={2} />
 
       <group ref={group}>
@@ -53,7 +53,7 @@ function Globe() {
         </mesh>
         <mesh>
           <sphereGeometry args={[1.565, 32, 24]} />
-          <meshBasicMaterial color="#d4af37" wireframe transparent opacity={0.22} />
+          <meshBasicMaterial color="#C9A96E" wireframe transparent opacity={0.22} />
         </mesh>
         <points>
           <bufferGeometry>
@@ -63,14 +63,14 @@ function Globe() {
         </points>
         <mesh>
           <sphereGeometry args={[1.82, 48, 32]} />
-          <meshBasicMaterial color="#e8c872" transparent opacity={0.08} side={THREE.BackSide} />
+          <meshBasicMaterial color="#C9A96E" transparent opacity={0.08} side={THREE.BackSide} />
         </mesh>
       </group>
 
       <group ref={ring} rotation={[Math.PI / 2.6, 0.4, 0]}>
         <mesh>
           <torusGeometry args={[2.15, 0.012, 12, 128]} />
-          <meshBasicMaterial color="#e8c872" transparent opacity={0.85} />
+          <meshBasicMaterial color="#C9A96E" transparent opacity={0.85} />
         </mesh>
         <mesh position={[2.15, 0, 0]}>
           <coneGeometry args={[0.045, 0.16, 6]} />

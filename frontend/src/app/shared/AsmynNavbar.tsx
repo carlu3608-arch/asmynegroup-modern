@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function AsmynNavbar() {
   return (
-    <nav className="w-full bg-[#223e8a] flex items-center justify-between px-6 py-2 border-b-4 border-[#f2c46f]">
+    <nav className="w-full bg-[#223e8a] flex items-center justify-between px-6 py-2 border-b-4 border-[#C9A96E]">
       <div className="flex items-center gap-3">
         <Image src="/Asmyne-Group-logo.png" alt="Logo Asmyne" width={40} height={40} className="min-w-[40px] min-h-[40px]" />
         <a href="/services/marketplace-global" className="text-white font-bold text-xl md:text-2xl hover:underline">Asmyne Voyages</a>

@@ -138,7 +138,7 @@ export default function EditProfileModal({
           {/* Cover Photo Section */}
           <div className="relative -mx-4 -mt-6 mb-6 sm:-mx-6">
             <div 
-              className="h-24 bg-gradient-to-br from-[#34194a] to-[#6f3f88] bg-cover bg-center relative cursor-pointer hover:opacity-80 transition sm:h-28"
+              className="h-24 bg-gradient-to-br from-[#34194a] to-[#8C6B3E] bg-cover bg-center relative cursor-pointer hover:opacity-80 transition sm:h-28"
               style={coverImage ? { backgroundImage: `url(${coverImage})` } : {}}
               onClick={handleCoverPhotoClick}
             >
@@ -173,7 +173,7 @@ export default function EditProfileModal({
           <div className="flex items-center justify-between pb-6 border-b border-[#58326d]/45">
             <div className="flex items-center gap-4">
               <div className="relative">
-                <div className="h-20 w-20 rounded-full bg-[#34194a] border-4 border-[#6f3f88] flex items-center justify-center overflow-hidden cursor-pointer hover:opacity-80 transition"
+                <div className="h-20 w-20 rounded-full bg-[#34194a] border-4 border-[#8C6B3E] flex items-center justify-center overflow-hidden cursor-pointer hover:opacity-80 transition"
                   onClick={handleProfilePhotoClick}
                 >
                   {profilePhoto ? (
@@ -181,7 +181,7 @@ export default function EditProfileModal({
                   ) : userPhotoUrl ? (
                     <img src={userPhotoUrl} alt="Profile" className="h-full w-full object-cover" />
                   ) : (
-                    <span className="text-3xl font-bold text-[#b87bda]">
+                    <span className="text-3xl font-bold text-[#C9A96E]">
                       {userName.charAt(0).toUpperCase()}
                     </span>
                   )}
@@ -189,7 +189,7 @@ export default function EditProfileModal({
                 <button 
                   type="button"
                   onClick={handleProfilePhotoClick}
-                  className="absolute bottom-0 right-0 h-7 w-7 rounded-full bg-[#6f3f88] hover:bg-[#7d4a96] flex items-center justify-center text-white transition border-2 border-[#170a21]">
+                  className="absolute bottom-0 right-0 h-7 w-7 rounded-full bg-[#8C6B3E] hover:bg-[#7d4a96] flex items-center justify-center text-white transition border-2 border-[#170a21]">
                   <FiCamera size={14} />
                 </button>
               </div>
@@ -199,7 +199,7 @@ export default function EditProfileModal({
                 <button 
                   type="button"
                   onClick={handleProfilePhotoClick}
-                  className="mt-2 flex items-center gap-2 text-sm font-semibold text-[#b87bda] hover:text-[#f3e9f9] transition">
+                  className="mt-2 flex items-center gap-2 text-sm font-semibold text-[#C9A96E] hover:text-[#f3e9f9] transition">
                   <FiCamera size={16} />
                   Edit Photo
                 </button>
@@ -217,7 +217,7 @@ export default function EditProfileModal({
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="w-full rounded-lg border border-[#58326d]/45 bg-[#241033] px-4 py-3 text-[#f3e9f9] placeholder-[#bc9acb] outline-none transition focus:border-[#b87bda] focus:ring-1 focus:ring-[#b87bda]"
+              className="w-full rounded-lg border border-[#58326d]/45 bg-[#241033] px-4 py-3 text-[#f3e9f9] placeholder-[#bc9acb] outline-none transition focus:border-[#C9A96E] focus:ring-1 focus:ring-[#C9A96E]"
               placeholder="Your name"
             />
           </div>
@@ -232,7 +232,7 @@ export default function EditProfileModal({
               value={bio}
               onChange={(e) => setBio(e.target.value)}
               rows={3}
-              className="w-full rounded-lg border border-[#58326d]/45 bg-[#241033] px-4 py-3 text-[#f3e9f9] placeholder-[#bc9acb] outline-none transition focus:border-[#b87bda] focus:ring-1 focus:ring-[#b87bda]"
+              className="w-full rounded-lg border border-[#58326d]/45 bg-[#241033] px-4 py-3 text-[#f3e9f9] placeholder-[#bc9acb] outline-none transition focus:border-[#C9A96E] focus:ring-1 focus:ring-[#C9A96E]"
               placeholder="Tell us about yourself"
             />
           </div>
@@ -247,7 +247,7 @@ export default function EditProfileModal({
               type="text"
               value={location}
               onChange={(e) => setLocation(e.target.value)}
-              className="w-full rounded-lg border border-[#58326d]/45 bg-[#241033] px-4 py-3 text-[#f3e9f9] placeholder-[#bc9acb] outline-none transition focus:border-[#b87bda] focus:ring-1 focus:ring-[#b87bda]"
+              className="w-full rounded-lg border border-[#58326d]/45 bg-[#241033] px-4 py-3 text-[#f3e9f9] placeholder-[#bc9acb] outline-none transition focus:border-[#C9A96E] focus:ring-1 focus:ring-[#C9A96E]"
               placeholder="City, Country"
             />
           </div>
@@ -262,7 +262,7 @@ export default function EditProfileModal({
               type="url"
               value={website}
               onChange={(e) => setWebsite(e.target.value)}
-              className="w-full rounded-lg border border-[#58326d]/45 bg-[#241033] px-4 py-3 text-[#f3e9f9] placeholder-[#bc9acb] outline-none transition focus:border-[#b87bda] focus:ring-1 focus:ring-[#b87bda]"
+              className="w-full rounded-lg border border-[#58326d]/45 bg-[#241033] px-4 py-3 text-[#f3e9f9] placeholder-[#bc9acb] outline-none transition focus:border-[#C9A96E] focus:ring-1 focus:ring-[#C9A96E]"
               placeholder="https://example.com"
             />
           </div>

@@ -46,7 +46,7 @@ function CarouselCards() {
                 <img src={item.img} alt={item.title} className="h-[260px] w-full object-cover" />
                 <div className="p-5 bg-[#e6eef8]">
                   <h3 className="text-4xl font-extrabold tracking-tight text-[#0a174e] mb-3">{item.title}</h3>
-                  <span className="inline-block px-3 py-1 rounded-full text-sm font-semibold bg-[#2563eb] text-white">
+                  <span className="inline-block px-3 py-1 rounded-full text-sm font-semibold bg-[#C9A96E] text-white">
                     {item.desc}
                   </span>
                 </div>

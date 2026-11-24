@@ -4,14 +4,10 @@ import HomeFooter from "./HomeFooter";
 import ServicesSection from "./ServicesSection";
 import SiteEffects from "@/components/SiteEffects";
 import GoldParticles from "@/components/GoldParticles";
-import Image from "next/image";
 import Link from "next/link";
-import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 import { useI18n } from "@/i18n/LanguageProvider";
 import LanguageSwitcher from "@/i18n/LanguageSwitcher";
-
-const HeroGlobeR3F = dynamic(() => import("@/components/HeroGlobeR3F"), { ssr: false });
 
 export default function Home() {
   const { t } = useI18n();
@@ -50,33 +46,31 @@ export default function Home() {
 
       <header data-header className="site-header">
         <div className="header-inner">
-          <Link href="/" className="flex items-center gap-2 min-w-0">
-            <Image src="/asmyne-group-logo.png" alt="Logo Asmyne Group" width={48} height={48} className="h-11 w-11 object-contain" />
-            <span className="text-lg md:text-xl font-semibold tracking-wide whitespace-nowrap">
-              Asmyne <span className="text-accent">Group</span>
-            </span>
+          <Link href="/" className="brand">
+            <span className="brand-mono" aria-hidden="true">A</span>
+            Asmyne <b>Group</b>
           </Link>
-          <nav className="hidden md:flex items-center gap-8 text-[15px] font-medium">
+          <nav className="header-links">
             {nav.map((item) => (
-              <Link key={item.href} href={item.href} className="nav-link">
+              <Link key={item.href} href={item.href} className={item.href === "/" ? "nav-link is-active" : "nav-link"}>
                 {item.label}
               </Link>
             ))}
           </nav>
-          <div className="flex items-center gap-3">
-            <LanguageSwitcher compact />
-            <Link href="/services/conseil-migratoire" className="hidden md:inline-flex btn-gold">
+          <div className="header-right">
+            <LanguageSwitcher inline />
+            <Link href="/services/conseil-migratoire" className="btn-gold nav-cta">
               {t("nav.cta")}
             </Link>
             <button
               type="button"
-              className="burger md:hidden"
+              className="burger"
               data-burger
               aria-label={mobileNavOpen ? t("nav.closeMenu") : t("nav.openMenu")}
               aria-expanded={mobileNavOpen}
               onClick={() => setMobileNavOpen((v) => !v)}
             >
-              <span className={mobileNavOpen ? "is-open" : ""} />
+              <i /><i />
             </button>
           </div>
         </div>
@@ -98,36 +92,43 @@ export default function Home() {
       </div>
 
       <section data-home-hero className="hero">
-        <GoldParticles className="hero-particles" quantity={56} />
+        <GoldParticles className="hero-particles" quantity={40} />
         <div className="hero-shade" />
         <div className="hero-grid">
           <div className="hero-copy">
             <p data-fade className="eyebrow">{t("hero.eyebrow")}</p>
-            <h1 data-split className="hero-title font-display">{t("hero.title")}</h1>
+            <h1 data-fade className="hero-title font-display">
+              {t("hero.titlePrefix")} <em>{t("hero.titleAccent")}</em>
+            </h1>
+            <p data-fade className="hero-lead">{t("hero.lead")}</p>
             <div data-fade className="hero-actions">
-              <Link href="/services/conseil-migratoire" className="btn-gold">{t("hero.cta")}</Link>
+              <Link href="/services/conseil-migratoire" className="btn-gold">
+                {t("hero.cta")} <span aria-hidden="true">→</span>
+              </Link>
               <a
                 href="https://embed.app.guidde.com/playbooks/rLrBGTRBbpjVwVjLuNqBWh?mode=videoOnly"
                 target="_blank"
                 rel="noreferrer noopener"
                 className="btn-ghost"
               >
+                <span className="play" aria-hidden="true">▶</span>
                 {t("hero.demo")}
               </a>
             </div>
-          </div>
-          <HeroGlobeR3F>
-            <div className="globe-logo">
-              <Image
-                src="/asmyne-group-logo.png"
-                alt="Logo Asmyne Group"
-                width={420}
-                height={420}
-                className="logo-float h-auto w-full object-contain"
-                priority
-              />
+            <div data-fade className="hero-stats">
+              <div>+10<span>{t("hero.statServices")}</span></div>
+              <div>24/7<span>{t("hero.statSupport")}</span></div>
+              <div>1<span>{t("hero.statEcosystem")}</span></div>
             </div>
-          </HeroGlobeR3F>
+          </div>
+          <div className="hero-visual">
+            <img src="/globe-premium.jpg" alt="Asmyne Group" />
+            <div className="hero-tag">
+              {t("hero.tag")}
+              <br />
+              <b>{t("hero.tag2")}</b>
+            </div>
+          </div>
         </div>
       </section>
 
