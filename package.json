@@ -8,5 +8,14 @@
     "slugify": "^1.6.9",
     "socket.io": "^4.8.3",
     "socket.io-client": "^4.8.3"
+  },
+  "name": "asmynegroup-modern",
+  "private": true,
+  "scripts": {
+    "build": "npm ci --prefix frontend && npm run build --prefix frontend",
+    "start": "npm run start --prefix frontend"
+  },
+  "engines": {
+    "node": ">=20"
   }
 }
