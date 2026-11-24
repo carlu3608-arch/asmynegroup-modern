@@ -5,6 +5,7 @@ import { Geist, Geist_Mono, Outfit, Cormorant_Garamond } from "next/font/google"
 import "./globals.css";
 
 import CartProviderBridge from "./shared/CartProviderBridge";
+import { LanguageProvider } from "@/i18n/LanguageProvider";
 import ClientToastWrapper from "./shared/ClientToastWrapper";
 import { verifyAuthToken } from "@/lib/jwt";
 
@@ -57,13 +58,15 @@ export default async function RootLayout({
     >
       <head />
       <body className="relative min-h-full flex flex-col overflow-x-hidden text-gray-800 bg-gray-50">
-        <ClientToastWrapper>
+        <LanguageProvider>
+          <ClientToastWrapper>
           <CartProviderBridge userCartPrefix={cartPrefix}>
             <div className="relative z-10">
               {children}
             </div>
           </CartProviderBridge>
-        </ClientToastWrapper>
+          </ClientToastWrapper>
+        </LanguageProvider>
       </body>
     </html>
   );

@@ -8,61 +8,29 @@ import Image from "next/image";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
+import { useI18n } from "@/i18n/LanguageProvider";
+import LanguageSwitcher from "@/i18n/LanguageSwitcher";
 
 const HeroGlobeR3F = dynamic(() => import("@/components/HeroGlobeR3F"), { ssr: false });
 
-const nav = [
-  { href: "/", label: "Inicio" },
-  { href: "/services/marketplace-global", label: "Marketplace" },
-  { href: "/blog", label: "Blog" },
-  { href: "/contact", label: "Contacto" },
-];
-
-const whyCards = [
-  {
-    title: "Asesoría Migratoria",
-    desc: "Asesoría migratoria profesional y acompañamiento personalizado para ayudarte a entender cada proceso y tomar decisiones con seguridad y confianza.",
-  },
-  {
-    title: "Consejos Empresariales",
-    desc: "Consejos empresariales para ayudarte a crecer, emprender y fortalecer tu negocio con estrategias efectivas y mejores decisiones para tu futuro.",
-  },
-  {
-    title: "Soluciones de Belleza",
-    desc: "Soluciones de belleza y Soluciones capilares adaptadas a tus necesidades para resaltar tu estilo, tu confianza y tu bienestar personal.",
-  },
-  {
-    title: "Yontikonsey Blog",
-    desc: "Plataforma de blog y contenido útil con “Yontikonsey Blog”, donde compartimos consejos, información y experiencias que te inspiran y te ayudan a avanzar.",
-  },
-  {
-    title: "Agencia de Viajes",
-    desc: "Servicios de agencia de viajes y asistencia internacional para que vivas experiencias increíbles con tranquilidad, seguridad y el mejor acompañamiento.",
-  },
-  {
-    title: "Red Social",
-    desc: "Espacio de red social para conectar con otras personas, compartir ideas, crear relaciones y formar parte de una comunidad activa y positiva.",
-  },
-];
-
-const faqs = [
-  {
-    q: "¿Cómo puedo iniciar mi proceso con Asmyne Group?",
-    a: "Puedes comenzar escribiéndonos por WhatsApp o desde el formulario de contacto. Evaluamos tu necesidad y te guiamos con un plan personalizado.",
-  },
-  {
-    q: "¿Cuánto tiempo tarda una asesoría migratoria?",
-    a: "Depende del tipo de trámite y de la documentación disponible. En la primera consulta te damos una estimación clara de tiempos y pasos.",
-  },
-  {
-    q: "¿Qué documentos necesito para comenzar?",
-    a: "Generalmente: pasaporte vigente, actas civiles, antecedentes y formularios según el caso. Te entregamos una lista exacta antes de iniciar.",
-  },
-];
-
 export default function Home() {
+  const { t } = useI18n();
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
+
+  const nav = [
+    { href: "/", label: t("nav.inicio") },
+    { href: "/services/marketplace-global", label: t("nav.marketplace") },
+    { href: "/blog", label: t("nav.blog") },
+    { href: "/contact", label: t("nav.contacto") },
+  ];
+
+  const whyCards = [1, 2, 3, 4, 5, 6].map((i) => ({
+    title: t(`why.card${i}.title`),
+    desc: t(`why.card${i}.desc`),
+  }));
+
+  const faqs = [1, 2, 3].map((i) => ({ q: t(`faq.q${i}`), a: t(`faq.a${i}`) }));
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -96,14 +64,15 @@ export default function Home() {
             ))}
           </nav>
           <div className="flex items-center gap-3">
+            <LanguageSwitcher compact />
             <Link href="/services/conseil-migratoire" className="hidden md:inline-flex btn-gold">
-              Comenzar Aquí
+              {t("nav.cta")}
             </Link>
             <button
               type="button"
               className="burger md:hidden"
               data-burger
-              aria-label={mobileNavOpen ? "Cerrar menú" : "Abrir menú"}
+              aria-label={mobileNavOpen ? t("nav.closeMenu") : t("nav.openMenu")}
               aria-expanded={mobileNavOpen}
               onClick={() => setMobileNavOpen((v) => !v)}
             >
@@ -121,8 +90,9 @@ export default function Home() {
               {item.label}
             </Link>
           ))}
+          <div className="mt-4"><LanguageSwitcher /></div>
           <Link href="/services/conseil-migratoire" className="btn-gold mt-4 justify-center" onClick={() => setMobileNavOpen(false)}>
-            Comenzar Aquí
+            {t("nav.cta")}
           </Link>
         </nav>
       </div>
@@ -132,23 +102,17 @@ export default function Home() {
         <div className="hero-shade" />
         <div className="hero-grid">
           <div className="hero-copy">
-            <p data-fade className="eyebrow">
-              Un solo lugar, infinitas soluciones.
-            </p>
-            <h1 data-split className="hero-title font-display">
-              Todas tus soluciones digitales en un solo ecosistema
-            </h1>
+            <p data-fade className="eyebrow">{t("hero.eyebrow")}</p>
+            <h1 data-split className="hero-title font-display">{t("hero.title")}</h1>
             <div data-fade className="hero-actions">
-              <Link href="/services/conseil-migratoire" className="btn-gold">
-                Comenzar Aquí
-              </Link>
+              <Link href="/services/conseil-migratoire" className="btn-gold">{t("hero.cta")}</Link>
               <a
                 href="https://embed.app.guidde.com/playbooks/rLrBGTRBbpjVwVjLuNqBWh?mode=videoOnly"
                 target="_blank"
                 rel="noreferrer noopener"
                 className="btn-ghost"
               >
-                Ver la demostración
+                {t("hero.demo")}
               </a>
             </div>
           </div>
@@ -172,19 +136,19 @@ export default function Home() {
       <section className="stats-row" data-stagger>
         <div className="stat">
           <div className="stat-num" data-count="10K+">10K+</div>
-          <div className="stat-label">Clientes satisfechos</div>
+          <div className="stat-label">{t("stats.clients")}</div>
         </div>
         <div className="stat">
           <div className="stat-num" data-count="150+">150+</div>
-          <div className="stat-label">Países atendidos</div>
+          <div className="stat-label">{t("stats.countries")}</div>
         </div>
         <div className="stat">
           <div className="stat-num" data-count="99.9%">99.9%</div>
-          <div className="stat-label">Seguridad garantizada</div>
+          <div className="stat-label">{t("stats.security")}</div>
         </div>
         <div className="stat">
           <div className="stat-num">24/7</div>
-          <div className="stat-label">Soporte disponible</div>
+          <div className="stat-label">{t("stats.support")}</div>
         </div>
       </section>
 
@@ -193,25 +157,17 @@ export default function Home() {
           <img src="/asmyne-pierre.jpg" alt="Asmyne Pierre" data-parallax />
         </div>
         <div className="about-copy" data-fade>
-          <div className="eyebrow">Sobre nosotros</div>
-          <h2 className="font-display section-title">Somos una plataforma integral</h2>
-          <p className="font-semibold text-white">
-            Somos una plataforma integral dedicada a ofrecer asesoría migratoria, empresarial y soluciones digitales innovadoras para personas y negocios. Nuestro objetivo es brindar un acompañamiento profesional, confiable y personalizado que ayude a nuestros clientes a crecer, regularizar sus procesos y alcanzar nuevas oportunidades.
-          </p>
-          <p>
-            También ofrecemos servicios de viajes, contenido informativo, soluciones de belleza y herramientas digitales adaptadas a las necesidades actuales. Trabajamos con compromiso, responsabilidad y visión para conectar a cada persona con soluciones efectivas y modernas.
-          </p>
-          <Link href="/blog" className="btn-gold mt-2 w-fit">
-            READ MORE
-          </Link>
+          <div className="eyebrow">{t("about.eyebrow")}</div>
+          <h2 className="font-display section-title">{t("about.title")}</h2>
+          <p className="font-semibold text-white">{t("about.p1")}</p>
+          <p>{t("about.p2")}</p>
+          <Link href="/blog" className="btn-gold mt-2 w-fit">{t("about.more")}</Link>
         </div>
       </section>
 
       <section className="why-section">
-        <h2 data-split className="font-display section-title text-center">Por qué elegir Asmyne Group</h2>
-        <p data-fade className="section-lead">
-          Ayuda y orientación en todo tu camino para tomar las mejores decisiones.
-        </p>
+        <h2 data-split className="font-display section-title text-center">{t("why.title")}</h2>
+        <p data-fade className="section-lead">{t("why.lead")}</p>
         <div className="why-grid" data-stagger>
           {whyCards.map((card) => (
             <article key={card.title} className="glass-card" data-tilt>
@@ -228,15 +184,11 @@ export default function Home() {
 
       <section className="city-section">
         <div data-fade>
-          <h2 className="font-display section-title">
-            Somos verdaderamente excelentes en servicios en la ciudad
-          </h2>
-          <p>
-            Somos una agencia familiar con experiencia empírica, combinando generaciones de trabajo práctico con análisis basados en datos para ofrecer los mejores resultados a nuestros clientes.
-          </p>
+          <h2 className="font-display section-title">{t("city.title")}</h2>
+          <p>{t("city.p")}</p>
           <div className="hero-actions mt-6">
-            <Link href="/contact" className="btn-gold">Habla con un experto</Link>
-            <a href="tel:+18093086370" className="btn-ghost">Call: +1-(809) 308-6370</a>
+            <Link href="/contact" className="btn-gold">{t("city.cta1")}</Link>
+            <a href="tel:+18093086370" className="btn-ghost">{t("city.cta2")}</a>
           </div>
         </div>
         <div data-reveal data-ripple className="city-photo">
@@ -249,33 +201,31 @@ export default function Home() {
         <div className="features-grid" data-stagger>
           <div className="feature">
             <div className="stat-num" data-count="2007">2007</div>
-            <div className="stat-label">Year of Establishment</div>
+            <div className="stat-label">{t("stats2.year")}</div>
           </div>
           <div className="feature">
             <div className="stat-num" data-count="547">547</div>
-            <div className="stat-label">Successful Projects</div>
+            <div className="stat-label">{t("stats2.projects")}</div>
           </div>
           <div className="feature">
             <div className="stat-num" data-count="45+">45+</div>
-            <div className="stat-label">Global Partners</div>
+            <div className="stat-label">{t("stats2.partners")}</div>
           </div>
           <div className="feature">
             <div className="stat-num" data-count="1500">1500</div>
-            <div className="stat-label">Team Members</div>
+            <div className="stat-label">{t("stats2.team")}</div>
           </div>
         </div>
       </section>
 
       <section className="faq-section">
         <div data-fade className="faq-intro">
-          <div className="eyebrow">Preguntas Frecuentes Generales (FAQ)</div>
+          <div className="eyebrow">{t("faq.eyebrow")}</div>
           <h2 className="font-display section-title">
-            ¿Tienes dudas?<br />Revisa las FAQ o contáctanos
+            {t("faq.title.l1")}<br />{t("faq.title.l2")}
           </h2>
-          <p>
-            Aquí encontrarás respuestas rápidas sobre nuestros servicios digitales, asesorías y procesos. Si necesitas ayuda personalizada, nuestro equipo está listo para orientarte paso a paso.
-          </p>
-          <Link href="/faq" className="btn-gold w-fit">Ver más preguntas frecuentes</Link>
+          <p>{t("faq.p")}</p>
+          <Link href="/faq" className="btn-gold w-fit">{t("faq.cta")}</Link>
         </div>
         <div className="faq-list">
           {faqs.map((item, i) => {

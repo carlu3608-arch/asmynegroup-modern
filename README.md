@@ -1,13 +1,26 @@
 # Asmyne Group — sitio moderno
 
-Rediseño visual de Asmyne Group: hero 3D con globo dorado (React Three Fiber + bloom), campo de partículas al estilo del teclado IAX, paleta navy/oro, animaciones al scroll y menú móvil.
+Rediseño visual de Asmyne Group: hero 3D con globo dorado (React Three Fiber + bloom), campo de partículas, paleta navy/oro, animaciones al scroll y menú móvil.
+
+## Novedades
+
+- **Admin** en `/admin` (login en `/admin/login`): editar textos e imágenes de la portada por idioma, gestionar solicitudes de servicios y configurar el sitio.
+- **i18n**: Español (por defecto), English y Français. Selector de idioma en el header; detecta el idioma del navegador en la primera visita y guarda la preferencia.
 
 ## Stack
 
 - Next.js (App Router) + TypeScript + Tailwind CSS
 - `three`, `@react-three/fiber`, `@react-three/drei`, `@react-three/postprocessing`
 - `motion` (animaciones de UI) y GSAP + Lenis (scroll)
-- API y marketplace heredados del proyecto original, con secretos solo por variables de entorno
+- MongoDB para contenido editable, solicitudes y auth (secretos solo por variables de entorno)
+
+## Variables de entorno (Railway / `.env.local`)
+
+Ver `.env.example`. Obligatorias para el admin:
+
+- `MONGODB_URI`, `MONGODB_DB`
+- `JWT_SECRET`
+- `ADMIN_EMAIL`, `ADMIN_PASSWORD` (crean/sincronizan la cuenta admin en el primer login)
 
 ## Desarrollo
 
@@ -17,8 +30,6 @@ npm install
 npm run dev
 ```
 
-Copia `.env.example` a `frontend/.env.local` y rellena las claves que necesites (MongoDB, JWT, Stripe, OpenAI). El sitio de marketing se construye sin ellas.
-
 ## Deploy
 
-El directorio de la aplicación es `frontend/`. En Vercel, usa ese root directory.
+El build corre desde la raíz del repo (`npm ci --prefix frontend && npm run build --prefix frontend`). Ver `railway.toml`.
