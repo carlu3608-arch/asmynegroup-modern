@@ -86,10 +86,12 @@ export default function MarketplaceGlobal() {
         onCollectionChange={setSelectedCollection}
       />
 
-      <section className="bg-gradient-to-r from-black to-indigo-500 text-white py-16 px-4 text-center">
-        <h1 className="text-4xl md:text-5xl font-bold mb-4">Bienvenido al Marketplace Global</h1>
-        <p className="text-lg md:text-xl mb-6">Descubre las mejores ofertas de tecnología, smartphones, consolas, accesorios ¡y mucho más!</p>
-        <a href="#products" className="inline-block px-8 py-3 bg-white text-black font-bold rounded shadow hover:bg-gray-100">Ver productos</a>
+      <section className="relative min-h-[70vh] flex flex-col items-center justify-center text-white py-16 px-4 text-center overflow-hidden">
+        <img src="/heroes/marketplace-global.png" alt="" className="absolute inset-0 w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-[#050c24]/55" />
+        <h1 className="relative z-10 text-4xl md:text-5xl font-bold mb-4 text-[#e6b85c] drop-shadow-lg">Bienvenido al Marketplace Global</h1>
+        <p className="relative z-10 text-lg md:text-xl mb-6">Descubre las mejores ofertas de tecnología, smartphones, consolas, accesorios ¡y mucho más!</p>
+        <a href="#products" className="relative z-10 inline-block px-8 py-3 bg-[#e6b85c] text-[#050c24] font-bold rounded-full shadow hover:bg-white">Ver productos</a>
       </section>
 
       <section id="collections" className="max-w-6xl mx-auto py-10 px-4">

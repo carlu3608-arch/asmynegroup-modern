@@ -2,10 +2,12 @@ export default function SystemeMonetisation() {
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-[#1a1a2e] via-[#16213e] to-[#0f3460] text-white font-sans flex flex-col items-center py-0">
       {/* Hero Section */}
-      <section className="w-full flex flex-col items-center justify-center py-16 px-4 bg-gradient-to-r from-[#0f3460] to-[#16213e] shadow-lg">
-        <h1 className="text-5xl md:text-6xl font-extrabold mb-4 text-[#ffd700] drop-shadow-lg text-center">Plataforma de monetización Premium</h1>
-        <p className="mb-8 text-xl md:text-2xl text-white/80 max-w-2xl text-center">Maximice sus ingresos con herramientas potentes: suscripciones, pagos recurrentes, comisiones, gestión automatizada e informes detallados.</p>
-        <button className="bg-[#ffd700] text-[#0f3460] font-bold px-8 py-4 rounded-full shadow-lg hover:bg-yellow-400 transition text-lg">Comenzar ahora</button>
+      <section className="relative w-full min-h-[70vh] flex flex-col items-center justify-center py-16 px-4 overflow-hidden shadow-lg">
+        <img src="/heroes/systeme-monetisation.png" alt="" className="absolute inset-0 w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-[#050c24]/55" />
+        <h1 className="relative z-10 text-5xl md:text-6xl font-extrabold mb-4 text-[#ffd700] drop-shadow-lg text-center">Plataforma de monetización Premium</h1>
+        <p className="relative z-10 mb-8 text-xl md:text-2xl text-white/80 max-w-2xl text-center">Maximice sus ingresos con herramientas potentes: suscripciones, pagos recurrentes, comisiones, gestión automatizada e informes detallados.</p>
+        <button className="relative z-10 bg-[#ffd700] text-[#0f3460] font-bold px-8 py-4 rounded-full shadow-lg hover:bg-yellow-400 transition text-lg">Comenzar ahora</button>
       </section>
 
       {/* Features Cards */}

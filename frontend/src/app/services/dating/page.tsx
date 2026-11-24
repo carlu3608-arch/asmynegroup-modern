@@ -8,7 +8,7 @@ export default function DatingLanding() {
     <>
       <div className="relative min-h-screen flex flex-col justify-center items-center bg-black">
         <div className="absolute inset-0 z-0 bg-[#1b0f1f]">
-          <img src="/dating-hero.png" alt="Fondo de encuentros" className="w-full h-full object-contain md:object-cover object-center" />
+          <img src="/heroes/dating.png" alt="" className="w-full h-full object-cover object-center" />
           <div className="absolute inset-0 bg-black/60" />
         </div>
 

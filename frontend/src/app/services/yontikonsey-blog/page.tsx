@@ -2,7 +2,7 @@
 "use client";
 import React, { useEffect, useRef } from "react";
 
-const HERO_BG = "/blog-header.jpg"; // Image personnalisée du header
+const HERO_BG = "/heroes/yontikonsey-blog.png";
 const CATEGORIES = ["", "", "", "", ""];
 
 export default function YontikonseyBlog() {

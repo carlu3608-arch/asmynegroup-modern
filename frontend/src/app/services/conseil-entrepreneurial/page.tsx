@@ -49,7 +49,7 @@ export default function ConseilEntrepreneurialPage() {
         </div>
       </nav>
       {/* Hero Section */}
-      <section className="w-full flex flex-col items-center justify-center min-h-[120vh] px-4 bg-[url('/images/entrepreneur.jpeg')] bg-cover bg-center pt-40">
+      <section className="w-full flex flex-col items-center justify-center min-h-[120vh] px-4 bg-[url('/heroes/conseil-entrepreneurial.png')] bg-cover bg-center pt-40">
         <h1 className="text-6xl md:text-7xl font-extrabold mb-6 text-[#f2c46f] drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)] text-center">Asesoría empresarial</h1>
       </section>
 

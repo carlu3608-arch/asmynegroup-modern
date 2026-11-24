@@ -66,7 +66,7 @@ function ImmigrationHero() {
     <section
       className="w-full min-h-[600px] md:min-h-[900px] bg-center bg-cover flex items-center justify-center relative animate-fade-in"
       style={{
-        backgroundImage: 'url(/images/real-estate-building.jpeg)',
+        backgroundImage: 'url(/heroes/asesoria-migratoria.png)',
         backgroundPosition: 'center',
         backgroundSize: 'cover',
       }}

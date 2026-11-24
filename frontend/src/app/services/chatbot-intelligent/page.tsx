@@ -53,6 +53,12 @@ export default function ChatbotPage() {
 
   return (
     <div className="min-h-screen w-full bg-black text-white flex font-sans flex-col">
+      <section className="relative w-full min-h-[28rem] flex items-center justify-center overflow-hidden">
+        <img src="/heroes/chatbot-intelligent.png" alt="" className="absolute inset-0 w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-[#050c24]/40" />
+        <h1 className="relative z-10 text-4xl md:text-5xl font-extrabold text-[#e6b85c] drop-shadow-lg text-center px-4">Chatbot inteligente</h1>
+      </section>
+      <div className="flex flex-1 w-full">
       {/* Barra lateral de iconos */}
       <aside className="hidden md:flex w-20 bg-black border-r border-[#23272f] flex-col h-screen items-center justify-between py-4">
         <div className="flex flex-col gap-4 items-center w-full">
@@ -318,6 +324,7 @@ export default function ChatbotPage() {
           </form>
         </div>
       </main>
+      </div>
     {/* Prompt contextuel */}
     {prompt && (
       <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50">

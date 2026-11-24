@@ -28,7 +28,7 @@ export default function AgenceVoyage() {
 			<section className="w-full min-h-[28rem] flex flex-col items-center justify-center relative m-0 p-0 overflow-hidden">
 			  {/* Imagen de fondo */}
 			<Image
-				src="/images/agence.png"
+				src="/heroes/agence-voyage.png"
 				alt="Agencia de viajes"
 			    fill
 			    className="object-cover w-full h-full absolute inset-0 z-0"

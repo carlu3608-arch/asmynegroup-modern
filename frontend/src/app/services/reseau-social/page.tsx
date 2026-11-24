@@ -849,5 +849,15 @@ function Feed() {
 }
 
 export default function ReseauSocial() {
-  return <div className="min-h-screen bg-black" />;
+  return (
+    <div className="min-h-screen bg-[#050c24]">
+      <section className="relative w-full min-h-[80vh] flex items-center justify-center overflow-hidden">
+        <img src="/heroes/reseau-social.png" alt="" className="absolute inset-0 h-full w-full object-cover" />
+        <div className="absolute inset-0 bg-[#050c24]/45" />
+        <div className="relative z-10 px-6 text-center">
+          <h1 className="text-4xl md:text-6xl font-extrabold text-[#e6b85c] drop-shadow-lg">Red social</h1>
+        </div>
+      </section>
+    </div>
+  );
 }
