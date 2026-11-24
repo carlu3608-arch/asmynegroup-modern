@@ -5,18 +5,18 @@ import { FaFacebookF, FaInstagram, FaTiktok, FaYoutube, FaWhatsapp } from "react
 import { useI18n } from "@/i18n/LanguageProvider";
 
 export default function HomeFooter() {
-  const { t, settings } = useI18n();
+  const { t, settings, branding } = useI18n();
   const social = settings.social ?? {};
   const email = settings.contactEmail || "contact@asmyne.com";
   const phone = settings.supportPhone || "1-(809) 308-6370";
-  const siteName = settings.siteName || "Asmyne Group";
+  const siteName = branding.siteName || settings.siteName || "Asmyne Group";
 
   return (
     <footer className="home-footer">
       <div className="footer-grid">
         <div>
           <div className="flex items-center gap-2 mb-4">
-            <Image src="/asmyne-group-logo.png" alt="Logo Asmyne Group" width={40} height={40} className="h-10 w-10 object-contain" />
+            <Image src={branding.logoUrl || "/asmyne-group-logo.png"} alt="Logo Asmyne Group" width={40} height={40} className="h-10 w-10 object-contain" unoptimized={(branding.logoUrl || "").startsWith("/api/media/")} />
             <span className="text-2xl font-extrabold tracking-wide">{siteName}</span>
           </div>
           <div className="text-white/70 mb-1">{t("footer.address.label")}</div>

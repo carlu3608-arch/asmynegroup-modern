@@ -10,7 +10,7 @@ import { useI18n } from "@/i18n/LanguageProvider";
 import LanguageSwitcher from "@/i18n/LanguageSwitcher";
 
 export default function Home() {
-  const { t } = useI18n();
+  const { t, branding, image } = useI18n();
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
 
@@ -47,8 +47,12 @@ export default function Home() {
       <header data-header className="site-header">
         <div className="header-inner">
           <Link href="/" className="brand">
-            <span className="brand-mono" aria-hidden="true">A</span>
-            Asmyne <b>Group</b>
+            {branding.logoUrl && branding.logoUrl !== "/asmyne-group-logo.png" ? (
+              <img src={branding.logoUrl} alt={branding.siteName || "Asmyne Group"} className="brand-logo" />
+            ) : (
+              <span className="brand-mono" aria-hidden="true">{(branding.siteName || "Asmyne Group").charAt(0)}</span>
+            )}
+            <span className="brand-name">{branding.siteName || "Asmyne Group"}</span>
           </Link>
           <nav className="header-links">
             {nav.map((item) => (
@@ -155,7 +159,7 @@ export default function Home() {
 
       <section className="about-section">
         <div data-reveal className="about-photo" data-ripple>
-          <img src="/asmyne-pierre.jpg" alt="Asmyne Pierre" data-parallax />
+          <img src={image("about") || "/asmyne-pierre.jpg"} alt="Asmyne Pierre" data-parallax />
         </div>
         <div className="about-copy" data-fade>
           <div className="eyebrow">{t("about.eyebrow")}</div>
@@ -180,7 +184,7 @@ export default function Home() {
       </section>
 
       <section className="office-band">
-        <img src="/cta-office-bg.png" alt="Bureau" data-parallax />
+        <img src={image("office") || "/cta-office-bg.png"} alt="Bureau" data-parallax />
       </section>
 
       <section className="city-section">
@@ -193,7 +197,7 @@ export default function Home() {
           </div>
         </div>
         <div data-reveal data-ripple className="city-photo">
-          <img src="/images/real-estate-building.png" alt="Real Estate Building" />
+          <img src={image("city") || "/images/real-estate-building.png"} alt="Real Estate Building" />
         </div>
       </section>
 

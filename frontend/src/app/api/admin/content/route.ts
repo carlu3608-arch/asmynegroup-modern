@@ -36,28 +36,36 @@ export async function PUT(request: NextRequest) {
     return NextResponse.json({ error: "Solicitud inválida." }, { status: 400 });
   }
 
-  // Keep only known locales.
-  const overrides: Record<string, Record<string, string>> = {};
-  for (const l of locales) {
-    if (body.overrides?.[l] && typeof body.overrides[l] === "object") {
-      overrides[l] = {};
-      for (const [k, v] of Object.entries(body.overrides[l])) {
-        if (typeof v === "string") overrides[l][k] = v;
+  const $set: Record<string, unknown> = { updatedAt: new Date() };
+
+  if (body.overrides) {
+    const overrides: Record<string, Record<string, string>> = {};
+    for (const l of locales) {
+      if (body.overrides?.[l] && typeof body.overrides[l] === "object") {
+        overrides[l] = {};
+        for (const [k, v] of Object.entries(body.overrides[l])) {
+          if (typeof v === "string") overrides[l][k] = v;
+        }
       }
     }
+    $set.overrides = overrides;
   }
-  const images: Record<string, string> = {};
-  if (body.images && typeof body.images === "object") {
-    for (const [k, v] of Object.entries(body.images)) {
-      if (typeof v === "string" && v.trim()) images[k] = v.trim();
+
+  if (body.images) {
+    const images: Record<string, string> = {};
+    if (typeof body.images === "object") {
+      for (const [k, v] of Object.entries(body.images)) {
+        if (typeof v === "string" && v.trim()) images[k] = v.trim();
+      }
     }
+    $set.images = images;
   }
 
   try {
     const db = await getMongoDb();
     await db.collection("siteContent").updateOne(
       { _id: CONTENT_ID as never },
-      { $set: { overrides, images, updatedAt: new Date() } },
+      { $set },
       { upsert: true },
     );
     return NextResponse.json({ ok: true });

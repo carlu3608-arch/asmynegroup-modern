@@ -6,6 +6,7 @@ import "./globals.css";
 
 import CartProviderBridge from "./shared/CartProviderBridge";
 import { LanguageProvider } from "@/i18n/LanguageProvider";
+import BrandSync from "@/components/BrandSync";
 import ClientToastWrapper from "./shared/ClientToastWrapper";
 import { verifyAuthToken } from "@/lib/jwt";
 
@@ -66,6 +67,7 @@ export default async function RootLayout({
       <head />
       <body className="relative min-h-full flex flex-col overflow-x-hidden text-gray-800 bg-gray-50">
         <LanguageProvider>
+          <BrandSync />
           <ClientToastWrapper>
           <CartProviderBridge userCartPrefix={cartPrefix}>
             <div className="relative z-10">

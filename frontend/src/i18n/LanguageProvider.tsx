@@ -16,6 +16,7 @@ import {
   type Dict,
   type Locale,
 } from "./dictionaries";
+import { DEFAULT_BRANDING, defaultServices, type Branding, type CmsService } from "@/lib/cms";
 
 type Overrides = Partial<Record<Locale, Dict>>;
 
@@ -33,7 +34,10 @@ type LanguageContextValue = {
   t: (key: string) => string;
   image: (slug: string) => string | undefined;
   settings: SiteSettings;
+  branding: Branding;
+  services: CmsService[];
   ready: boolean;
+  refresh: () => void;
 };
 
 const LanguageContext = createContext<LanguageContextValue | null>(null);
@@ -48,10 +52,7 @@ function detectLocale(): Locale {
   } catch {
     /* ignore */
   }
-  const candidates = [
-    ...(navigator.languages ?? []),
-    navigator.language,
-  ].filter(Boolean);
+  const candidates = [...(navigator.languages ?? []), navigator.language].filter(Boolean);
   for (const raw of candidates) {
     const code = raw.slice(0, 2).toLowerCase();
     if (locales.includes(code as Locale)) return code as Locale;
@@ -64,19 +65,18 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   const [overrides, setOverrides] = useState<Overrides>({});
   const [images, setImages] = useState<Record<string, string>>({});
   const [settings, setSettings] = useState<SiteSettings>({});
+  const [branding, setBranding] = useState<Branding>(DEFAULT_BRANDING);
+  const [services, setServices] = useState<CmsService[]>(defaultServices());
   const [ready, setReady] = useState(false);
+  const [tick, setTick] = useState(0);
 
-  // Detect language on first visit.
   useEffect(() => {
     const detected = detectLocale();
     setLocaleState(detected);
-    if (typeof document !== "undefined") {
-      document.documentElement.lang = detected;
-    }
+    if (typeof document !== "undefined") document.documentElement.lang = detected;
     setReady(true);
   }, []);
 
-  // Load editable content + settings from the DB (graceful if unavailable).
   useEffect(() => {
     let active = true;
     fetch("/api/site-content", { cache: "no-store" })
@@ -86,14 +86,14 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
         if (data.overrides) setOverrides(data.overrides as Overrides);
         if (data.images) setImages(data.images as Record<string, string>);
         if (data.settings) setSettings(data.settings as SiteSettings);
+        if (data.branding) setBranding({ ...DEFAULT_BRANDING, ...data.branding });
+        if (Array.isArray(data.services)) setServices(data.services as CmsService[]);
       })
-      .catch(() => {
-        /* keep bundled defaults */
-      });
+      .catch(() => {});
     return () => {
       active = false;
     };
-  }, []);
+  }, [tick]);
 
   const setLocale = useCallback((next: Locale) => {
     setLocaleState(next);
@@ -103,9 +103,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     } catch {
       /* ignore */
     }
-    if (typeof document !== "undefined") {
-      document.documentElement.lang = next;
-    }
+    if (typeof document !== "undefined") document.documentElement.lang = next;
   }, []);
 
   const t = useCallback(
@@ -114,37 +112,35 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
       if (ov != null && ov !== "") return ov;
       const dict = dictionaries[locale]?.[key];
       if (dict != null) return dict;
-      const fallback = dictionaries[DEFAULT_LOCALE]?.[key];
-      return fallback ?? key;
+      return dictionaries[DEFAULT_LOCALE]?.[key] ?? key;
     },
     [locale, overrides],
   );
 
   const image = useCallback((slug: string) => images[slug], [images]);
+  const refresh = useCallback(() => setTick((n) => n + 1), []);
 
   const value = useMemo<LanguageContextValue>(
-    () => ({ locale, setLocale, t, image, settings, ready }),
-    [locale, setLocale, t, image, settings, ready],
+    () => ({ locale, setLocale, t, image, settings, branding, services, ready, refresh }),
+    [locale, setLocale, t, image, settings, branding, services, ready, refresh],
   );
 
-  return (
-    <LanguageContext.Provider value={value}>
-      {children}
-    </LanguageContext.Provider>
-  );
+  return <LanguageContext.Provider value={value}>{children}</LanguageContext.Provider>;
 }
 
 export function useI18n() {
   const ctx = useContext(LanguageContext);
   if (!ctx) {
-    // Safe fallback so components never crash if used outside the provider.
     return {
       locale: DEFAULT_LOCALE,
       setLocale: () => {},
       t: (key: string) => dictionaries[DEFAULT_LOCALE]?.[key] ?? key,
       image: () => undefined,
       settings: {} as SiteSettings,
+      branding: DEFAULT_BRANDING,
+      services: defaultServices(),
       ready: false,
+      refresh: () => {},
     } satisfies LanguageContextValue;
   }
   return ctx;
