@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getMongoDb } from "@/lib/mongodb";
 import { ADMIN_COOKIE, verifyAdminToken } from "@/lib/adminAuth";
+import { DEFAULT_MARKETPLACE_URL, sanitizeMarketplaceUrl, clearMarketplaceUrlCache } from "@/lib/marketplaceUrl";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -11,6 +12,7 @@ const DEFAULT_SETTINGS = {
   siteName: "Asmyne Group",
   contactEmail: "contact@asmyne.com",
   supportPhone: "+1-(809) 308-6370",
+  marketplaceUrl: DEFAULT_MARKETPLACE_URL,
   social: {
     facebook: "https://www.facebook.com/share/1KGpFstMcy/",
     instagram: "https://www.instagram.com/asmynegroup",
@@ -56,6 +58,11 @@ export async function PUT(request: NextRequest) {
     return NextResponse.json({ error: "Solicitud inválida." }, { status: 400 });
   }
   const settings = { ...DEFAULT_SETTINGS, ...(body.settings ?? {}) };
+  if ("marketplaceUrl" in settings) {
+    const clean = sanitizeMarketplaceUrl(settings.marketplaceUrl);
+    if (!clean) return NextResponse.json({ error: "URL del marketplace inválida (usa https://...)." }, { status: 400 });
+    settings.marketplaceUrl = clean;
+  }
   try {
     const db = await getMongoDb();
     await db.collection("siteContent").updateOne(
@@ -63,6 +70,7 @@ export async function PUT(request: NextRequest) {
       { $set: { settings, updatedAt: new Date() } },
       { upsert: true },
     );
+    clearMarketplaceUrlCache();
     return NextResponse.json({ ok: true, settings });
   } catch (e) {
     const detail = e instanceof Error ? e.message : "error";

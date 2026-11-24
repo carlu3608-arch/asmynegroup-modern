@@ -39,6 +39,7 @@ type Settings = {
   siteName?: string;
   contactEmail?: string;
   supportPhone?: string;
+  marketplaceUrl?: string;
   social?: Record<string, string>;
   sectionsEnabled?: Record<string, boolean>;
 };
@@ -756,7 +757,7 @@ function SettingsPanel({ flash }: { flash: (ok: boolean, msg: string) => void })
       <header className="admin-head">
         <div>
           <h1>Configuración</h1>
-          <p>Contacto y redes sociales.</p>
+          <p>Contacto, marketplace y redes sociales.</p>
         </div>
         <button className="admin-btn-gold" onClick={save} disabled={saving}>{saving ? "Guardando…" : "Guardar"}</button>
       </header>
@@ -765,6 +766,11 @@ function SettingsPanel({ flash }: { flash: (ok: boolean, msg: string) => void })
         <h2>Contacto</h2>
         <label className="admin-field"><span>Correo</span><input type="email" value={s.contactEmail ?? ""} onChange={(e) => setS({ ...s, contactEmail: e.target.value })} /></label>
         <label className="admin-field"><span>Teléfono</span><input value={s.supportPhone ?? ""} onChange={(e) => setS({ ...s, supportPhone: e.target.value })} /></label>
+      </div>
+      <div className="admin-card">
+        <h2>Marketplace Global</h2>
+        <label className="admin-field"><span>URL del marketplace</span><input type="url" placeholder="https://market.asmynegroup.com" value={s.marketplaceUrl ?? ""} onChange={(e) => setS({ ...s, marketplaceUrl: e.target.value })} /></label>
+        <p style={{ opacity: 0.7, fontSize: "0.85rem", margin: "6px 0 0" }}>Todos los enlaces de Marketplace del sitio redirigen a esta dirección. Cámbiala a https://market.asmynegroup.com cuando el DNS esté listo.</p>
       </div>
       <div className="admin-card">
         <h2>Redes</h2>

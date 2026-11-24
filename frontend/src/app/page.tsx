@@ -5,6 +5,7 @@ import ServicesSection from "./ServicesSection";
 import SiteEffects from "@/components/SiteEffects";
 import GoldParticles from "@/components/GoldParticles";
 import Link from "next/link";
+import SmartLink from "@/components/SmartLink";
 import { useEffect, useState } from "react";
 import { useI18n } from "@/i18n/LanguageProvider";
 import LanguageSwitcher from "@/i18n/LanguageSwitcher";
@@ -56,9 +57,9 @@ export default function Home() {
           </Link>
           <nav className="header-links">
             {nav.map((item) => (
-              <Link key={item.href} href={item.href} className={item.href === "/" ? "nav-link is-active" : "nav-link"}>
+              <SmartLink key={item.href} href={item.href} className={item.href === "/" ? "nav-link is-active" : "nav-link"}>
                 {item.label}
-              </Link>
+              </SmartLink>
             ))}
           </nav>
           <div className="header-right">
@@ -84,9 +85,9 @@ export default function Home() {
         <div className="mobile-drawer-backdrop" onClick={() => setMobileNavOpen(false)} />
         <nav className="mobile-drawer-panel">
           {nav.map((item) => (
-            <Link key={item.href} href={item.href} onClick={() => setMobileNavOpen(false)}>
+            <SmartLink key={item.href} href={item.href} onClick={() => setMobileNavOpen(false)}>
               {item.label}
-            </Link>
+            </SmartLink>
           ))}
           <div className="mt-4"><LanguageSwitcher /></div>
           <Link href="/services/conseil-migratoire" className="btn-gold mt-4 justify-center" onClick={() => setMobileNavOpen(false)}>

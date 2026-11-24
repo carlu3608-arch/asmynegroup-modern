@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+import SmartLink from "@/components/SmartLink";
 import { MouseEvent } from "react";
 import { useI18n } from "@/i18n/LanguageProvider";
 
@@ -26,7 +26,7 @@ export default function ServicesSection() {
           const icon = image(s.slug) || s.iconUrl || "/asmyne-group-logo.png";
           const isRedSocial = s.slug === "reseau-social";
           return (
-            <Link
+            <SmartLink
               key={s.id || s.slug}
               href={`/services/${s.slug}`}
               className="service-card glass-card"
@@ -39,7 +39,7 @@ export default function ServicesSection() {
               </div>
               <h3>{title}</h3>
               <p>{desc}</p>
-            </Link>
+            </SmartLink>
           );
         })}
       </div>
