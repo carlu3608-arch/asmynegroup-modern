@@ -20,8 +20,9 @@ import {
   type ServiceTexts,
   DEFAULT_BRANDING,
 } from "@/lib/cms";
+import VaultAdmin from "./VaultAdmin";
 
-type Tab = "contenido" | "paginas" | "servicios" | "marca" | "solicitudes" | "config";
+type Tab = "contenido" | "paginas" | "servicios" | "marca" | "solicitudes" | "config" | "vault";
 type Overrides = Partial<Record<Locale, Record<string, string>>>;
 
 type ServiceRequest = {
@@ -155,6 +156,7 @@ export default function AdminDashboard({ adminEmail }: { adminEmail: string }) {
           <button className={tab === "marca" ? "active" : ""} onClick={() => setTab("marca")}>🎨 Marca e imágenes</button>
           <button className={tab === "solicitudes" ? "active" : ""} onClick={() => setTab("solicitudes")}>📥 Solicitudes</button>
           <button className={tab === "config" ? "active" : ""} onClick={() => setTab("config")}>⚙️ Configuración</button>
+          <button className={tab === "vault" ? "active" : ""} onClick={() => setTab("vault")}>🔐 Vault</button>
         </nav>
         <div className="admin-side-foot">
           <div className="admin-who">{adminEmail}</div>
@@ -185,6 +187,7 @@ export default function AdminDashboard({ adminEmail }: { adminEmail: string }) {
         {tab === "marca" && <BrandPanel flash={flash} />}
         {tab === "solicitudes" && <RequestsManager flash={flash} />}
         {tab === "config" && <SettingsPanel flash={flash} />}
+        {tab === "vault" && <VaultAdmin flash={flash} />}
       </main>
     </div>
   );

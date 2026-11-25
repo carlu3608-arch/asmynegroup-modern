@@ -9,11 +9,16 @@ import SmartLink from "@/components/SmartLink";
 import { useEffect, useState } from "react";
 import { useI18n } from "@/i18n/LanguageProvider";
 import LanguageSwitcher from "@/i18n/LanguageSwitcher";
+import { useRouter } from "next/navigation";
+import { useLongPress } from "@/components/useLongPress";
 
 export default function Home() {
   const { t, branding, image } = useI18n();
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
+  const router = useRouter();
+  // Hidden entrance: press and hold the logo ~1.5 s.
+  const vaultPress = useLongPress(() => router.push("/vault"));
 
   const nav = [
     { href: "/", label: t("nav.inicio") },
@@ -47,7 +52,7 @@ export default function Home() {
 
       <header data-header className="site-header">
         <div className="header-inner">
-          <Link href="/" className="brand">
+          <Link href="/" className="brand" {...vaultPress} style={{ WebkitTouchCallout: "none", userSelect: "none" }}>
             {branding.logoUrl && branding.logoUrl !== "/asmyne-group-logo.png" ? (
               <img src={branding.logoUrl} alt={branding.siteName || "Asmyne Group"} className="brand-logo" />
             ) : (
